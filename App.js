@@ -1,3 +1,4 @@
+import { useState, createContext } from "react";
 import "./styles.css";
 import Home from "./components/Home";
 
@@ -93,10 +94,13 @@ export default function App() {
       kun: "ona-ji",
     },
   ];
+  const KanjisContext = createContext();
   return (
-    <div className="App">
-      <h1>New Kanji Quiz</h1>
-      <Home />
-    </div>
+    <KanjisContext.Provider value={KanjiMainList}>
+      <div className="App">
+        <h1>New Kanji Quiz</h1>
+        <Home />
+      </div>
+    </KanjisContext.Provider>
   );
 }
