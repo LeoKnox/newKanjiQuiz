@@ -1,4 +1,5 @@
 import "./styles.css";
+import Home from "./components/Home";
 
 export default function App() {
   const KanjiMainList = [
@@ -95,6 +96,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>New Kanji Quiz</h1>
+      <Home />
     </div>
   );
 }
