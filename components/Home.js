@@ -10,12 +10,13 @@ export default Home = () => {
   const [currPage, setCurrPage] = useState(<Manage />);
   const kanjis = useContext(AllContext);
   const [kc, setKc] = useState(KanjisContext);
-  console.log(kc.props.value);
+  //console.log(kc.value);
   return (
     <div>
       <p>kanji page</p>
       <p>{kanjis[0]["kanji"]}</p>
       {currPage}
+      {kc.props.value[0]["kanji"]}
       <button onClick={() => setCurrPage(<Manage />)}>Home</button>
       <button onClick={() => setCurrPage(<Write />)}>Write</button>
       <button onClick={() => setCurrPage(<Quiz />)}>Quiz</button>
