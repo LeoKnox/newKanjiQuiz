@@ -9,7 +9,7 @@ import Manage from "./Manage.js";
 export default Home = () => {
   const [currPage, setCurrPage] = useState(<Manage />);
   const kanjis = useContext(AllContext);
-  const [kc, setKc] = useState({KanjisContext["props"]["value"]});
+  const [kc, setKc] = useState(AllContext);
   const kd = useContext(KanjisContext);
   console.log(kd);
   return (
