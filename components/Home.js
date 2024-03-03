@@ -9,11 +9,12 @@ import Manage from "./Manage.js";
 export default Home = () => {
   const [currPage, setCurrPage] = useState(<Manage />);
   const kanjis = useContext(AllContext);
+  const kc = useContext(KanjisContext);
   return (
     <div>
       <p>kanji page</p>
       <p>{kanjis[0]["kanji"]}</p>
-      <p>{KanjisContext[0]}</p>
+      <p>{kc[0]["id"]}</p>
       {currPage}
       <button onClick={() => setCurrPage(<Manage />)}>Home</button>
       <button onClick={() => setCurrPage(<Write />)}>Write</button>
