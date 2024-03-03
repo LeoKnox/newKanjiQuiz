@@ -13,6 +13,9 @@ export default Home = () => {
   const [kc, setKc] = useState(KanjisContext);
   const kd = useContext(KanjisContext);
   console.log(AllContext);
+  const find = () => {
+    alert(findPos("o"));
+  };
   return (
     <div>
       <p>kanji page</p>
@@ -23,6 +26,7 @@ export default Home = () => {
       <button onClick={() => setCurrPage(<Write />)}>Write</button>
       <button onClick={() => setCurrPage(<Quiz />)}>Quiz</button>
       <button onClick={() => setCurrPage(<Practice />)}>Practice</button>
+      <button onClick={() => find}>findPos</button>
     </div>
   );
 };
