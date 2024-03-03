@@ -3,6 +3,8 @@ import "./styles.css";
 import Home from "./components/Home";
 import AllContext from "./components/kanji-context";
 
+export const KanjisContext = createContext();
+
 export default function App() {
   const KanjiMainList = [
     {
@@ -95,7 +97,6 @@ export default function App() {
       kun: "ona-ji",
     },
   ];
-  const KanjisContext = createContext(AllContext);
   return (
     <KanjisContext.Provider value={KanjiMainList}>
       <div className="App">
