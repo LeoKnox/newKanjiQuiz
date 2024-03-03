@@ -10,7 +10,8 @@ export default Home = () => {
   const [currPage, setCurrPage] = useState(<Manage />);
   const kanjis = useContext(AllContext);
   const [kc, setKc] = useState(KanjisContext);
-  //console.log(kc.value);
+  const kd = useContext(KanjisContext);
+  console.log(kd);
   return (
     <div>
       <p>kanji page</p>
