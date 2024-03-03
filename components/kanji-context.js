@@ -92,8 +92,8 @@ AllContext = createContext([
   },
 ]);
 
-export const findPos = () => {
-  return "red";
+export const findPos = (o) => {
+  AllContext[0]["kanji"] = o;
 };
 
 export default AllContext;
