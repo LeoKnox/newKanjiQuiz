@@ -92,8 +92,8 @@ AllContext = createContext([
   },
 ]);
 
-const findPos = () => {
+export const findPos = () => {
   return "red";
 };
 
-export default (AllContext, findPos);
+export default AllContext;
