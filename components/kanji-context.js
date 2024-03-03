@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const AllContext = createContext([
+AllContext = createContext([
   {
     id: 92,
     kanji: "丸",
@@ -92,4 +92,8 @@ const AllContext = createContext([
   },
 ]);
 
-export default AllContext;
+const findPos = () => {
+  return "red";
+};
+
+export default (AllContext, findPos);
