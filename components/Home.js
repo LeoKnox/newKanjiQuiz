@@ -13,6 +13,7 @@ export default Home = () => {
     <div>
       <p>kanji page</p>
       <p>{kanjis[0]["kanji"]}</p>
+      <p>{KanjisContext[0]}</p>
       {currPage}
       <button onClick={() => setCurrPage(<Manage />)}>Home</button>
       <button onClick={() => setCurrPage(<Write />)}>Write</button>
