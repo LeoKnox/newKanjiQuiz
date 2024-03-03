@@ -1,6 +1,7 @@
 import { useState, createContext } from "react";
 import "./styles.css";
 import Home from "./components/Home";
+import AllContext from "./components/kanji-context";
 
 export default function App() {
   const KanjiMainList = [
@@ -94,7 +95,7 @@ export default function App() {
       kun: "ona-ji",
     },
   ];
-  const KanjisContext = createContext();
+  const KanjisContext = createContext(AllContext);
   return (
     <KanjisContext.Provider value={KanjiMainList}>
       <div className="App">
