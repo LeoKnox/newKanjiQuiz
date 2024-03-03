@@ -8,8 +8,6 @@ import Manage from "./Manage.js";
 
 export default Home = () => {
   const [currPage, setCurrPage] = useState(<Manage />);
-  console.log(KanjisContext);
-  //const kanjis = useContext(KanjisContext);
   const kanjis = useContext(AllContext);
   return (
     <div>
