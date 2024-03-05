@@ -1,7 +1,7 @@
 import { useState, createContext } from "react";
 import "./styles.css";
 import Home from "./components/Home";
-import AllContext from "./components/kanji-context";
+//import AllContext from "./components/kanji-context";
 
 export const KanjisContext = createContext();
 
