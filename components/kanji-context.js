@@ -1,6 +1,6 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-AllContext = createContext([
+const [allKanji, setAllKanji] = useState([
   {
     id: 92,
     kanji: "丸",
@@ -92,9 +92,10 @@ AllContext = createContext([
   },
 ]);
 
-export const findPos = (o = "blue") => {
-  alert(o);
-  AllContext[0]["kanji"] = o;
+export const findPos = (pos = 1) => {
+
+  console.log(AllKanji[pos]);
+  //AllContext[0]["kanji"] = o;
 };
 
 export default AllContext;
