@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import KanjisContext from "../App";
-import AllContext from "./kanji-context.js";
+//import AllContext from "./kanji-context.js";
+import { KanjiContext } from "../KanjiContext.js";
 import { findPos } from "./kanji-context.js";
 import Write from "./Write.js";
 import Quiz from "./Quiz.js";
@@ -9,19 +10,14 @@ import Manage from "./Manage.js";
 
 export default Home = () => {
   const [currPage, setCurrPage] = useState(<Manage />);
-  const kanjis = useContext(AllContext);
-  const [kc, setKc] = useState(KanjisContext);
-  const kd = useContext(KanjisContext);
-  console.log(AllContext);
+  const [storeKanjis, setStoreKanjis] = useContext(KanjiContext);
   const find = () => {
-    findPos("o");
+    findPos(3);
   };
   return (
     <div>
       <p>kanji page</p>
-      <p>{kanjis[0]["kanji"]}</p>
       {currPage}
-      <p>{kc.props.value[0]["kanji"]}</p>
       <button onClick={() => setCurrPage(<Manage />)}>Home</button>
       <button onClick={() => setCurrPage(<Write />)}>Write</button>
       <button onClick={() => setCurrPage(<Quiz />)}>Quiz</button>
