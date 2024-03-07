@@ -8,7 +8,7 @@ import Quiz from "./Quiz.js";
 import Practice from "./Practice.js";
 import Manage from "./Manage.js";
 
-export default Home = () => {
+export default Home = (storeKanji, setStoreKanji) => {
   const [currPage, setCurrPage] = useState(<Manage />);
   const [storeKanjis, setStoreKanjis] = useContext(KanjiContext);
   const find = () => {
