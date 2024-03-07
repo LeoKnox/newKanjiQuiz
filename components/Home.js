@@ -10,7 +10,7 @@ import Manage from "./Manage.js";
 
 export default Home = (storeKanji, setStoreKanji) => {
   const [currPage, setCurrPage] = useState(<Manage />);
-  const [storeKanjis, setStoreKanjis] = useContext(KanjiContext);
+  const { storeKanjis, setStoreKanjis } = useContext(KanjiContext);
   const find = () => {
     findPos(3);
   };
