@@ -6,7 +6,6 @@ export default function App() {
   const value = "kanji data";
   return (
     <div className="App">
-      <h1>Welcome to Kanji App</h1>
       <KanjiContext.Provider value={value}>
         <Home />
       </KanjiContext.Provider>
