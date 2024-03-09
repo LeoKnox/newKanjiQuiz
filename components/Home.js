@@ -1,3 +1,7 @@
+import { useContext } from "react";
+import { KanjiContext } from "../KanjiContext.js";
+
 export default Home = () => {
-  return <p>kanji for all</p>;
+  const value = useContext(KanjiContext);
+  return <p>kanji for all {value}</p>;
 };
