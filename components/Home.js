@@ -8,7 +8,8 @@ export default Home = () => {
   const [componentPage, setComponentPage] = useState(<DashBoard />);
   return (
     <div>
-      <button OnClick={() => setComponentPage(<AllKanji />)}>All Kanji</button>
+      <button onClick={() => setComponentPage(<AllKanji />)}>All Kanji</button>
+      <button onClick={() => setComponentPage(<DashBoard />)}>Home</button>
       <p>{componentPage}</p>
     </div>
   );
