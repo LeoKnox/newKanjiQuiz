@@ -5,17 +5,24 @@ export default Quiz = ({ kanjiData }) => {
   useEffect(() => {
     const shuffled = kanjiData.sort(() => 0.5 - Math.random());
     let selected = shuffled.slice(0, 3);
-    let answer = selected[Math.floor(Math.random() * selected.length)];
+    let randAnswer = selected[Math.floor(Math.random() * selected.length)];
     setQuizes(selected);
-    setAnswer(answer);
+    setAnswer(randAnswer.meaning);
   }, []);
+  const confirmAnswer = (answer) => {
+    if (quizes.filter((selected) => selected.meaning === answer).length > 0) {
+      alert("Correct!");
+    }
+  };
   return (
     <div>
       <h2>Kanji Quiz Page</h2>
-      <p>answer {answer.word}</p>
+      <p>answer {answer}</p>
       {quizes.map((kanji) => (
         <p>
-          {kanji.word}: {kanji.meaning}
+          <button onClick={() => confirmAnswer(kanji.meaning)}>
+            {kanji.word}
+          </button>
         </p>
       ))}
     </div>
