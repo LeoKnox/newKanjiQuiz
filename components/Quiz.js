@@ -8,12 +8,10 @@ export default Quiz = ({ kanjiData }) => {
     let randAnswer = selected[Math.floor(Math.random() * selected.length)];
     setQuizes(selected);
     setAnswer(randAnswer.meaning);
-  }, []);
+  }, [answer]);
   const confirmAnswer = (selection) => {
     if (selection === answer) {
-      alert("correct");
-    } else {
-      alert("incorrect");
+      setAnswer("");
     }
   };
   return (
