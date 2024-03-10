@@ -10,9 +10,8 @@ export default Quiz = ({ kanjiData }) => {
     setAnswer(randAnswer.meaning);
   }, []);
   const confirmAnswer = (answer) => {
-    if (quizes.filter((selected) => selected.meaning === answer).length > 0) {
-      alert("Correct!");
-    }
+    let obj = quizes.find((o) => o.meaning === answer);
+    alert(obj.meaning);
   };
   return (
     <div>
