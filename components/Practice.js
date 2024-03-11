@@ -30,10 +30,13 @@ export default Practice = ({ kanjiData }) => {
         <button onClick={advance} name="previous">
           Previous
         </button>
-        <label>{practiceKanji[position]["word"]}</label>
+        <label>| {practiceKanji[position]["word"]} |</label>
         <button onClick={advance} name="next">
           Next
         </button>
+        <div>
+          <p>draw here</p>
+        </div>
       </div>
     </div>
   );
