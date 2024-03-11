@@ -9,7 +9,7 @@ export default Practice = ({ kanjiData }) => {
   });
   const advance = (e) => {
     if (e.target.name === "next") {
-      alert("next");
+      setPosition(position + 1);
     }
   };
   return (
@@ -17,7 +17,7 @@ export default Practice = ({ kanjiData }) => {
       <h2>Practice Kanji</h2>
       <div>
         <button>Previous</button>
-        <label>{practiceKanji[0]["word"]}</label>
+        <label>{practiceKanji[position]["word"]}</label>
         <button onClick={advance} name="next">
           Next
         </button>
