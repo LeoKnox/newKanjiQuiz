@@ -15,12 +15,21 @@ export default Practice = ({ kanjiData }) => {
         setPosition(position + 1);
       }
     }
+    if (e.target.name === "previous") {
+      if (position <= 0) {
+        setPosition(practiceKanji.length - 1);
+      } else {
+        setPosition(position - 1);
+      }
+    }
   };
   return (
     <div>
       <h2>Practice Kanji</h2>
       <div>
-        <button>Previous</button>
+        <button onClick={advance} name="previous">
+          Previous
+        </button>
         <label>{practiceKanji[position]["word"]}</label>
         <button onClick={advance} name="next">
           Next
