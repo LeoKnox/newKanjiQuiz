@@ -9,7 +9,11 @@ export default Practice = ({ kanjiData }) => {
   });
   const advance = (e) => {
     if (e.target.name === "next") {
-      setPosition(position + 1);
+      if (position >= practiceKanji.length - 1) {
+        setPosition(0);
+      } else {
+        setPosition(position + 1);
+      }
     }
   };
   return (
