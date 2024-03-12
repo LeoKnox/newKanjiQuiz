@@ -8,12 +8,12 @@ import Practice from "./Practice.js";
 export default Home = () => {
   const [componentPage, setComponentPage] = useState(<DashBoard />);
   const kanjiData = [
-    { word: "ichi", meaning: "one" },
-    { word: "ni", meaning: "two" },
-    { word: "san", meaning: "three" },
-    { word: "yon", meaning: "four" },
-    { word: "go", meaning: "five" },
-    { word: "roku", meaning: "six" },
+    { word: "ichi", meaning: "one", kanji: "一" },
+    { word: "ni", meaning: "two", kanji: "二" },
+    { word: "san", meaning: "three", kanji: "三" },
+    { word: "yon", meaning: "four", kanji: "四" },
+    { word: "go", meaning: "five", kanji: "五" },
+    { word: "roku", meaning: "six", kanji: "六" },
   ];
   return (
     <div>
