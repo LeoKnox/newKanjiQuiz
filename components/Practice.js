@@ -7,7 +7,11 @@ export default Practice = ({ kanjiData }) => {
   const [time, setTime] = useState(6000);
   useEffect(() => {
     setTimeout(() => {
-      setPosition(position + 1);
+      if (position >= practiceKanji.length - 1) {
+        setPosition(0);
+      } else {
+        setPosition(position + 1);
+      }
     }, time);
     console.log("begin");
   }, [position]);
