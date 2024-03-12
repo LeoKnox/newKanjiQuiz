@@ -7,10 +7,10 @@ export default Practice = ({ kanjiData }) => {
   const [time, setTime] = useState(6);
   useEffect(() => {
     setTimeout(() => {
-      setTime(time + 1);
+      setPosition(position + 1);
     }, 3000);
     console.log("begin");
-  }, [time]);
+  }, [position]);
   const advance = (e) => {
     if (e.target.name === "next") {
       if (position >= practiceKanji.length - 1) {
