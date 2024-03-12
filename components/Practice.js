@@ -6,7 +6,7 @@ export default Practice = ({ kanjiData }) => {
   const [randomSet, setRandomSet] = useState(true);
   const [time, setTime] = useState(6000);
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setInterval(() => {
       if (position >= practiceKanji.length - 1) {
         setPosition(0);
       } else {
@@ -30,6 +30,7 @@ export default Practice = ({ kanjiData }) => {
         setPosition(position - 1);
       }
     }
+    return () => clearInterval(timer);
   };
   return (
     <div>
