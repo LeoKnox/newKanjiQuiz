@@ -4,9 +4,13 @@ export default Practice = ({ kanjiData }) => {
   const [practiceKanji, setPracticeKanji] = useState(kanjiData);
   const [position, setPosition] = useState(0);
   const [randomSet, setRandomSet] = useState(true);
+  const [time, setTime] = useState(6);
   useEffect(() => {
+    setTimeout(() => {
+      setTime(time + 1);
+    }, 3000);
     console.log("begin");
-  });
+  }, [time]);
   const advance = (e) => {
     if (e.target.name === "next") {
       if (position >= practiceKanji.length - 1) {
@@ -26,6 +30,7 @@ export default Practice = ({ kanjiData }) => {
   return (
     <div>
       <h2>Practice Kanji</h2>
+      <p>{time}</p>
       <div>
         <button onClick={advance} name="previous">
           Previous
