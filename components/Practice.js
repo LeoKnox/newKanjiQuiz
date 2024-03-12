@@ -4,11 +4,11 @@ export default Practice = ({ kanjiData }) => {
   const [practiceKanji, setPracticeKanji] = useState(kanjiData);
   const [position, setPosition] = useState(0);
   const [randomSet, setRandomSet] = useState(true);
-  const [time, setTime] = useState(6);
+  const [time, setTime] = useState(6000);
   useEffect(() => {
     setTimeout(() => {
       setPosition(position + 1);
-    }, 3000);
+    }, time);
     console.log("begin");
   }, [position]);
   const advance = (e) => {
