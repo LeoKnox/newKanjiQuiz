@@ -14,7 +14,6 @@ export default Practice = ({ kanjiData }) => {
   }, time);
   useEffect(() => {
     return () => clearInterval(timer);
-    console.log("begin");
   }, [position]);
   const advance = (e) => {
     if (e.target.name === "next") {
@@ -36,7 +35,9 @@ export default Practice = ({ kanjiData }) => {
   return (
     <div>
       <h2>Practice Kanji</h2>
-      <p>{time}</p>
+      <p>
+        {position + 1} / {practiceKanji.length}
+      </p>
       <div>
         <button onClick={advance} name="previous">
           Previous
