@@ -21,7 +21,7 @@ export default Quiz = ({ kanjiData }) => {
       {quizes.map((kanji) => (
         <p>
           <button onClick={() => confirmAnswer(kanji.meaning)}>
-            {kanji.word}
+            {kanji.kanji}
           </button>
         </p>
       ))}
