@@ -18,7 +18,7 @@ export default Practice = ({ kanjiData }) => {
   }, time);
   useEffect(() => {
     return () => clearInterval(timer);
-  }, [position]);
+  }, [position, randomSet]);
   const advance = (e) => {
     if (e.target.name === "next") {
       if (position >= practiceKanji.length - 1) {
