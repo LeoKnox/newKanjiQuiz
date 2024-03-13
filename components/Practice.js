@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 export default Practice = ({ kanjiData }) => {
   const [practiceKanji, setPracticeKanji] = useState(kanjiData);
   const [position, setPosition] = useState(0);
-  const [randomSet, setRandomSet] = useState(true);
-  const [time, setTime] = useState(6000);
+  const [randomSet, setRandomSet] = useState(false);
+  const [time, setTime] = useState(1000);
   const timer = setInterval(() => {
     if (randomSet) {
       setPosition(Math.floor(Math.random() * practiceKanji.length));
