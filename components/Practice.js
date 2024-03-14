@@ -20,6 +20,9 @@ export default Practice = ({ kanjiData }) => {
   useEffect(() => {
     return () => clearInterval(timer);
   }, [position, randomSet]);
+  const pause = () => {
+    console.log("pause");
+  };
   const advance = (e) => {
     if (e.target.name === "next") {
       if (position >= practiceKanji.length - 1) {
@@ -52,12 +55,15 @@ export default Practice = ({ kanjiData }) => {
       </button>
       <div>
         <button onClick={advance} name="previous">
-          {randomSet ? "Pause" : "Previous"}
+          {randomSet ? "" : "Previous"}
         </button>
         <label>| {practiceKanji[position]["kanji"]} |</label>
         <button onClick={advance} name="next">
           Next
         </button>
+        <p>
+          <button onClick={pause}>Pause</button>
+        </p>
         <div>
           <p>draw here</p>
         </div>
