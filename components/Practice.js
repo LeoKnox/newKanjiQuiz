@@ -20,6 +20,17 @@ export default Practice = ({ kanjiData }) => {
   useEffect(() => {
     return () => clearInterval(timer);
   }, [position, randomSet]);
+  const resume = () => {
+    if (randomSet) {
+      setPosition(Math.floor(Math.random() * practiceKanji.length));
+    } else {
+      if (position >= practiceKanji.length - 1) {
+        setPosition(0);
+      } else {
+        setPosition(position + 1);
+      }
+    }
+  };
   const pause = () => {
     clearTimeout(timer);
     console.log("pause");
@@ -64,6 +75,7 @@ export default Practice = ({ kanjiData }) => {
         </button>
         <p>
           <button onClick={pause}>Pause</button>
+          <button onClick={resume}>Resume</button>
         </p>
         <div>
           <p>draw here</p>
