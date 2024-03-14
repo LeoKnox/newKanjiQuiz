@@ -21,7 +21,7 @@ export default Practice = ({ kanjiData }) => {
     return () => clearInterval(timer);
   }, [position, randomSet]);
   const pause = () => {
-    return () => clearTimeout(timer);
+    setTime(null);
     console.log("pause");
   };
   const advance = (e) => {
