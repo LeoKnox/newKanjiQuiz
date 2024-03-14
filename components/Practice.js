@@ -40,7 +40,6 @@ export default Practice = ({ kanjiData }) => {
         setPosition(position - 1);
       }
     }
-    return () => clearInterval(timer);
   };
   return (
     <div>
