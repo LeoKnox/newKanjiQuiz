@@ -5,7 +5,7 @@ export default Practice = ({ kanjiData }) => {
   const [position, setPosition] = useState(0);
   const [randomSet, setRandomSet] = useState(false);
   const [time, setTime] = useState(1000);
-  const timer = setInterval(() => {
+  const timer = setTimeout(() => {
     if (randomSet) {
       setPosition(Math.floor(Math.random() * practiceKanji.length));
     } else {
