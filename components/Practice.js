@@ -15,6 +15,7 @@ export default Practice = ({ kanjiData }) => {
         setPosition(position + 1);
       }
     }
+    return () => clearInterval(timer);
   }, time);
   useEffect(() => {
     return () => clearInterval(timer);
@@ -34,7 +35,7 @@ export default Practice = ({ kanjiData }) => {
         setPosition(position - 1);
       }
     }
-    //return () => clearInterval(timer);
+    return () => clearInterval(timer);
   };
   return (
     <div>
