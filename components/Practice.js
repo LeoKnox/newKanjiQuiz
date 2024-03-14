@@ -24,7 +24,6 @@ export default Practice = ({ kanjiData }) => {
   };
   const pause = () => {
     clearTimeout(timer);
-    console.log("pause");
   };
   const advance = (e) => {
     if (e.target.name === "next") {
@@ -40,10 +39,6 @@ export default Practice = ({ kanjiData }) => {
       } else {
         setPosition(position - 1);
       }
-    }
-    if (e.target.name === "pause") {
-      timer.pause();
-      return;
     }
     return () => clearInterval(timer);
   };
