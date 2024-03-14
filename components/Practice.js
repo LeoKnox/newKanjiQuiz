@@ -35,6 +35,10 @@ export default Practice = ({ kanjiData }) => {
         setPosition(position - 1);
       }
     }
+    if (e.target.name === "pause") {
+      timer.pause();
+      return;
+    }
     return () => clearInterval(timer);
   };
   return (
@@ -48,7 +52,7 @@ export default Practice = ({ kanjiData }) => {
       </button>
       <div>
         <button onClick={advance} name="previous">
-          {randomSet ? Pause : Previous}
+          {randomSet ? "Pause" : "Previous"}
         </button>
         <label>| {practiceKanji[position]["kanji"]} |</label>
         <button onClick={advance} name="next">
