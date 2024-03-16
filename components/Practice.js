@@ -63,13 +63,12 @@ export default Practice = ({ kanjiData }) => {
       />
       <label>6s</label>
       <p>
-        {randomSet ? null : (
-          <progress
-            id="progress"
-            value={position + 1}
-            max={practiceKanji.length}
-          ></progress>
-        )}
+        <progress
+          id="progress"
+          value={position + 1}
+          max={practiceKanji.length}
+          style={{ visibility: randomSet ? "hidden" : "visible" }}
+        ></progress>
       </p>
       <button onClick={() => setRandomSet(!randomSet)}>
         {randomSet ? "Random" : "Ordered"}
