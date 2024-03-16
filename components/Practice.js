@@ -45,9 +45,11 @@ export default Practice = ({ kanjiData }) => {
     <div>
       <h2>Practice Kanji</h2>
       <input type="radio" onChange={() => setTime(1000)} />
-      <label>1 sec</label>
-      <button onClick={() => setTime(3000)}>3</button>
-      <button onClick={() => setTime(6000)}>6</button>
+      <label>1s</label>
+      <input type="radio" onChange={() => setTime(3000)} />
+      <label>3s</label>
+      <input type="radio" onChange={() => setTime(6000)} />
+      <label>6s</label>
       <p>
         {position + 1} / {practiceKanji.length}
       </p>
