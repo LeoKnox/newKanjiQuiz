@@ -6,24 +6,23 @@ export default Practice = ({ kanjiData }) => {
   const [randomSet, setRandomSet] = useState(false);
   const [time, setTime] = useState(1000);
   const timer = setTimeout(() => {
+    resume();
+  }, time);
+  useEffect(() => {
+    return () => clearInterval(timer);
+  }, [position, randomSet, time]);
+  const resume = (e) => {
     if (position >= practiceKanji.length - 1) {
       setPosition(0);
     } else {
       setPosition(position + 1);
     }
-  }, time);
-  useEffect(() => {
-    return () => clearInterval(timer);
-  }, [position, randomSet, time]);
+  };
   const pause = (e) => {
     if (e.target.checked) {
       clearTimeout(timer);
     } else {
-      if (position >= practiceKanji.length - 1) {
-        setPosition(0);
-      } else {
-        setPosition(position + 1);
-      }
+      resume();
     }
   };
   const advance = (e) => {
