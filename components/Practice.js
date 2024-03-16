@@ -46,19 +46,19 @@ export default Practice = ({ kanjiData }) => {
       <h2>Practice Kanji</h2>
       <input
         type="radio"
-        {{time} === 1000 ? checked=true : checked = false}
+        checked={time === 1000}
         onChange={() => setTime(1000)}
       />
       <label>1s</label>
       <input
         type="radio"
-        {time === 3000 ? checked=true : checked = false}
+        checked={time === 3000}
         onChange={() => setTime(3000)}
       />
       <label>3s</label>
       <input
         type="radio"
-        {time === 6000 ? checked=true : checked = false}
+        checked={time === 6000}
         onChange={() => setTime(6000)}
       />
       <label>6s</label>
