@@ -6,28 +6,19 @@ export default Practice = ({ kanjiData }) => {
   const [randomSet, setRandomSet] = useState(false);
   const [time, setTime] = useState(1000);
   const timer = setTimeout(() => {
-    resume();
+    if (position >= practiceKanji.length - 1) {
+      setPosition(0);
+    } else {
+      setPosition(position + 1);
+    }
   }, time);
   useEffect(() => {
     return () => clearInterval(timer);
   }, [position, randomSet, time]);
-  const resume = () => {
-    if (randomSet) {
-      setPosition(Math.floor(Math.random() * practiceKanji.length));
-    } else {
-      if (position >= practiceKanji.length - 1) {
-        setPosition(0);
-      } else {
-        setPosition(position + 1);
-      }
-    }
-  };
   const pause = (e) => {
-    //clearTimeout(timer);
     if (e.target.checked) {
       clearTimeout(timer);
     } else {
-      console.log("the other");
       if (position >= practiceKanji.length - 1) {
         setPosition(0);
       } else {
@@ -93,10 +84,6 @@ export default Practice = ({ kanjiData }) => {
         <button onClick={advance} name="next">
           Next
         </button>
-        <p>
-          <button onClick={pause}>Pause</button>
-          <button onClick={resume}>Resume</button>
-        </p>
         <div>
           <p>draw here</p>
         </div>
