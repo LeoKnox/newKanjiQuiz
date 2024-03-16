@@ -44,6 +44,10 @@ export default Practice = ({ kanjiData }) => {
   return (
     <div>
       <h2>Practice Kanji</h2>
+      <input type="radio" name="speed" value="3" />
+      <label>3</label>
+      <input type="radio" name="speed" value="6" />
+      <label>6</label>
       <p>
         {position + 1} / {practiceKanji.length}
       </p>
