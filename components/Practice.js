@@ -44,8 +44,8 @@ export default Practice = ({ kanjiData }) => {
   return (
     <div>
       <h2>Practice Kanji</h2>
-      <button onClick={() => setTime(3)}>3</button>
-      <button onClick={() => setTime(6)}>6</button>
+      <button onClick={() => setTime(3000)}>3</button>
+      <button onClick={() => setTime(6000)}>6</button>
       <p>
         {position + 1} / {practiceKanji.length}
       </p>
