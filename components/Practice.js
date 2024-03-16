@@ -24,10 +24,8 @@ export default Practice = ({ kanjiData }) => {
   };
   const pause = (e) => {
     //clearTimeout(timer);
-    if (e.target.value) {
-      console.log("i'm saved");
+    if (e.target.checked) {
       clearTimeout(timer);
-      e.target.value = false;
     } else {
       console.log("the other");
       if (position >= practiceKanji.length - 1) {
@@ -35,7 +33,6 @@ export default Practice = ({ kanjiData }) => {
       } else {
         setPosition(position + 1);
       }
-      e.target.value = true;
     }
   };
   const advance = (e) => {
