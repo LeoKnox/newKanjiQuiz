@@ -10,7 +10,7 @@ export default Practice = ({ kanjiData }) => {
   }, time);
   useEffect(() => {
     return () => clearInterval(timer);
-  }, [position, randomSet]);
+  }, [position, randomSet, time]);
   const resume = () => {
     if (randomSet) {
       setPosition(Math.floor(Math.random() * practiceKanji.length));
