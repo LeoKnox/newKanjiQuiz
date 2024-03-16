@@ -44,6 +44,8 @@ export default Practice = ({ kanjiData }) => {
   return (
     <div>
       <h2>Practice Kanji</h2>
+      <input type="radio" onChange={pause} />
+      <label>pause</label>
       <input
         type="radio"
         checked={time === 1000}
