@@ -26,8 +26,10 @@ export default Practice = ({ kanjiData }) => {
     clearTimeout(timer);
     if (e.target.value) {
       console.log("i'm saved");
+      e.target.value = false;
     } else {
       console.log("the other");
+      e.target.value = true;
     }
   };
   const advance = (e) => {
