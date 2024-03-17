@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+// kanji is 80x89 pixels
 
 export default Practice = ({ kanjiData }) => {
   const [practiceKanji, setPracticeKanji] = useState(kanjiData);
@@ -87,6 +88,7 @@ export default Practice = ({ kanjiData }) => {
         </button>
         <div>
           <p>draw here</p>
+          <svg height="89" width="80"></svg>
         </div>
       </div>
     </div>
