@@ -88,7 +88,11 @@ export default Practice = ({ kanjiData }) => {
         </button>
         <div>
           <p>draw here</p>
-          <svg height="89" width="80"></svg>
+          <svg
+            height="109"
+            width="100"
+            style={{ border: "1px black solid" }}
+          ></svg>
         </div>
       </div>
     </div>
