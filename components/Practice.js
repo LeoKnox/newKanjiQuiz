@@ -4,7 +4,7 @@ export default Practice = ({ kanjiData }) => {
   const [practiceKanji, setPracticeKanji] = useState(kanjiData);
   const [position, setPosition] = useState(0);
   const [randomSet, setRandomSet] = useState(false);
-  const [time, setTime] = useState(1000);
+  const [time, setTime] = useState(3000);
   const timer = setTimeout(() => {
     resume();
   }, time);
@@ -79,7 +79,9 @@ export default Practice = ({ kanjiData }) => {
         <button onClick={advance} name="previous" disabled={randomSet}>
           Previous
         </button>
-        <label>| {practiceKanji[position]["kanji"]} |</label>
+        <label style={{ fontSize: "3em" }}>
+          {practiceKanji[position]["kanji"]}
+        </label>
         <button onClick={advance} name="next">
           Next
         </button>
