@@ -18,7 +18,7 @@ export default DrawKanji = () => {
   };
 
   const renderPolyline = () => {
-    const context = Canvas.getContext("2d");
+    const context = svg.getContext("2d");
 
     context.beginPath();
     points.forEach((point) => {
@@ -27,6 +27,15 @@ export default DrawKanji = () => {
     context.stroke();
   };
   return (
-    <svg height="109" width="100" style={{ border: "1px black solid" }}></svg>
+    <svg
+      height="109"
+      width="100"
+      style={{ border: "1px black solid" }}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+    >
+      {renderPolyline()}
+    </svg>
   );
 };
