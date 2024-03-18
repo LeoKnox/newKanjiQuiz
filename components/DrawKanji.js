@@ -41,8 +41,8 @@ export default DrawKanji = () => {
       {points.map((point) => {
         {point.x}+','+{point.y}+' '
       })}"
+        style={{ fill: "none", stroke: "green", strokeWidth: "3" }}
       />
-      style={{ fill: "none", stroke: "green", strokeWidth: "3" }}
     </svg>
   );
 };
