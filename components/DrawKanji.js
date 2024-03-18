@@ -37,10 +37,9 @@ export default DrawKanji = () => {
       onMouseUp={handleMouseUp}
     >
       <polyline
-        points="
-      {points.map((point) => {
-        {point.x}+','+{point.y}+' '
-      })}"
+        points={points.map((point) => {
+          point.x + "," + point.y + " ";
+        })}
         style={{ fill: "none", stroke: "green", strokeWidth: "3" }}
       />
     </svg>
