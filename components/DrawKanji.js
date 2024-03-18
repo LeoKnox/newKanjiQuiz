@@ -18,15 +18,14 @@ export default DrawKanji = () => {
     console.log(`points: ${JSON.stringify(points)}`);
   };
 
-  const renderPolyline = () => {
-    /*const context = svg.getContext("2d");
-
-    context.beginPath();
-    points.forEach((point) => {
-      context.lineTo(point.x, point.y);
-    });
-    context.stroke();*/
-  };
+  const drawLine = (
+    <polyline
+      points={points.map((point) => `${point.x},${point.y}`).join(" ")}
+      stroke="black"
+      strokeWidth="2"
+      fill="none"
+    />
+  );
   return (
     <svg
       height="109"
@@ -36,16 +35,7 @@ export default DrawKanji = () => {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
     >
-      <polyline
-        points={points.map((point) => {
-          {
-            {
-              point.x;
-            }
-          }
-        })}
-        style={{ fill: "none", stroke: "green", strokeWidth: "3" }}
-      />
+      {drawLine}
     </svg>
   );
 };
