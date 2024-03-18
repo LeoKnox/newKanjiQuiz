@@ -26,5 +26,7 @@ export default DrawKanji = () => {
     });
     context.stroke();
   };
-  return <p>draw here</p>;
+  return (
+    <svg height="109" width="100" style={{ border: "1px black solid" }}></svg>
+  );
 };
