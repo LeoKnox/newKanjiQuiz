@@ -29,7 +29,7 @@ export default DrawKanji = () => {
   );
   return (
     <>
-      <p>{`${points.x} : ${points.y}`}</p>
+      <p>{`${points[5]}`}</p>
       <svg
         viewBox={"0, 0, 109, 100"}
         style={{ border: "1px black solid" }}
