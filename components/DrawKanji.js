@@ -25,17 +25,20 @@ export default DrawKanji = () => {
       strokeWidth="2"
       fill="none"
     />*/
-    <polyline points={"1,1 5,5"} stroke="black" strokeWidth="2" />
+    <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
   );
   return (
-    <svg
-      viewBox={"0, 0, 109, 100"}
-      style={{ border: "1px black solid" }}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-    >
-      {drawLine}
-    </svg>
+    <>
+      <p>{`${points.x} : ${points.y}`}</p>
+      <svg
+        viewBox={"0, 0, 109, 100"}
+        style={{ border: "1px black solid" }}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+      >
+        {drawLine}
+      </svg>
+    </>
   );
 };
