@@ -19,12 +19,13 @@ export default DrawKanji = () => {
   };
 
   const drawLine = (
-    <polyline
+    /*<polyline
       points={points.map((point) => `${point.x},${point.y}`).join(" ")}
       stroke="black"
       strokeWidth="2"
       fill="none"
-    />
+    />*/
+    <polyline points={"1,1 5,5"} stroke="black" strokeWidth="2" />
   );
   return (
     <svg
