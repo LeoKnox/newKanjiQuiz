@@ -29,8 +29,7 @@ export default DrawKanji = () => {
   );
   return (
     <svg
-      height="109"
-      width="100"
+      viewBox={{"0", "0", "109", "100"}}
       style={{ border: "1px black solid" }}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
