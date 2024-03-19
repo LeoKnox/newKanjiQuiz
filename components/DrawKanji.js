@@ -20,6 +20,7 @@ export default DrawKanji = () => {
 
   const drawLine = (
     <polyline
+      style={{ position: "absolute" }}
       points={points.map((point) => `${point.x},${point.y}`).join(" ")}
       stroke="black"
       strokeWidth="2"
