@@ -20,7 +20,6 @@ export default DrawKanji = () => {
 
   const drawLine = (
     <polyline
-      style={{ position: "absolute" }}
       points={points.map((point) => `${point.x},${point.y}`).join(" ")}
       stroke="black"
       strokeWidth="2"
@@ -29,7 +28,7 @@ export default DrawKanji = () => {
   );
   return (
     <svg
-      viewBox={{"0", "0", "109", "100"}}
+      viewBox={(0, 0, 109, 100)}
       style={{ border: "1px black solid" }}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
