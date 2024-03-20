@@ -43,8 +43,8 @@ export default DrawKanji = () => {
       <svg
         id="svg"
         style={{ border: "1px black solid" }}
-        witdh="109"
-        height="100"
+        witdh="109px"
+        height="100px"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
