@@ -22,7 +22,7 @@ export default DrawKanji = () => {
   };
 
   const handleMouseUp = () => {
-    setPoints([]);
+    //setPoints([]);
     console.log(`points: ${JSON.stringify(points)}`);
   };
 
@@ -44,7 +44,7 @@ export default DrawKanji = () => {
         id="svg"
         style={{ border: "1px black solid" }}
         witdh="109px"
-        height="100px"
+        height="200px"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
