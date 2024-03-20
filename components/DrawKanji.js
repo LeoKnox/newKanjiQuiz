@@ -4,13 +4,13 @@ export default DrawKanji = () => {
   const [points, setPoints] = useState([]);
 
   const handleMouseDown = (event) => {
-    const { clientX, clientY } = event;
-    setPoints([...points, { x: clientX, y: clientY }]);
+    const { clientX, clientY, offsetX, offsetY } = event;
+    setPoints([...points, { x: clientX - offsetX, y: clientY - offsetY }]);
   };
 
   const handleMouseMove = (event) => {
-    const { clientX, clientY } = event;
-    setPoints([...points, { x: clientX, y: clientY }]);
+    const { clientX, clientY, offsetX, offsetY } = event;
+    setPoints([...points, { x: clientX - offsetX, y: clientY - offsetY }]);
   };
 
   const handleMouseUp = () => {
@@ -25,7 +25,6 @@ export default DrawKanji = () => {
         stroke="black"
         strokeWidth="2"
         fill="none"
-        style={{ postion: "relative" }}
       />
       <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
     </>
