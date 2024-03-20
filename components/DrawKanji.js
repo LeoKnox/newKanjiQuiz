@@ -10,6 +10,7 @@ export default DrawKanji = () => {
 
   const handleMouseMove = (event) => {
     const { clientX, clientY, offsetX, offsetY } = event;
+    console.log(`x: ${clientX} : ${offsetX}, y: ${clientY} : ${offsetY}`);
     setPoints([...points, { x: clientX - offsetX, y: clientY - offsetY }]);
   };
 
