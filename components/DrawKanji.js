@@ -31,7 +31,7 @@ export default DrawKanji = () => {
       <polyline
         points={points.map((point) => `${point.x},${point.y}`).join(" ")}
         stroke="black"
-        strokeWidth="2"
+        strokeWidth="4"
         fill="none"
       />
       <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
