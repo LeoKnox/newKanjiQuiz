@@ -10,7 +10,13 @@ export default DrawKanji = () => {
 
   const handleMouseMove = (event) => {
     const { clientX, clientY, offsetX, offsetY } = event;
-    console.log(`x: ${clientX} : ${offsetX}, y: ${clientY} : ${offsetY}`);
+    console.log(
+      `rect ${
+        document.getElementById("svg").getBoundingClientRect()
+          ? document.getElementById("svg").getBoundingClientRect()
+          : "red"
+      }`
+    );
     setPoints([...points, { x: clientX - offsetX, y: clientY - offsetY }]);
   };
 
