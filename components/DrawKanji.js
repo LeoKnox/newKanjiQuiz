@@ -4,16 +4,21 @@ export default DrawKanji = () => {
   const [points, setPoints] = useState([]);
 
   const handleMouseDown = (event) => {
-    const { clientX, clientY, offsetX, offsetY } = event;
-    setPoints([...points, { x: clientX - offsetX, y: clientY - offsetY }]);
+    const { clientX, clientY } = event;
+    let offset = document.getElementById("svg").getBoundingClientRect();
+    setPoints([
+      ...points,
+      { x: clientX - offset.left, y: clientY - offset.top },
+    ]);
   };
 
   const handleMouseMove = (event) => {
-    const { clientX, clientY, offsetX, offsetY } = event;
-    console.log(
-      `rect ${document.getElementById("svg").getBoundingClientRect().top}`
-    );
-    setPoints([...points, { x: clientX - offsetX, y: clientY - offsetY }]);
+    const { clientX, clientY } = event;
+    let offset = document.getElementById("svg").getBoundingClientRect();
+    setPoints([
+      ...points,
+      { x: clientX - offset.left, y: clientY - offset.top },
+    ]);
   };
 
   const handleMouseUp = () => {
@@ -37,7 +42,6 @@ export default DrawKanji = () => {
       <p>{`${JSON.stringify(points[5])}`}</p>
       <svg
         id="svg"
-        viewBox={"0, 0, 109, 100"}
         style={{ border: "1px black solid" }}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
