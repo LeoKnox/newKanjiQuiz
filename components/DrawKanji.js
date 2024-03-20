@@ -25,7 +25,7 @@ export default DrawKanji = () => {
         stroke="black"
         strokeWidth="2"
         fill="none"
-        style={{ postion: "absolute" }}
+        style={{ postion: "relative" }}
       />
       <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
     </>
