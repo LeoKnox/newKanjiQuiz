@@ -4,6 +4,10 @@ export default DrawKanji = () => {
   const [points, setPoints] = useState([]);
   const [draw, setDraw] = useState(false);
 
+  const clearPractice = () => {
+    setPoints([]);
+  };
+
   const handleMouseDown = (event) => {
     const { clientX, clientY } = event;
     let offset = document.getElementById("svg").getBoundingClientRect();
@@ -50,13 +54,14 @@ export default DrawKanji = () => {
         id="svg"
         style={{ border: "1px black solid" }}
         witdh="109px"
-        height="200px"
+        height="100px"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
       >
         {drawLine}
       </svg>
+      <button onClick={clearPractice}>Clear</button>
     </>
   );
 };
