@@ -2,14 +2,20 @@ import { useState } from "react";
 
 export default DrawKanji = () => {
   const [points, setPoints] = useState([]);
+  const [draw, setDraw] = useState(false);
 
   const handleMouseDown = (event) => {
     const { clientX, clientY } = event;
     let offset = document.getElementById("svg").getBoundingClientRect();
-    setPoints([
-      ...points,
-      { x: clientX - offset.left, y: clientY - offset.top },
-    ]);
+    if (draw) {
+      setPoints([
+        ...points,
+        { x: clientX - offset.left, y: clientY - offset.top },
+      ]);
+      setDraw(false);
+    } else {
+      setDraw(true);
+    }
   };
 
   const handleMouseMove = (event) => {
