@@ -7,24 +7,23 @@ export default DrawKanji = () => {
   const handleMouseDown = (event) => {
     const { clientX, clientY } = event;
     let offset = document.getElementById("svg").getBoundingClientRect();
-    if (draw) {
-      setPoints([
-        ...points,
-        { x: clientX - offset.left, y: clientY - offset.top },
-      ]);
-      setDraw(false);
-    } else {
-      setDraw(true);
-    }
+    draw ? setDraw(false) : setDraw(true);
+    /*
+    setPoints([
+      ...points,
+      { x: clientX - offset.left, y: clientY - offset.top },
+    ]);*/
   };
 
   const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
     let offset = document.getElementById("svg").getBoundingClientRect();
-    setPoints([
-      ...points,
-      { x: clientX - offset.left, y: clientY - offset.top },
-    ]);
+    if (draw) {
+      setPoints([
+        ...points,
+        { x: clientX - offset.left, y: clientY - offset.top },
+      ]);
+    }
   };
 
   const handleMouseUp = () => {
