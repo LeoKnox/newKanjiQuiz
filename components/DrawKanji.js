@@ -7,7 +7,7 @@ export default DrawKanji = () => {
   const handleMouseDown = (event) => {
     const { clientX, clientY } = event;
     let offset = document.getElementById("svg").getBoundingClientRect();
-    draw ? setDraw(false) : setDraw(true);
+    setDraw(true);
     /*
     setPoints([
       ...points,
@@ -29,6 +29,7 @@ export default DrawKanji = () => {
   const handleMouseUp = () => {
     //setPoints([]);
     console.log(`points: ${JSON.stringify(points)}`);
+    setDraw(false);
   };
 
   const drawLine = (
