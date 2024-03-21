@@ -31,7 +31,7 @@ export default DrawKanji = () => {
   };
 
   const handleMouseUp = () => {
-    //setPoints([]);
+    setPoints([]);
     console.log(`points: ${JSON.stringify(points)}`);
     setDraw(false);
   };
