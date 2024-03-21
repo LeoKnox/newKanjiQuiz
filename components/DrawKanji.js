@@ -61,7 +61,9 @@ export default DrawKanji = () => {
       >
         {drawLine}
       </svg>
-      <button onClick={clearPractice}>Clear</button>
+      <p>
+        <button onClick={clearPractice}>Clear</button>
+      </p>
     </>
   );
 };
