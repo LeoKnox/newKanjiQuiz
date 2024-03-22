@@ -49,6 +49,7 @@ export default DrawKanji = () => {
           strokeWidth="4"
           fill="none"
         />;
+        <p>{`${line[0].point.x}x${line[0].point.y}`}</p>;
       })}
       <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
     </>
