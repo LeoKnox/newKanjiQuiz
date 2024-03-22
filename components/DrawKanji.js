@@ -43,13 +43,16 @@ export default DrawKanji = () => {
   const drawLine = (
     <>
       {kanji.map((line) => {
-        <polyline
-          points={line.map((point) => `${point.x},${point.y}`).join(" ")}
-          stroke="black"
-          strokeWidth="4"
-          fill="none"
-        />;
-        <p>{`${line[0].point.x}x${line[0].point.y}`}</p>;
+        <>
+          <p>1</p>
+          <polyline
+            points="15,15 10,10"
+            stroke="black"
+            strokeWidth="4"
+            fill="none"
+          />
+          ;
+        </>;
       })}
       <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
     </>
