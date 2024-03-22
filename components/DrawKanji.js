@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default DrawKanji = () => {
-  const [points, setPoints] = useState([]);
+  const [stroke, setStroke] = useState([]);
   const [draw, setDraw] = useState(false);
 
   const clearPractice = () => {
@@ -23,23 +23,23 @@ export default DrawKanji = () => {
     const { clientX, clientY } = event;
     let offset = document.getElementById("svg").getBoundingClientRect();
     if (draw) {
-      setPoints([
-        ...points,
+      setStroke([
+        ...stroke,
         { x: clientX - offset.left, y: clientY - offset.top },
       ]);
     }
   };
 
   const handleMouseUp = () => {
-    setPoints([]);
-    console.log(`points: ${JSON.stringify(points)}`);
+    //setPoints([]);
+    console.log(`points: ${JSON.stringify(stroke)}`);
     setDraw(false);
   };
 
   const drawLine = (
     <>
       <polyline
-        points={points.map((point) => `${point.x},${point.y}`).join(" ")}
+        points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
         stroke="black"
         strokeWidth="4"
         fill="none"
@@ -49,7 +49,7 @@ export default DrawKanji = () => {
   );
   return (
     <>
-      <p>{`${JSON.stringify(points[5])}`}</p>
+      <p>{`${JSON.stringify(stroke[1])}`}</p>
       <svg
         id="svg"
         style={{ border: "1px black solid" }}
