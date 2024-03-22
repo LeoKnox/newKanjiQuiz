@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default DrawKanji = () => {
   const [stroke, setStroke] = useState([]);
+  const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
 
   const clearPractice = () => {
@@ -33,6 +34,7 @@ export default DrawKanji = () => {
   const handleMouseUp = () => {
     //setPoints([]);
     console.log(`points: ${JSON.stringify(stroke)}`);
+    setKanji([...kanji, stroke]);
     setDraw(false);
   };
 
