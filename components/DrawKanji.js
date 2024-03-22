@@ -6,7 +6,7 @@ export default DrawKanji = () => {
   const [draw, setDraw] = useState(false);
 
   const clearPractice = () => {
-    setPoints([]);
+    setKanji([]);
   };
 
   const handleMouseDown = (event) => {
@@ -43,16 +43,12 @@ export default DrawKanji = () => {
   const drawLine = (
     <>
       {kanji.map((line) => {
-        <>
-          <p>1</p>
-          <polyline
-            points="15,15 10,10"
-            stroke="black"
-            strokeWidth="4"
-            fill="none"
-          />
-          ;
-        </>;
+        <polyline
+          points={line.map((point) => `${point.x},${point.y}`).join(" ")}
+          stroke="black"
+          strokeWidth="4"
+          fill="none"
+        />;
       })}
       <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
     </>
