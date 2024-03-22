@@ -33,8 +33,10 @@ export default DrawKanji = () => {
 
   const handleMouseUp = () => {
     //setPoints([]);
-    console.log(`points: ${JSON.stringify(stroke)}`);
-    setKanji([...kanji, stroke]);
+    let newKanji = kanji;
+    newKanji.push(stroke);
+    setKanji(newKanji);
+    console.log(`kanji: ${JSON.stringify(kanji)}`);
     setDraw(false);
   };
 
