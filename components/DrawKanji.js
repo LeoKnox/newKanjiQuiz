@@ -76,10 +76,14 @@ export default DrawKanji = () => {
             point={line.map((point) => `${point.x},${point.y}`).join(" ")}
           />;
         })}
-        <polyline
-          point="`${pos}`,1 1,`${pos}`"
-          stroke="black"
-          strokeWidth="2"
+        <rect
+          x={pos}
+          y="10"
+          width="200"
+          height="100"
+          stroke="red"
+          stroke-width="6"
+          fill="blue"
         />
       </svg>
       <p>
