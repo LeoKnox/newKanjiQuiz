@@ -67,6 +67,9 @@ export default DrawKanji = () => {
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
+        width="109px"
+        hanging="100px"
+        style={{ border: "1px solid black" }}
       >
         {kanji.map((line) => {
           <polyline
