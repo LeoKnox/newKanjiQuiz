@@ -75,16 +75,16 @@ export default DrawKanji = () => {
           <polyline
             point={line.map((point) => `${point.x},${point.y}`).join(" ")}
           />;
+          <rect
+            x={pos}
+            y="10"
+            width="200"
+            height="100"
+            stroke="red"
+            stroke-width="6"
+            fill="blue"
+          />;
         })}
-        <rect
-          x={pos}
-          y="10"
-          width="200"
-          height="100"
-          stroke="red"
-          stroke-width="6"
-          fill="blue"
-        />
       </svg>
       <p>
         <button onClick={clearPractice}>Clear</button>
