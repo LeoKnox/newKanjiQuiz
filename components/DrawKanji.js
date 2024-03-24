@@ -42,7 +42,7 @@ export default DrawKanji = () => {
 
   const drawLine = (
     //console.log("red");
-    <>
+    /*<>
       {kanji.map((line) => {
         <polyline
           points={line.map((point) => `${point.x},${point.y}`).join(" ")}
@@ -52,7 +52,8 @@ export default DrawKanji = () => {
         />;
       })}
       <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
-    </>
+    </>*/
+    <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
   );
   const drawMultiLine = () => {
     console.log("run");
