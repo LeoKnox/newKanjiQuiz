@@ -69,7 +69,7 @@ export default DrawKanji = () => {
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
       >
-        {drawMultiLine}
+        {() => drawMultiLine()}
       </svg>
       <p>
         <button onClick={clearPractice}>Clear</button>
