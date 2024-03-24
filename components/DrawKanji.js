@@ -62,16 +62,12 @@ export default DrawKanji = () => {
   return (
     <>
       <p>{`${JSON.stringify(stroke[1])}`}</p>
-      <svg
-        id="svg"
-        style={{ border: "1px black solid" }}
-        witdh="109px"
-        height="100px"
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-      >
-        {drawMultiLine()}
+      <svg>
+        {kanji.map((line) => {
+          <polyline
+            point={line.map((point) => `${point.x},${point.y}`).join(" ")}
+          />;
+        })}
       </svg>
       <p>
         <button onClick={clearPractice}>Clear</button>
