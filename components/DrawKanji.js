@@ -76,10 +76,10 @@ export default DrawKanji = () => {
             point={line.map((point) => `${point.x},${point.y}`).join(" ")}
           />;
           <rect
-            x={pos}
+            x="10"
             y="10"
-            width="200"
-            height="100"
+            width={stroke.x}
+            height={stroke.y}
             stroke="red"
             stroke-width="6"
             fill="blue"
