@@ -71,11 +71,12 @@ export default DrawKanji = () => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        {kanji.map((line) => {
+        {kanji.map((line, pos) => {
           <polyline
             point={line.map((point) => `${point.x},${point.y}`).join(" ")}
           />;
         })}
+        <polyline point=`"${pos},1 1,${pos}"` stroke="black" strokeWidth="2" />
       </svg>
       <p>
         <button onClick={clearPractice}>Clear</button>
