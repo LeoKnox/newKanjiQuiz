@@ -41,6 +41,7 @@ export default DrawKanji = () => {
   };
 
   const drawLine = (
+    //console.log("red");
     <>
       {kanji.map((line) => {
         <polyline
@@ -53,6 +54,9 @@ export default DrawKanji = () => {
       <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
     </>
   );
+  const drawMultiLine = () => {
+    drawLine();
+  };
   return (
     <>
       <p>{`${JSON.stringify(stroke[1])}`}</p>
@@ -65,14 +69,7 @@ export default DrawKanji = () => {
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
       >
-        {kanji.map((line) => {
-          <polyline
-            points={line.map((point) => `${point.x},${point.y}`).join(" ")}
-            stroke="black"
-            strokeWidth="4"
-            fill="none"
-          />;
-        })}
+        {drawMultiLine}
       </svg>
       <p>
         <button onClick={clearPractice}>Clear</button>
