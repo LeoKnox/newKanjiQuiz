@@ -95,6 +95,9 @@ export default DrawKanji = () => {
           />;
         })}
       </svg>
+      {kanji.map((line) => {
+        <p>one</p>;
+      })}
       <p>
         <button onClick={clearPractice}>Clear</button>
       </p>
