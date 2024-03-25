@@ -40,6 +40,7 @@ export default DrawKanji = () => {
     let newKanji = kanji;
     newKanji.push(stroke);
     setKanji(newKanji);
+    setStroke([]);
     console.log(`kanji: ${JSON.stringify(kanji)}`);
     setDraw(false);
   };
@@ -94,7 +95,6 @@ export default DrawKanji = () => {
           />;
         })}
       </svg>
-      {drawMultiLine}
       <p>
         <button onClick={clearPractice}>Clear</button>
       </p>
