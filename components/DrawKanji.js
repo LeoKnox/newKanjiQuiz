@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default DrawKanji = () => {
   const [stroke, setStroke] = useState([]);
   const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
+
+  useEffect(() => {
+    console.log("run");
+  }, [kanji]);
 
   const clearPractice = () => {
     setKanji([]);
@@ -35,7 +39,7 @@ export default DrawKanji = () => {
     //setPoints([]);
     let newKanji = kanji;
     newKanji.push(stroke);
-    setKanji(...kanji, stroke);
+    setKanji(newKanji);
     console.log(`kanji: ${JSON.stringify(kanji)}`);
     setDraw(false);
   };
