@@ -60,8 +60,12 @@ export default DrawKanji = () => {
     <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
   );
   const drawMultiLine = () => {
-    console.log("run");
-    drawLine;
+    console.log("ml");
+    {
+      kanji.map((line) => {
+        console.log(JSON.stringify(line));
+      });
+    }
   };
   return (
     <>
@@ -90,15 +94,7 @@ export default DrawKanji = () => {
           />;
         })}
       </svg>
-      {kanji.map((line) => {
-        {
-          line.map((point) => (
-            <p>
-              {point.x}:{point.y}
-            </p>
-          ));
-        }
-      })}
+      {drawMultiLine}
       <p>
         <button onClick={clearPractice}>Clear</button>
       </p>
