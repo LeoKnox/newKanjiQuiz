@@ -35,7 +35,7 @@ export default DrawKanji = () => {
     //setPoints([]);
     let newKanji = kanji;
     newKanji.push(stroke);
-    setKanji(newKanji);
+    setKanji(...kanji, stroke);
     console.log(`kanji: ${JSON.stringify(kanji)}`);
     setDraw(false);
   };
