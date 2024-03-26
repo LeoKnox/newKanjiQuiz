@@ -15,7 +15,7 @@ export default DrawKanji = () => {
 
   const handleMouseDown = (event) => {
     const { clientX, clientY } = event;
-    let offset = document.getElementById("svg").getBoundingClientRect();
+    //let offset = document.getElementById("svg").getBoundingClientRect();
     setDraw(true);
     /*
     setPoints([
@@ -47,14 +47,15 @@ export default DrawKanji = () => {
 
   const drawLine = (
     <>
-      <polyline
-        points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
-        stroke="black"
-        strokeWidth="4"
-        fill="none"
-      />
-      ;
-      <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
+      {kanji.map((line) => {
+        <polyline
+          points={line.map((point) => `${point.x},${point.y}`).join(" ")}
+          stroke="black"
+          strokeWidth="4"
+          fill="none"
+        />;
+        <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />;
+      })}
     </>
   );
   const drawMultiLine = () => {
