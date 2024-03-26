@@ -54,7 +54,6 @@ export default DrawKanji = () => {
           strokeWidth="4"
           fill="none"
         />;
-        <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />;
       })}
     </>
   );
@@ -81,16 +80,7 @@ export default DrawKanji = () => {
         <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
         {kanji.map((line, pos) => {
           <polyline
-            point={line.map((point) => `${point.x},${point.y}`).join(" ")}
-          />;
-          <rect
-            x="10"
-            y="10"
-            width={stroke.x}
-            height={stroke.y}
-            stroke="red"
-            stroke-width="6"
-            fill="blue"
+            point={kanji[pos].map((point) => `${point.x},${point.y}`).join(" ")}
           />;
         })}
       </svg>
