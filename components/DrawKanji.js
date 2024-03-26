@@ -78,7 +78,7 @@ export default DrawKanji = () => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        {drawLine}
+        <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
         {kanji.map((line, pos) => {
           <polyline
             point={line.map((point) => `${point.x},${point.y}`).join(" ")}
