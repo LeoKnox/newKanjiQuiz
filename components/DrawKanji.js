@@ -7,7 +7,7 @@ export default DrawKanji = () => {
 
   useEffect(() => {
     console.log("run");
-  }, [kanji]);
+  }, [kanji, stroke]);
 
   const clearPractice = () => {
     setKanji([]);
@@ -46,19 +46,16 @@ export default DrawKanji = () => {
   };
 
   const drawLine = (
-    //console.log("red");
-    /*<>
-      {kanji.map((line) => {
-        <polyline
-          points={line.map((point) => `${point.x},${point.y}`).join(" ")}
-          stroke="black"
-          strokeWidth="4"
-          fill="none"
-        />;
-      })}
+    <>
+      <polyline
+        points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
+        stroke="black"
+        strokeWidth="4"
+        fill="none"
+      />
+      ;
       <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
-    </>*/
-    <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
+    </>
   );
   const drawMultiLine = () => {
     console.log("ml");
@@ -80,6 +77,7 @@ export default DrawKanji = () => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
+        {drawLine}
         {kanji.map((line, pos) => {
           <polyline
             point={line.map((point) => `${point.x},${point.y}`).join(" ")}
@@ -95,7 +93,6 @@ export default DrawKanji = () => {
           />;
         })}
       </svg>
-      <p>{kanji ? kanji[0] : "no"}</p>
       <p>
         <button onClick={clearPractice}>Clear</button>
       </p>
