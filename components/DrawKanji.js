@@ -49,7 +49,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
     <>
       {kanji.forEach((line) => {
         <polyline
-          point={line.forEach((point) => `${point.x},${point.y}`).join(" ")}
+          point={line.map((point) => `${point.x},${point.y}`).join(" ")}
         />;
       })}
     </>
