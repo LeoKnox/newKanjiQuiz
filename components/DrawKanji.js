@@ -68,7 +68,9 @@ export default DrawKanji = ({ advance }) => {
   return (
     <>
       <p>{`${JSON.stringify(stroke[1])}`}</p>
-      
+      <button onClick={advance} name="previous">
+        Previous2
+      </button>
       <svg
         id="svg"
         onMouseDown={handleMouseDown}
