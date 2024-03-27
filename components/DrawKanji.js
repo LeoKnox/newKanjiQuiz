@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default DrawKanji = ({ advance }) => {
+export default DrawKanji = ({ advance, randomSet }) => {
   const [stroke, setStroke] = useState([]);
   const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
@@ -68,7 +68,7 @@ export default DrawKanji = ({ advance }) => {
   return (
     <>
       <p>{`${JSON.stringify(stroke[1])}`}</p>
-      <button onClick={advance} name="previous">
+      <button onClick={advance} name="previous" disabled={randomSet}>
         Previous2
       </button>
       <svg
