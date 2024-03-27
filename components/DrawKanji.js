@@ -82,9 +82,10 @@ export default DrawKanji = ({ advance, randomSet }) => {
       >
         <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
         {kanji.forEach((line, pos) => {
+        console.log('
           <polyline
             point={kanji[pos].map((point) => `${point.x},${point.y}`).join(" ")}
-          />;
+          />')
         })}
       </svg>
       <button onClick={advance} name="next">
