@@ -47,17 +47,10 @@ export default DrawKanji = ({ advance, randomSet }) => {
 
   const drawLine = (
     <>
-      {kanji.map((line) => {
-        line.map((point) => {
-          console.log(`
-                <polyline
-                points=${point.x},${point.y}
-                stroke="black"
-                strokeWidth="4"
-                fill="none"
-              />;
-              `);
-        });
+      {kanji.forEach((line) => {
+        <polyline
+          point={line.forEach((point) => `${point.x},${point.y}`).join(" ")}
+        />;
       })}
     </>
   );
