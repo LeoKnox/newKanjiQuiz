@@ -69,7 +69,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
     <>
       <p>{`${JSON.stringify(stroke[1])}`}</p>
       <button onClick={advance} name="previous" disabled={randomSet}>
-        Previous2
+        Previous
       </button>
       <svg
         id="svg"
@@ -81,14 +81,14 @@ export default DrawKanji = ({ advance, randomSet }) => {
         style={{ border: "1px solid black" }}
       >
         <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
-        {kanji.map((line, pos) => {
+        {kanji.forEach((line, pos) => {
           <polyline
             point={kanji[pos].map((point) => `${point.x},${point.y}`).join(" ")}
           />;
         })}
       </svg>
       <button onClick={advance} name="next">
-        Next2
+        Next
       </button>
       <p>
         <button onClick={clearPractice}>Clear</button>
