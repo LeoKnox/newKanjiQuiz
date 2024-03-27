@@ -48,12 +48,16 @@ export default DrawKanji = ({ advance, randomSet }) => {
   const drawLine = (
     <>
       {kanji.map((line) => {
-        <polyline
-          points={line.map((point) => `${point.x},${point.y}`).join(" ")}
-          stroke="black"
-          strokeWidth="4"
-          fill="none"
-        />;
+        line.map((point) => {
+          console.log(`
+                <polyline
+                points=${point.x},${point.y}
+                stroke="black"
+                strokeWidth="4"
+                fill="none"
+              />;
+              `);
+        });
       })}
     </>
   );
@@ -80,13 +84,15 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
+        {drawLine}
+        /*
         <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
         {kanji.forEach((line, pos) => {
-        console.log('
           <polyline
             point={kanji[pos].map((point) => `${point.x},${point.y}`).join(" ")}
-          />')
+          />;
         })}
+        */
       </svg>
       <button onClick={advance} name="next">
         Next
