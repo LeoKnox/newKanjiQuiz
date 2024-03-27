@@ -93,6 +93,11 @@ export default DrawKanji = ({ advance, randomSet }) => {
       <p>
         <button onClick={clearPractice}>Clear</button>
       </p>
+      {kanji.forEach((x) => {
+        x.forEach((y) => {
+          <p>{y}</p>;
+        });
+      })}
     </>
   );
 };
