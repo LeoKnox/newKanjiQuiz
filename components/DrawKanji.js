@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default DrawKanji = () => {
+export default DrawKanji = ({ advance }) => {
   const [stroke, setStroke] = useState([]);
   const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
@@ -68,6 +68,7 @@ export default DrawKanji = () => {
   return (
     <>
       <p>{`${JSON.stringify(stroke[1])}`}</p>
+      
       <svg
         id="svg"
         onMouseDown={handleMouseDown}
