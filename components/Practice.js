@@ -85,7 +85,7 @@ export default Practice = ({ kanjiData }) => {
           Previous
         </button>
         <div>
-          <DrawKanji />
+          <DrawKanji advance={advance} />
         </div>
         <button onClick={advance} name="next">
           Next
