@@ -87,6 +87,9 @@ export default DrawKanji = ({ advance }) => {
           />;
         })}
       </svg>
+      <button onClick={advance} name="next">
+        Next2
+      </button>
       <p>
         <button onClick={clearPractice}>Clear</button>
       </p>
