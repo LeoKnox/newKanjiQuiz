@@ -81,15 +81,9 @@ export default Practice = ({ kanjiData }) => {
         <label style={{ fontSize: "5em" }}>
           {practiceKanji[position]["kanji"]}
         </label>
-        <button onClick={advance} name="previous" disabled={randomSet}>
-          Previous
-        </button>
         <div>
-          <DrawKanji advance={advance} />
+          <DrawKanji advance={advance} randomSet={randomSet} />
         </div>
-        <button onClick={advance} name="next">
-          Next
-        </button>
       </div>
     </div>
   );
