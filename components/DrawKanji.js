@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export default DrawKanji = ({ advance, randomSet }) => {
   const [stroke, setStroke] = useState([]);
-  const [kanji, setKanji] = useState([]);
+  const [kanji, setKanji] = useState([[]]);
   const [draw, setDraw] = useState(false);
 
   useEffect(() => {
@@ -48,9 +48,8 @@ export default DrawKanji = ({ advance, randomSet }) => {
   const drawLine = (
     <>
       {kanji.forEach((line) => {
-        let x = line;
         <polyline
-          point={x.map((point) => `${point.x},${point.y}`).join(" ")}
+          point={line.map((point) => `${point.x},${point.y}`).join(" ")}
         />;
       })}
     </>
