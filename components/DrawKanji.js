@@ -55,12 +55,26 @@ export default DrawKanji = ({ advance, randomSet }) => {
     </>
   );
   const drawMultiLine = () => {
+    let tempSvg = getElemenById("svg");
     console.log("ml");
     {
       kanji.map((line) => {
         console.log(JSON.stringify(line));
+        tempSvg.append(
+          <polyline
+            point={line.map((point) => `${point.x},${point.y}`).join(" ")}
+          />
+        );
       });
     }
+    /*
+        <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
+        {kanji.forEach((line, pos) => {
+          <polyline
+            point={kanji[pos].map((point) => `${point.x},${point.y}`).join(" ")}
+          />;
+        })}
+        */
   };
   return (
     <>
@@ -77,14 +91,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        /*
-        <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
-        {kanji.forEach((line, pos) => {
-          <polyline
-            point={kanji[pos].map((point) => `${point.x},${point.y}`).join(" ")}
-          />;
-        })}
-        */
+        {drawMultiLine}
       </svg>
       <button onClick={advance} name="next">
         Next
@@ -92,7 +99,6 @@ export default DrawKanji = ({ advance, randomSet }) => {
       <p>
         <button onClick={clearPractice}>Clear</button>
       </p>
-      {drawLine}
       {kanji.forEach((x) => {
         x.forEach((y) => {
           <p>{y}</p>;
