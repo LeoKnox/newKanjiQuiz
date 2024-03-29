@@ -55,7 +55,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
     </>
   );
   const drawMultiLine = () => {
-    let tempSvg = getElemenById("svg");
+    let tempSvg = document.getElementById("svg");
     console.log("ml");
     {
       kanji.map((line) => {
@@ -91,7 +91,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        {drawMultiLine}
+        {drawMultiLine()}
       </svg>
       <button onClick={advance} name="next">
         Next
