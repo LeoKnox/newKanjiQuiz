@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 
 export default DrawKanji = ({ advance, randomSet }) => {
   const [stroke, setStroke] = useState([]);
-  const [kanji, setKanji] = useState([[]]);
+  const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
 
   useEffect(() => {
-    console.log("run");
+    setKanji([]);
   }, [kanji, stroke]);
 
   const clearPractice = () => {
@@ -77,7 +77,6 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        {drawLine}
         /*
         <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
         {kanji.forEach((line, pos) => {
@@ -93,6 +92,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
       <p>
         <button onClick={clearPractice}>Clear</button>
       </p>
+      {drawLine}
       {kanji.forEach((x) => {
         x.forEach((y) => {
           <p>{y}</p>;
