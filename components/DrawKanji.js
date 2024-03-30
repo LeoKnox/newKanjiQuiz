@@ -54,20 +54,12 @@ export default DrawKanji = ({ advance, randomSet }) => {
       })}
     </>
   );
-  const drawMultiLine = () => {
+  const drawMultiLine = (x) => {
     let tempSvg = document.getElementById("svg");
     console.log("ml");
-    {
-      kanji.map((line, index) => {
-        console.log(JSON.stringify(line));
-        console.log(index);
-        tempSvg.append(
-          <polyline
-            point={line.map((point) => `${point.x},${point.y}`).join(" ")}
-          />
-        );
-      });
-    }
+
+    <polyline point={x.map((point) => `${point.x},${point.y}`).join(" ")} />;
+
     /*
         <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
         {kanji.forEach((line, pos) => {
@@ -92,7 +84,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        {() => drawMultiLine()}
+        kanji.map((line) => {() => drawMultiLine(line)})
       </svg>
       <button onClick={advance} name="next">
         Next
