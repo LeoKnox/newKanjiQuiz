@@ -38,14 +38,19 @@ export default DrawKanji = ({ advance, randomSet }) => {
   const handleMouseUp = () => {
     //setPoints([]);
     let newKanji = kanji;
-    newKanji.push(stroke);
+    newKanji.push(
+      <polyline
+        point={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
+      />
+    );
     setKanji(newKanji);
     setStroke([]);
     console.log(`kanji: ${JSON.stringify(kanji)}`);
     setDraw(false);
   };
 
-  const drawLine = (
+  /*const drawLine = (
+    
     <>
       {kanji.forEach((line) => {
         <polyline
@@ -60,15 +65,15 @@ export default DrawKanji = ({ advance, randomSet }) => {
 
     <polyline point={x.map((point) => `${point.x},${point.y}`).join(" ")} />;
 
-    /*
+    
         <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
         {kanji.forEach((line, pos) => {
           <polyline
             point={kanji[pos].map((point) => `${point.x},${point.y}`).join(" ")}
           />;
         })}
-        */
-  };
+        
+  };*/
   return (
     <>
       <p>{`${JSON.stringify(stroke[1])}`}</p>
@@ -83,9 +88,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         width="109px"
         hanging="100px"
         style={{ border: "1px solid black" }}
-      >
-        {kanji.map((line) => drawMultiLine(line))}
-      </svg>
+      ></svg>
       <button onClick={advance} name="next">
         Next
       </button>
