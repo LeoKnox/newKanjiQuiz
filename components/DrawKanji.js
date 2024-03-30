@@ -84,7 +84,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        kanji.map((line) => {() => drawMultiLine(line)})
+        {kanji.map((line) => drawMultiLine(line))}
       </svg>
       <button onClick={advance} name="next">
         Next
