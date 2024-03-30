@@ -92,7 +92,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        {drawMultiLine()}
+        {() => drawMultiLine()}
       </svg>
       <button onClick={advance} name="next">
         Next
