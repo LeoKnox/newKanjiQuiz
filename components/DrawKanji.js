@@ -39,7 +39,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
     //setPoints([]);
     let newKanji = kanji;
     let y = stroke.map((point) => `${point.x},${point.y}`).join(" ");
-    let x = "<polyline point= " + y+"/>"
+    let x = "<polyline point= " + y + "/>";
     //x.append({stroke.map((point) => `${point.x},${point.y}`).join(" ")})
     newKanji.push([x]);
     setKanji(newKanji);
@@ -81,13 +81,20 @@ export default DrawKanji = ({ advance, randomSet }) => {
       </button>
       <svg
         id="svg"
+        key="svg"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         width="109px"
         hanging="100px"
         style={{ border: "1px solid black" }}
-      ></svg>
+      >
+        {kanji.forEach((line, pos) => {
+          <polyline
+            point={kanji[pos].map((point) => `${point.x},${point.y}`).join(" ")}
+          />;
+        })}
+      </svg>
       <button onClick={advance} name="next">
         Next
       </button>
