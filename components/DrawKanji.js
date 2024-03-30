@@ -39,9 +39,8 @@ export default DrawKanji = ({ advance, randomSet }) => {
     //setPoints([]);
     let newKanji = kanji;
     let x = (
-      <polyline
-        point={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
-      />
+      "<polyline point= "+{stroke.map((point) => `${point.x},${point.y}`).join(" ")}
+      +"/>"
     );
     newKanji.push([x]);
     setKanji(newKanji);
