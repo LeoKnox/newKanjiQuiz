@@ -58,8 +58,9 @@ export default DrawKanji = ({ advance, randomSet }) => {
     let tempSvg = document.getElementById("svg");
     console.log("ml");
     {
-      kanji.map((line) => {
+      kanji.map((line, index) => {
         console.log(JSON.stringify(line));
+        console.log(index);
         tempSvg.append(
           <polyline
             point={line.map((point) => `${point.x},${point.y}`).join(" ")}
