@@ -41,7 +41,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
     let y = stroke.map((point) => `${point.x},${point.y}`).join(" ");
     let x = "<polyline point= " + y + "/>";
     //x.append({stroke.map((point) => `${point.x},${point.y}`).join(" ")})
-    newKanji.push([x]);
+    newKanji.push([y]);
     setKanji(newKanji);
     /*
     x = document.getElementById("svg");
@@ -51,31 +51,6 @@ export default DrawKanji = ({ advance, randomSet }) => {
     setDraw(false);
   };
 
-  /*const drawLine = (
-    
-    <>
-      {kanji.forEach((line) => {
-        <polyline
-          point={line.map((point) => `${point.x},${point.y}`).join(" ")}
-        />;
-      })}
-    </>
-  );
-  const drawMultiLine = (x) => {
-    let tempSvg = document.getElementById("svg");
-    console.log("ml");
-
-    <polyline point={x.map((point) => `${point.x},${point.y}`).join(" ")} />;
-
-    
-        <polyline points={"1,1 108,99"} stroke="black" strokeWidth="2" />
-        {kanji.forEach((line, pos) => {
-          <polyline
-            point={kanji[pos].map((point) => `${point.x},${point.y}`).join(" ")}
-          />;
-        })}
-        
-  };*/
   const polyLine = () => {
     const polyline = React.createElement("polyline", {
       stroke,
