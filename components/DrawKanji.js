@@ -101,7 +101,13 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        {polyLine}
+        kanji.map((line) =>{" "}
+        {createElement("polyline", {
+          line,
+          stroke: "black",
+          strokeWidth: 2,
+        })}
+        )
       </svg>
       <button onClick={advance} name="next">
         Next
