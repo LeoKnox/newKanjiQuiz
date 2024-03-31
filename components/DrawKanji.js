@@ -43,6 +43,9 @@ export default DrawKanji = ({ advance, randomSet }) => {
     //x.append({stroke.map((point) => `${point.x},${point.y}`).join(" ")})
     newKanji.push([x]);
     setKanji(newKanji);
+    /*
+    x = document.getElementById("svg");
+    x.add(stroke);*/
     setStroke([]);
     console.log(`kanji: ${JSON.stringify(kanji)}`);
     setDraw(false);
@@ -73,6 +76,15 @@ export default DrawKanji = ({ advance, randomSet }) => {
         })}
         
   };*/
+  const polyLine = () => {
+    const polyline = React.createElement("polyline", {
+      stroke,
+      stroke: "black",
+      strokeWidth: 2,
+    });
+
+    return polyline;
+  };
   return (
     <>
       <p>{`${JSON.stringify(stroke[1])}`}</p>
@@ -89,11 +101,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        {kanji.forEach((line, pos) => {
-          <polyline
-            point={kanji[pos].map((point) => `${point.x},${point.y}`).join(" ")}
-          />;
-        })}
+        <polyLine />
       </svg>
       <button onClick={advance} name="next">
         Next
