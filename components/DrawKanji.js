@@ -82,7 +82,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
       stroke: "black",
       strokeWidth: 2,
     });
-
+    console.log(`polyline ${JSON.stringify(polyline)}`);
     return polyline;
   };
   return (
