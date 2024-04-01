@@ -56,7 +56,8 @@ export default DrawKanji = ({ advance, randomSet }) => {
   };
   const testLine = () => {
     console.log("testLine");
-    let testData = [
+    let testData = [];
+    testData.push(
       test.map((x) => {
         <polyline
           id="red"
@@ -65,9 +66,9 @@ export default DrawKanji = ({ advance, randomSet }) => {
           strokeWidth="2"
           fill="none"
         />;
-      }),
-    ];
-    console.log(testData);
+      })
+    ),
+      console.log(JSON.stringify(testData));
     return testData;
   };
 
