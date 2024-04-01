@@ -54,9 +54,9 @@ export default DrawKanji = ({ advance, randomSet }) => {
     setDraw(false);
   };
   const testLine = () => {
-    test.map((line) => {
-      //return polyline(points={line} stroke="black" strokeWidth="2");
-    });
+    let testData = [<polyline point="29,74 43,74 48,75" />];
+
+    return <polyline point="29,74 43,74 48,75" />;
   };
 
   const polyLine = () => {
