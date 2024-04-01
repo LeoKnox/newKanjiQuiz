@@ -4,6 +4,9 @@ export default DrawKanji = ({ advance, randomSet }) => {
   const [stroke, setStroke] = useState([]);
   const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
+  const [test, setText] = useState([
+    [["29,74 43,74 48,75"]["52, 87 44,88 33,80"]],
+  ]);
 
   useEffect(() => {
     setKanji([]);
@@ -86,7 +89,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
       <p>
         <button onClick={clearPractice}>Clear</button>
       </p>
-      {kanji.forEach((x) => {
+      {test.forEach((x) => {
         x.map((y) => {
           <p>{y}</p>;
         });
