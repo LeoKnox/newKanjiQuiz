@@ -5,7 +5,8 @@ export default DrawKanji = ({ advance, randomSet }) => {
   const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
   const [test, setText] = useState([
-    [["29,74 43,74 48,75"]["52, 87 44,88 33,80"]],
+    ["29,74 43,74 48,75"],
+    ["52, 87 44,88 33,80"],
   ]);
 
   useEffect(() => {
@@ -58,7 +59,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
     let testData = [
       <polyline
         id="red"
-        points="29,74 43,74 48,75"
+        points={"29,74 43,74 48,75"}
         stroke="black"
         strokeWidth="2"
       />,
