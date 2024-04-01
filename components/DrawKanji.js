@@ -55,14 +55,16 @@ export default DrawKanji = ({ advance, randomSet }) => {
   };
   const testLine = () => {
     console.log("testLine");
-    let testData = [<polyline points="29,74 43,74 48,75" />];
+    let testData = [
+      <polyline points="29,74 43,74 48,75" stroke="black" strokeWidth="2" />,
+    ];
 
-    return <polyline points="29,74 43,74 48,75" />;
+    <polyline points="29,74 43,74 48,75" />;
   };
 
   const polyLine = () => {
-    const polyline = React.createElement("polyline", {
-      stroke,
+    const polyline = createElement("polyline", {
+      points: stroke,
       stroke: "black",
       strokeWidth: 2,
     });
@@ -89,7 +91,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
           <polyline points={line} stroke="black" strokeWidth="2" />;
         })}
         <polyline points={test} stroke="black" strokeWidth="2" />
-
+        {polyLine()}
         {testLine}
       </svg>
       <button onClick={advance} name="next">
