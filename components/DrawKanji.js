@@ -59,9 +59,10 @@ export default DrawKanji = ({ advance, randomSet }) => {
     let testData = [
       <polyline
         id="red"
-        points={"29,74 43,74 48,75"}
+        points={test}
         stroke="black"
         strokeWidth="2"
+        fill="none"
       />,
     ];
 
@@ -93,10 +94,6 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        {kanji.map((line) => {
-          <polyline points={line} stroke="black" strokeWidth="2" />;
-        })}
-        <polyline points={test} stroke="black" strokeWidth="2" />
         {testLine()}
       </svg>
       <button onClick={advance} name="next">
