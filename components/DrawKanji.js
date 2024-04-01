@@ -10,7 +10,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
 
   useEffect(() => {
     setKanji([]);
-  }, [kanji, stroke]);
+  }, []);
 
   const clearPractice = () => {
     setKanji([]);
@@ -55,9 +55,9 @@ export default DrawKanji = ({ advance, randomSet }) => {
   };
   const testLine = () => {
     test.map((line) => {
-      return polyline(points={line} stroke="black" strokeWidth="2");
-    })
-  }
+      //return polyline(points={line} stroke="black" strokeWidth="2");
+    });
+  };
 
   const polyLine = () => {
     const polyline = React.createElement("polyline", {
@@ -84,7 +84,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        {test.map((line) => {
+        {kanji.map((line) => {
           <polyline points={line} stroke="black" strokeWidth="2" />;
         })}
         {testLine}
