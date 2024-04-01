@@ -19,13 +19,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
 
   const handleMouseDown = (event) => {
     const { clientX, clientY } = event;
-    //let offset = document.getElementById("svg").getBoundingClientRect();
     setDraw(true);
-    /*
-    setPoints([
-      ...points,
-      { x: clientX - offset.left, y: clientY - offset.top },
-    ]);*/
   };
 
   const handleMouseMove = (event) => {
@@ -55,7 +49,6 @@ export default DrawKanji = ({ advance, randomSet }) => {
     kanji.map((x) => {
       testData.push(
         <polyline
-          id="red"
           points={x}
           stroke="black"
           strokeWidth="2"
@@ -92,11 +85,6 @@ export default DrawKanji = ({ advance, randomSet }) => {
       <p>
         <button onClick={clearPractice}>Clear</button>
       </p>
-      {test.forEach((x) => {
-        x.map((y) => {
-          <p>{y}</p>;
-        });
-      })}
     </>
   );
 };
