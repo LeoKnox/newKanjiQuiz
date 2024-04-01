@@ -53,6 +53,11 @@ export default DrawKanji = ({ advance, randomSet }) => {
     console.log(`kanji: ${JSON.stringify(kanji)}`);
     setDraw(false);
   };
+  const testLine = () => {
+    test.map((line) => {
+      return polyline(points={line} stroke="black" strokeWidth="2");
+    })
+  }
 
   const polyLine = () => {
     const polyline = React.createElement("polyline", {
@@ -82,6 +87,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         {test.map((line) => {
           <polyline points={line} stroke="black" strokeWidth="2" />;
         })}
+        {testLine}
       </svg>
       <button onClick={advance} name="next">
         Next
