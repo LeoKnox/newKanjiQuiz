@@ -59,7 +59,9 @@ export default DrawKanji = ({ advance, randomSet }) => {
       <polyline points="29,74 43,74 48,75" stroke="black" strokeWidth="2" />,
     ];
 
-    <polyline points="29,74 43,74 48,75" />;
+    return (
+      <polyline points="29,74 43,74 48,75" stroke="black" strokeWidth="2" />
+    );
   };
 
   const polyLine = () => {
