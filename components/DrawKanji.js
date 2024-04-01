@@ -88,7 +88,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
           <polyline points={line} stroke="black" strokeWidth="2" />;
         })}
         <polyline points={test} stroke="black" strokeWidth="2" />
-        <polyline point="29,74 43,74 48,75" />
+        <polyline points="29,74 43,74 48,85" />
         {testLine}
       </svg>
       <button onClick={advance} name="next">
