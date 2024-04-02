@@ -55,13 +55,15 @@ export default DrawKanji = ({ advance, randomSet }) => {
     return testData;
   };
 
-  const drawLine = (
-    <>
-      <polyline
-        point={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
-      />
-    </>
-  );
+  const drawLine =
+    (console.log("drawLine"),
+    (
+      <>
+        <polyline
+          point={test.map((point) => `${point.x},${point.y}`).join(" ")}
+        />
+      </>
+    ));
 
   return (
     <>
