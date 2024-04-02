@@ -55,6 +55,16 @@ export default DrawKanji = ({ advance, randomSet }) => {
     return testData;
   };
 
+  const drawLine = (
+    <>
+      {kanji.forEach((line) => {
+        <polyline
+          point={line.map((point) => `${point.x},${point.y}`).join(" ")}
+        />;
+      })}
+    </>
+  );
+
   return (
     <>
       <p>{`${JSON.stringify(stroke[1])}`}</p>
@@ -72,6 +82,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         style={{ border: "1px solid black" }}
       >
         {testLine()}
+        {drawLine}
       </svg>
       <button onClick={advance} name="next">
         Next
