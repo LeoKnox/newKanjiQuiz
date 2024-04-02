@@ -79,9 +79,12 @@ export default DrawKanji = ({ advance, randomSet }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        <polyline
-          points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
-        />
+        {
+          <polyline
+            points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
+            strokeWidth="2px"
+          />
+        }
         {testLine()}
       </svg>
       <button onClick={advance} name="next">
