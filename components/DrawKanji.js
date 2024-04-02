@@ -35,9 +35,8 @@ export default DrawKanji = ({ advance, randomSet }) => {
 
   const handleMouseUp = () => {
     let newKanji = kanji;
-    let y = stroke.map((point) => `${point.x},${point.y}`).join(" ");
-    let x = "<polyline point= " + y + "/>";
-    newKanji.push([y]);
+    let line = stroke.map((point) => `${point.x},${point.y}`).join(" ");
+    newKanji.push([line]);
     setKanji(newKanji);
     setStroke([]);
     console.log(`kanji: ${JSON.stringify(kanji)}`);
@@ -48,12 +47,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
     let testData = [];
     kanji.map((x) => {
       testData.push(
-        <polyline
-          points={x}
-          stroke="black"
-          strokeWidth="2"
-          fill="none"
-        />
+        <polyline points={x} stroke="black" strokeWidth="2" fill="none" />
       );
     });
 
