@@ -80,7 +80,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         style={{ border: "1px solid black" }}
       >
         <polyline
-          point={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
+          points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
         />
         {testLine()}
       </svg>
