@@ -4,14 +4,6 @@ export default DrawKanji = ({ advance, randomSet }) => {
   const [stroke, setStroke] = useState([]);
   const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
-  const [test, setText] = useState([
-    ["29,74 43,74 48,75"],
-    ["52, 87 44,88 33,80"],
-  ]);
-
-  useEffect(() => {
-    setKanji([]);
-  }, []);
 
   const clearPractice = () => {
     setKanji([]);
@@ -42,16 +34,13 @@ export default DrawKanji = ({ advance, randomSet }) => {
     console.log(`kanji: ${JSON.stringify(kanji)}`);
     setDraw(false);
   };
-  const testLine = () => {
-    console.log("testLine");
+  const drawKanji = () => {
     let testData = [];
     kanji.map((x) => {
       testData.push(
         <polyline points={x} stroke="black" strokeWidth="4" fill="none" />
       );
     });
-
-    console.log(testData);
     return testData;
   };
 
@@ -83,7 +72,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         style={{ border: "1px solid black" }}
       >
         {drawLine}
-        {testLine()}
+        {drawKanji()}
       </svg>
       <button onClick={advance} name="next">
         Next
