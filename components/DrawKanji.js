@@ -58,7 +58,12 @@ export default DrawKanji = ({ advance, randomSet }) => {
   return (
     <>
       <p>{`${JSON.stringify(stroke[1])}`}</p>
-      <button onClick={advance} name="previous" disabled={randomSet}>
+      <button
+        className="moveKanji"
+        onClick={advance}
+        name="previous"
+        disabled={randomSet}
+      >
         Previous
       </button>
       <svg
@@ -74,7 +79,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
         {drawLine}
         {drawKanji()}
       </svg>
-      <button onClick={advance} name="next">
+      <button className="moveKanji" onClick={advance} name="next">
         Next
       </button>
       <p>
