@@ -31,7 +31,6 @@ export default DrawKanji = ({ advance, randomSet }) => {
     newKanji.push([line]);
     setKanji(newKanji);
     setStroke([]);
-    console.log(`kanji: ${JSON.stringify(kanji)}`);
     setDraw(false);
   };
   const drawKanji = () => {
@@ -44,16 +43,14 @@ export default DrawKanji = ({ advance, randomSet }) => {
     return testData;
   };
 
-  const drawLine =
-    (console.log(`stoke: ${JSON.stringify(stroke)}`),
-    (
-      <polyline
-        points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
-        stroke="black"
-        strokeWidth="4"
-        fill="none"
-      />
-    ));
+  const drawLine = (
+    <polyline
+      points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
+      stroke="black"
+      strokeWidth="4"
+      fill="none"
+    />
+  );
 
   return (
     <>
