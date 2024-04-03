@@ -58,9 +58,8 @@ export default DrawKanji = ({ advance, randomSet }) => {
   const drawLine =
     (console.log(`stoke: ${JSON.stringify(stroke)}`),
     (
-      <polyline
+      <polygon
         points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
-        strokeWidth="8"
         fill="none"
       />
     ));
