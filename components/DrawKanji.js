@@ -47,7 +47,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
     let testData = [];
     kanji.map((x) => {
       testData.push(
-        <polyline points={x} stroke="black" strokeWidth="2" fill="none" />
+        <polyline points={x} stroke="black" strokeWidth="4" fill="none" />
       );
     });
 
@@ -61,7 +61,7 @@ export default DrawKanji = ({ advance, randomSet }) => {
       <polyline
         points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
         stroke="black"
-        strokeWidth="2"
+        strokeWidth="4"
         fill="none"
       />
     ));
