@@ -4,6 +4,7 @@ import DrawKanji from "./DrawKanji.js";
 
 export default Practice = ({ kanjiData }) => {
   const [practiceKanji, setPracticeKanji] = useState(kanjiData);
+  const [stroke, setStroke] = useState([]);
   const [position, setPosition] = useState(0);
   const [randomSet, setRandomSet] = useState(false);
   const [time, setTime] = useState(3000);
@@ -83,7 +84,12 @@ export default Practice = ({ kanjiData }) => {
           {practiceKanji[position]["kanji"]}
         </label>
         <div>
-          <DrawKanji advance={advance} randomSet={randomSet} />
+          <DrawKanji
+            advance={advance}
+            randomSet={randomSet}
+            stroke={stroke}
+            setStroke={setStroke}
+          />
         </div>
       </div>
     </div>
