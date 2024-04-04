@@ -43,6 +43,7 @@ export default Practice = ({ kanjiData }) => {
         setPosition(position - 1);
       }
     }
+    setStroke([]);
   };
   return (
     <div>
