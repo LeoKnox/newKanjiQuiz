@@ -8,6 +8,7 @@ export default Practice = ({ kanjiData }) => {
   const [randomSet, setRandomSet] = useState(false);
   const [time, setTime] = useState(3000);
   const timer = setTimeout(() => {
+    console.log("resume time");
     resume();
   }, time);
   useEffect(() => {
