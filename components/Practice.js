@@ -3,13 +3,13 @@ import DrawKanji from "./DrawKanji.js";
 // kanji is 80x89 pixels
 
 export default Practice = ({ kanjiData }) => {
-  const [stroke, setStroke] = useState([]);
   const [practiceKanji, setPracticeKanji] = useState(kanjiData);
   const [position, setPosition] = useState(0);
   const [randomSet, setRandomSet] = useState(false);
   const [time, setTime] = useState(3000);
+  const [clean, setClean] = useState(false);
   const timer = setTimeout(() => {
-    setStroke([]);
+    setClean(!clean);
     resume();
   }, time);
   useEffect(() => {
@@ -85,12 +85,7 @@ export default Practice = ({ kanjiData }) => {
           {practiceKanji[position]["kanji"]}
         </label>
         <div>
-          <DrawKanji
-            advance={advance}
-            randomSet={randomSet}
-            stroke={stroke}
-            setStroke={setStroke}
-          />
+          <DrawKanji advance={advance} randomSet={randomSet} clean={clean} />
         </div>
       </div>
     </div>
