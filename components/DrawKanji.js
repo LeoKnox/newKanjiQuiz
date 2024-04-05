@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 
-export default DrawKanji = ({ advance, randomSet, stroke, setStroke }) => {
+export default DrawKanji = ({ advance, randomSet, clean }) => {
+  const [stroke, setStroke] = useState([]);
   const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
+  useEffect(() => {
+    clearPractice();
+  }, [clean]);
 
   const clearPractice = () => {
     setKanji([]);
