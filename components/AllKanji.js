@@ -4,10 +4,11 @@ import { kanjidb } from "./Kanjidb.js";
 export default AllKanji = ({ myKanji, setMyKanji }) => {
   const updateKanji = (e) => {
     const checked = e.target.checked;
+    const kanjiId = e.target.id;
     if (checked) {
-      setMyKanji([...myKanji, name]);
+      setMyKanji([...myKanji, kanjiId]);
     } else {
-      setMyKanji(myKanji.filter((item) => item !== name));
+      setMyKanji(myKanji.filter((item) => item.id !== kanjiId));
     }
   };
   //console.log(kanjidb);
@@ -18,7 +19,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
         <p>
           <input
             type="checkbox"
-            checked={myKanji.includes(index)}
+            checked={myKanji.includes(kanji.id)}
             id={kanji.id}
             onChange={(e) => updateKanji(e)}
           />
