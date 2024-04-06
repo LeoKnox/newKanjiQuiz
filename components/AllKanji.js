@@ -6,9 +6,10 @@ export default AllKanji = () => {
   return (
     <div>
       <h2>All Kanji Page</h2>
-      {kanjidb.map((kanji) => (
+      {kanjidb.map((kanji, index) => (
         <p>
-          {kanji.word}:{kanji.meaning}:{kanji.kanji}
+          <input type="checkbox" />
+          {index} - {kanji.word}:{kanji.meaning}:{kanji.kanji}
         </p>
       ))}
     </div>
