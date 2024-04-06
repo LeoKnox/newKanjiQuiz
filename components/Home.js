@@ -8,6 +8,7 @@ import kanjidb from "./Kanjidb.js";
 
 export default Home = () => {
   const [componentPage, setComponentPage] = useState(<DashBoard />);
+  const [myKanji, setMyKanji] = useState([]);
   const kanjiData = [
     { word: "ichi", meaning: "one", kanji: "一" },
     { word: "ni", meaning: "two", kanji: "二" },
@@ -16,11 +17,19 @@ export default Home = () => {
     { word: "go", meaning: "five", kanji: "五" },
     { word: "roku", meaning: "six", kanji: "六" },
   ];
-  console.log(kanjidb);
+  console.log(kanjidb[0]);
   return (
     <div>
       <button onClick={() => setComponentPage(<DashBoard />)}>Home</button>
-      <button onClick={() => setComponentPage(<AllKanji />)}>All Kanji</button>
+      <button
+        onClick={() =>
+          setComponentPage(
+            <AllKanji myKanji={myKanji} setMyKanji={setMyKanji} />
+          )
+        }
+      >
+        All Kanji
+      </button>
       <button onClick={() => setComponentPage(<Quiz kanjiData={kanjiData} />)}>
         Quiz
       </button>
