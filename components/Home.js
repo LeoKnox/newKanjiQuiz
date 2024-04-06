@@ -16,7 +16,7 @@ export default Home = () => {
     { word: "go", meaning: "five", kanji: "五" },
     { word: "roku", meaning: "six", kanji: "六" },
   ];
-  console.log(`home ${kanjidb}`);
+  console.log(kanjidb);
   return (
     <div>
       <button onClick={() => setComponentPage(<DashBoard />)}>Home</button>
