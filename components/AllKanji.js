@@ -2,12 +2,8 @@ import { useEffect } from "react";
 import { kanjidb } from "./Kanjidb.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
-  useEffect(() => {
-    updateKanji();
-  });
   const updateKanji = (e) => {
     const checked = e.target.checked;
-
     if (checked) {
       setMyKanji([...myKanji, name]);
     } else {
@@ -24,7 +20,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
             type="checkbox"
             checked={myKanji.includes(index)}
             id={kanji.id}
-            onChange={updateKanji}
+            onChange={(e) => updateKanji(e)}
           />
           {kanji.id} - {kanji.word}:{kanji.meaning}:{kanji.kanji}
         </p>
