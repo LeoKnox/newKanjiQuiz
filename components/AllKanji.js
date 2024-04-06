@@ -6,7 +6,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     updateKanji();
   });
   const updateKanji = (e) => {
-    const { id, checked } = e.target;
+    const checked = e.target.checked;
 
     if (checked) {
       setMyKanji([...myKanji, name]);
