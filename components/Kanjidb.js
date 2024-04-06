@@ -1,4 +1,4 @@
-/*export const senKanji = [
+let setKanji = [
   { word: "ichi", meaning: "one", kanji: "一" },
   { word: "ni", meaning: "two", kanji: "二" },
   { word: "san", meaning: "three", kanji: "三" },
@@ -11,8 +11,8 @@
   { word: "taka, takai", meaning: "high, costly, tall", kanji: "高" },
   { word: "chiisai", meaning: "small, little", kanji: "小" },
   { word: "ookii, TAI, DAI", meaning: "big, large, great", kanji: "大" },
-];*/
-export const Kanjidb = (retreiveKanji = [0, 1]) => {
+];
+export default kanjidb = (retreiveKanji = [0, 1]) => {
   return [
     { word: "ni", meaning: "two", kanji: "二" },
     { word: "san", meaning: "three", kanji: "三" },
