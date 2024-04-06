@@ -1,8 +1,18 @@
+import { useEffect } from "react";
 import { kanjidb } from "./Kanjidb.js";
 
-export default AllKanji = () => {
+export default AllKanji = ({ myKanji, setMyKanji }) => {
+  useEffect(() => {
+    updateKanji();
+  });
   const updateKanji = (e) => {
-    console.log(`update ${e.target.checked} ${e.target.id}`);
+    const { id, checked } = e.target;
+
+    if (checked) {
+      setMyKanji([...myKanji, name]);
+    } else {
+      setMyKanji(myKanji.filter((item) => item !== name));
+    }
   };
   //console.log(kanjidb);
   return (
@@ -10,8 +20,13 @@ export default AllKanji = () => {
       <h2>All Kanji Page</h2>
       {kanjidb.map((kanji, index) => (
         <p>
-          <input type="checkbox" id={index} onChange={(e) => updateKanji(e)} />
-          {index} - {kanji.word}:{kanji.meaning}:{kanji.kanji}
+          <input
+            type="checkbox"
+            checked={myKanji.includes(index)}
+            id={kanji.id}
+            onChange={updateKanji}
+          />
+          {kanji.id} - {kanji.word}:{kanji.meaning}:{kanji.kanji}
         </p>
       ))}
     </div>
