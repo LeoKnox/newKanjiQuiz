@@ -1,7 +1,7 @@
-export default DashBoard = () => {
+export default DashBoard = ({myKanji, setMyKanji}) => {
   return (
     <div>
-      <h2>DashBoard Page</h2>
+      <h2>Home Page</h2>
     </div>
   );
 };
