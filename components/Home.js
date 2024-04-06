@@ -4,6 +4,7 @@ import DashBoard from "./DashBoard.js";
 import AllKanji from "./AllKanji.js";
 import Quiz from "./Quiz.js";
 import Practice from "./Practice.js";
+import Kanjidb from "./Kanjidb.js";
 
 export default Home = () => {
   const [componentPage, setComponentPage] = useState(<DashBoard />);
@@ -15,6 +16,7 @@ export default Home = () => {
     { word: "go", meaning: "five", kanji: "五" },
     { word: "roku", meaning: "six", kanji: "六" },
   ];
+  console.log(`home ${Kanjidb}`);
   return (
     <div>
       <button onClick={() => setComponentPage(<DashBoard />)}>Home</button>
