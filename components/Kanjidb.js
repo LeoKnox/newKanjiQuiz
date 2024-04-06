@@ -1,20 +1,14 @@
-let setKanji = [
-  { word: "ichi", meaning: "one", kanji: "一" },
-  { word: "ni", meaning: "two", kanji: "二" },
-  { word: "san", meaning: "three", kanji: "三" },
-  { word: "yon", meaning: "four", kanji: "四" },
-  { word: "go", meaning: "five", kanji: "五" },
-  { word: "roku", meaning: "six", kanji: "六" },
-  { word: "hi", meaning: "fire, light", kanji: "火" },
-  { word: "hidari", meaning: "left", kanji: "左" },
-  { word: "migi", meaning: "right", kanji: "右" },
-  { word: "taka, takai", meaning: "high, costly, tall", kanji: "高" },
-  { word: "chiisai", meaning: "small, little", kanji: "小" },
-  { word: "ookii, TAI, DAI", meaning: "big, large, great", kanji: "大" },
+export const kanjidb = [
+  { id:1, word: "ichi", meaning: "one", kanji: "一" },
+  { id:2, word: "ni", meaning: "two", kanji: "二" },
+  { id:3, word: "san", meaning: "three", kanji: "三" },
+  { id:4, word: "yon", meaning: "four", kanji: "四" },
+  { id:5, word: "go", meaning: "five", kanji: "五" },
+  { id:6, word: "roku", meaning: "six", kanji: "六" },
+  { id:7, word: "hi", meaning: "fire, light", kanji: "火" },
+  { id:8, word: "hidari", meaning: "left", kanji: "左" },
+  { id:9, word: "migi", meaning: "right", kanji: "右" },
+  { id:10, word: "taka, takai", meaning: "high, costly, tall", kanji: "高" },
+  { id:11, word: "chiisai", meaning: "small, little", kanji: "小" },
+  { id:12, word: "ookii, TAI, DAI", meaning: "big, large, great", kanji: "大" },
 ];
-export default kanjidb = (retreiveKanji = [0, 1]) => {
-  return [
-    { word: "ni", meaning: "two", kanji: "二" },
-    { word: "san", meaning: "three", kanji: "三" },
-  ];
-};
