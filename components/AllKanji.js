@@ -23,7 +23,6 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
         <p>
           <input
             type="checkbox"
-            checked={myKanji.includes(kanji.id)}
             id={kanji.id}
             onChange={(e) => updateKanji(e)}
           />
