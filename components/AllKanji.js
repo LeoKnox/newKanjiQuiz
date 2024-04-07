@@ -13,7 +13,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       checkedKanji.filter(!kanjiId);
       setMyKanji(myKanji.filter((item) => item.id === kanjiId));
     }
-    console.log(checkedKanji);
+    console.log(myKanji);
   };
   //console.log(kanjidb);
   return (
@@ -23,7 +23,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
         <p>
           <input
             type="checkbox"
-            checked={checkedKanji.includes(kanji.id)}
+            checked={myKanji.includes(kanji.id)}
             id={kanji.id}
             onChange={(e) => updateKanji(e)}
           />
