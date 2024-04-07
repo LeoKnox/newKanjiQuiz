@@ -10,7 +10,8 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       checkedKanji.push(kanjiId);
       setMyKanji([...myKanji, kanjiId]);
     } else {
-      setMyKanji(myKanji.filter((item) => item.id !== kanjiId));
+      checkedKanji.filter((item) => item === kanjiId);
+      setMyKanji(myKanji.filter((item) => item.id === kanjiId));
     }
     console.log(checkedKanji);
   };
