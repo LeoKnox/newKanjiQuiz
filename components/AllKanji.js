@@ -2,18 +2,18 @@ import { useEffect } from "react";
 import { kanjidb } from "./Kanjidb.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
-  const checkedKanji = [];
+  let checkedKanji = [];
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
     if (checked) {
-      checkedKanji.push(kanjiId);
+      checkedKanji = [...checkedKanji, kanjiId];
       setMyKanji([...myKanji, kanjiId]);
     } else {
       checkedKanji.filter(!kanjiId);
       setMyKanji(myKanji.filter((item) => item.id === kanjiId));
     }
-    console.log(myKanji.includes(kanjiId));
+    console.log(checkedKanji);
   };
   //console.log(kanjidb);
   return (
