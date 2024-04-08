@@ -7,12 +7,12 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
     if (checked) {
-      checkedKanji = [...checkedKanji, kanjiId];
+      //checkedKanji = [...checkedKanji, kanjiId];
       setMyKanji([...myKanji, kanjiId]);
     } else {
       console.log("did I check the check?");
       checkedKanji = checkedKanji.filter((item) => item !== kanjiId);
-      setMyKanji([...checkedKanji, kanjiId]);
+      setMyKanji(checkedKanji);
     }
     console.log(checkedKanji);
     console.log(kanjiId);
