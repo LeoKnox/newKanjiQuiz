@@ -16,7 +16,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     }
     setMyKanji(checkedKanji);
     console.log(checkedKanji);
-    console.log(kanjiId);
+    console.log("ll" + myKanji);
   };
   //console.log(kanjidb);
   return (
