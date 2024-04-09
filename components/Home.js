@@ -19,7 +19,6 @@ export default Home = () => {
 
   return (
     <div>
-      <p>{myKanji}</p>
       <button onClick={() => setComponentPage(<DashBoard />)}>Home</button>
       <button
         onClick={() =>
@@ -39,6 +38,9 @@ export default Home = () => {
         Practice
       </button>
       <p>{componentPage}</p>
+      {myKanji.map((k) => (
+        <p>{k}</p>
+      ))}
     </div>
   );
 };
