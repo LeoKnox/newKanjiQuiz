@@ -6,8 +6,11 @@ import Quiz from "./Quiz.js";
 import Practice from "./Practice.js";
 
 export default Home = () => {
-  const [componentPage, setComponentPage] = useState(<DashBoard />);
   const [myKanji, setMyKanji] = useState([]);
+  const [componentPage, setComponentPage] = useState(
+    <DashBoard myKanji={myKanji} />
+  );
+
   const kanjiData = [
     { word: "ichi", meaning: "one", kanji: "一" },
     { word: "ni", meaning: "two", kanji: "二" },
@@ -19,7 +22,9 @@ export default Home = () => {
 
   return (
     <div>
-      <button onClick={() => setComponentPage(<DashBoard />)}>Home</button>
+      <button onClick={() => setComponentPage(<DashBoard myKanji={myKanji} />)}>
+        Home
+      </button>
       <button
         onClick={() =>
           setComponentPage(
@@ -38,9 +43,6 @@ export default Home = () => {
         Practice
       </button>
       <p>{componentPage}</p>
-      {myKanji.map((k) => (
-        <p>{k}</p>
-      ))}
     </div>
   );
 };
