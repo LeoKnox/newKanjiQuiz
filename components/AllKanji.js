@@ -9,19 +9,18 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     if (checked) {
       checkedKanji = [...checkedKanji, kanjiId];
     } else {
-      console.log("did I check the check?");
       checkedKanji = checkedKanji.filter((item) => item !== kanjiId);
-      //updatedCheckedBoxes.splice(updatedCheckedBoxes.indexOf(name), 1);
-      //setMyKanji(checkedKanji);
-      console.log(checkedKanji);
-      console.log("ll" + myKanji);
     }
     setMyKanji(...myKanji, checkedKanji);
   };
-  //console.log(kanjidb);
+  const selectAllKanji = () => {
+    let allKanji = [...Array(kanjidb.length).keys()];
+    setMyKanji(...myKanji, allKanji);
+  };
   return (
     <div>
       <h2>All Kanji Page</h2>
+      <button onClick={selectAllKanji}>Select All</button>
       {kanjidb.map((kanji, index) => (
         <p>
           <input
