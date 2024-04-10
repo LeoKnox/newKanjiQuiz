@@ -8,16 +8,15 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     const kanjiId = e.target.id;
     if (checked) {
       checkedKanji = [...checkedKanji, kanjiId];
-      setMyKanji(...myKanji, checkedKanji);
     } else {
       console.log("did I check the check?");
       checkedKanji = checkedKanji.filter((item) => item !== kanjiId);
       //updatedCheckedBoxes.splice(updatedCheckedBoxes.indexOf(name), 1);
-      setMyKanji(...myKanji, checkedKanji);
       //setMyKanji(checkedKanji);
       console.log(checkedKanji);
       console.log("ll" + myKanji);
     }
+    setMyKanji(...myKanji, checkedKanji);
   };
   //console.log(kanjidb);
   return (
