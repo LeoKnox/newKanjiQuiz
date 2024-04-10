@@ -17,7 +17,11 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     let allKanji = [...Array(kanjidb.length).keys()];
     setMyKanji(...myKanji, allKanji);
     for (let i = 0; i < kanjidb.length; i++) {
-      document.getElementById(i).checked = true;
+      console.log(i);
+      console.log(document.getElementById(i));
+      if (document.getElementById(i)) {
+        document.getElementById(i).checked = true;
+      }
     }
   };
   return (
