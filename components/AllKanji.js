@@ -22,10 +22,20 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       }
     }
   };
+  const deselectAllKanji = () => {
+    let allKanji = [...Array(kanjidb.length + 1).keys()];
+    setMyKanji([]);
+    for (let i = 0; i <= kanjidb.length; i++) {
+      if (document.getElementById(i)) {
+        document.getElementById(i).checked = false;
+      }
+    }
+  };
   return (
     <div>
       <h2>All Kanji Page</h2>
       <button onClick={selectAllKanji}>Select All</button>
+      <button onClick={deselectAllKanji}>Deselect All</button>
       {kanjidb.map((kanji, index) => (
         <p>
           <input
