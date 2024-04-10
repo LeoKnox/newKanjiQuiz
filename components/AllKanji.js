@@ -12,11 +12,12 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     } else {
       console.log("did I check the check?");
       checkedKanji = checkedKanji.filter((item) => item !== kanjiId);
-      setMyKanji(myKanji.filter((item) => item !== kanjiId));
+      //updatedCheckedBoxes.splice(updatedCheckedBoxes.indexOf(name), 1);
+      setMyKanji(...myKanji, checkedKanji);
+      //setMyKanji(checkedKanji);
+      console.log(checkedKanji);
+      console.log("ll" + myKanji);
     }
-    //setMyKanji(checkedKanji);
-    console.log(checkedKanji);
-    console.log("ll" + myKanji);
   };
   //console.log(kanjidb);
   return (
