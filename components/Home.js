@@ -1,38 +1,49 @@
-import { useEffect } from "react";
-import { kanjidb } from "./Kanjidb.js";
+import { useState } from "react";
+import { KanjiContext } from "../KanjiContext.js";
+import DashBoard from "./DashBoard.js";
+import AllKanji from "./AllKanji.js";
+import Quiz from "./Quiz.js";
+import Practice from "./Practice.js";
 
-export default AllKanji = ({ myKanji, setMyKanji }) => {
-  let checkedKanji = [];
-  const updateKanji = (e) => {
-    const checked = e.target.checked;
-    const kanjiId = e.target.id;
-    if (checked) {
-      checkedKanji = [...checkedKanji, kanjiId];
-      setMyKanji(...myKanji, checkedKanji);
-    } else {
-      console.log("did I check the check?");
-      checkedKanji = checkedKanji.filter((item) => item !== kanjiId);
-      //updatedCheckedBoxes.splice(updatedCheckedBoxes.indexOf(name), 1);
-      return setMyKanji(myKanji.splice(myKanji.indexOf(name), 1));
-    }
-    //setMyKanji(checkedKanji);
-    console.log(checkedKanji);
-    console.log("ll" + myKanji);
-  };
-  //console.log(kanjidb);
+export default Home = () => {
+  const [myKanji, setMyKanji] = useState([]);
+  const [componentPage, setComponentPage] = useState(
+    <DashBoard myKanji={myKanji} />
+  );
+
+  const kanjiData = [
+    { word: "ichi", meaning: "one", kanji: "一" },
+    { word: "ni", meaning: "two", kanji: "二" },
+    { word: "san", meaning: "three", kanji: "三" },
+    { word: "yon", meaning: "four", kanji: "四" },
+    { word: "go", meaning: "five", kanji: "五" },
+    { word: "roku", meaning: "six", kanji: "六" },
+  ];
+
   return (
     <div>
-      <h2>All Kanji Page</h2>
-      {kanjidb.map((kanji, index) => (
-        <p>
-          <input
-            type="checkbox"
-            id={kanji.id}
-            onChange={(e) => updateKanji(e)}
-          />
-          {kanji.id} - {kanji.word}:{kanji.meaning}:{kanji.kanji}
-        </p>
-      ))}
+      <button onClick={() => setComponentPage(<DashBoard myKanji={myKanji} />)}>
+        Home
+      </button>
+      <button
+        onClick={() =>
+          setComponentPage(
+            <AllKanji myKanji={myKanji} setMyKanji={setMyKanji} />
+          )
+        }
+      >
+        All Kanji
+      </button>
+      <button onClick={() => setComponentPage(<Quiz kanjiData={kanjiData} />)}>
+        Quiz
+      </button>
+      <button
+        onClick={() => setComponentPage(<Practice kanjiData={kanjiData} />)}
+      >
+        Practice
+      </button>
+      <p>{componentPage}</p>
+      {myKanji}
     </div>
   );
 };
