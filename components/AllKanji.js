@@ -16,6 +16,9 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
     setMyKanji(...myKanji, allKanji);
+    for (let i = 0; i < kanjidb.length; i++) {
+      document.getElementById(i).checked = true;
+    }
   };
   return (
     <div>
