@@ -7,6 +7,7 @@ import Practice from "./Practice.js";
 
 export default Home = () => {
   const [myKanji, setMyKanji] = useState([]);
+  console.log(`a: ${myKanji}`);
   const [componentPage, setComponentPage] = useState(
     <DashBoard myKanji={myKanji} />
   );
@@ -19,6 +20,7 @@ export default Home = () => {
     { word: "go", meaning: "five", kanji: "五" },
     { word: "roku", meaning: "six", kanji: "六" },
   ];
+  console.log(myKanji);
 
   return (
     <div>
@@ -43,7 +45,6 @@ export default Home = () => {
         Practice
       </button>
       <p>{componentPage}</p>
-      {myKanji}
     </div>
   );
 };
