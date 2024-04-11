@@ -16,24 +16,11 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length + 1).keys()];
     setMyKanji(...myKanji, kanjidb[allKanji]);
-    //for (let i in kanjidb) for (let i of kanjidb).
-    for (let kanji in kanjidb) {
-      console.log(`kanji: ${kanji}`);
-      if (document.getElementById(kanji)) {
-        document.getElementById(kanji+1).checked = true;
-      }
-    }
-    /*
-    for (let kanji of kanjidb) {
-      if (kanji) {
-        console.log(kanji);
-      }
-    }*/
-    /*for (let i = 0; i <= kanjidb.length; i++) {
+    for (let i = 0; i <= kanjidb.length; i++) {
       if (document.getElementById(i)) {
         document.getElementById(i).checked = true;
       }
-    }*/
+    }
     console.log(myKanji);
   };
   const deselectAllKanji = () => {
