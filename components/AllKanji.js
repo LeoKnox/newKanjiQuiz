@@ -20,14 +20,15 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     for (let kanji in kanjidb) {
       console.log(`kanji: ${kanji}`);
       if (document.getElementById(kanji)) {
-        document.getElementById(kanji).checked = true;
+        document.getElementById(kanji+1).checked = true;
       }
     }
+    /*
     for (let kanji of kanjidb) {
       if (kanji) {
         console.log(kanji);
       }
-    }
+    }*/
     /*for (let i = 0; i <= kanjidb.length; i++) {
       if (document.getElementById(i)) {
         document.getElementById(i).checked = true;
