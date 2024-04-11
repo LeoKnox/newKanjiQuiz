@@ -19,12 +19,20 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     //for (let i in kanjidb) for (let i of kanjidb).
     for (let kanji in kanjidb) {
       console.log(`kanji: ${kanji}`);
+      if (document.getElementById(kanji)) {
+        document.getElementById(kanji).checked = true;
+      }
     }
-    for (let i = 0; i <= kanjidb.length; i++) {
+    for (let kanji of kanjidb) {
+      if (kanji) {
+        console.log(kanji);
+      }
+    }
+    /*for (let i = 0; i <= kanjidb.length; i++) {
       if (document.getElementById(i)) {
         document.getElementById(i).checked = true;
       }
-    }
+    }*/
     console.log(myKanji);
   };
   const deselectAllKanji = () => {
