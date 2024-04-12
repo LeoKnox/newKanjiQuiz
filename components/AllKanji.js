@@ -18,8 +18,8 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     let tempKanji = [];
     console.log(allKanji);
     console.log("t");
-    for (let i = 0; i <= kanjidb.length; i++) {
-      //for (let i of allKanji) {
+    //for (let i = 0; i <= kanjidb.length; i++) {
+    for (let i of allKanji) {
       tempKanji.push(kanjidb[i]);
       console.log(kanjidb[i]);
       if (document.getElementById(i)) {
