@@ -17,7 +17,9 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     let allKanji = [...Array(kanjidb.length + 1).keys()];
     console.log(allKanji);
 
-    for (let i = 0; i <= kanjidb.length; i++) {
+    //for (let i = 0; i <= kanjidb.length; i++) {
+    for (let i of allKanji) {
+      console.log(i);
       setMyKanji(...myKanji, kanjidb[i]);
       if (document.getElementById(i)) {
         document.getElementById(i).checked = true;
