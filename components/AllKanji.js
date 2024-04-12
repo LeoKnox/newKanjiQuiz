@@ -14,7 +14,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     setMyKanji(...myKanji, checkedKanji);
   };
   const selectAllKanji = () => {
-    let allKanji = [...Array(kanjidb.length + 1).keys()];
+    let allKanji = [...Array(kanjidb.length).keys()];
     let tempKanji = [];
     console.log(allKanji);
     console.log("t");
