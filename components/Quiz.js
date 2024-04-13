@@ -14,6 +14,9 @@ export default Quiz = ({ kanjiData }) => {
   const confirmAnswer = (selection) => {
     if (selection === answer) {
       setAnswer("");
+      setBorder("black");
+    } else {
+      setBorder("red");
     }
   };
   return (
