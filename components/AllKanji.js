@@ -16,18 +16,13 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
     let tempKanji = [];
-    console.log(allKanji);
-    console.log("t");
-    //for (let i = 0; i <= kanjidb.length; i++) {
     for (let i of allKanji) {
       tempKanji.push(kanjidb[i]);
-      console.log(kanjidb[i]);
       if (document.getElementById(i)) {
         document.getElementById(i).checked = true;
       }
     }
     setMyKanji(tempKanji);
-    console.log(myKanji);
   };
   const deselectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length + 1).keys()];
