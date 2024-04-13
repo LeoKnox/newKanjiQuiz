@@ -13,7 +13,7 @@ export default Quiz = ({ kanjiData }) => {
   }, [answer]);
   const confirmAnswer = (selection) => {
     if (selection === answer) {
-      setAnswer("");
+      setAnswer("correct");
       setBorder("black");
     } else {
       setBorder("red");
