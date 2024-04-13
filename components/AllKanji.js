@@ -1,29 +1,51 @@
-import { useState, useEffect } from "react";
-export default Quiz = ({ kanjiData }) => {
-  const [quizes, setQuizes] = useState([]);
-  const [answer, setAnswer] = useState("");
-  useEffect(() => {
-    const shuffled = kanjiData.sort(() => 0.5 - Math.random());
-    console.log(`shuffled ${JSON.stringify(shuffled)}`);
-    let selected = shuffled.slice(0, 3);
-    let randAnswer = selected[Math.floor(Math.random() * selected.length)];
-    setQuizes(selected);
-    setAnswer(randAnswer.meaning);
-  }, [answer]);
-  const confirmAnswer = (selection) => {
-    if (selection === answer) {
-      setAnswer("");
+import { useEffect } from "react";
+import { kanjidb } from "./Kanjidb.js";
+
+export default AllKanji = ({ myKanji, setMyKanji }) => {
+  let checkedKanji = [];
+  const updateKanji = (e) => {
+    const checked = e.target.checked;
+    const kanjiId = e.target.id;
+    if (checked) {
+      checkedKanji = [...checkedKanji, kanjidb[kanjiId]];
+    } else {
+      checkedKanji = checkedKanji.filter((item) => item !== kanjiId);
+    }
+    setMyKanji(...myKanji, checkedKanji);
+  };
+  const selectAllKanji = () => {
+    let allKanji = [...Array(kanjidb.length).keys()];
+    let tempKanji = [];
+    for (let i of allKanji) {
+      tempKanji.push(kanjidb[i]);
+      if (document.getElementById(i)) {
+        document.getElementById(i).checked = true;
+      }
+    }
+    setMyKanji(tempKanji);
+  };
+  const deselectAllKanji = () => {
+    let allKanji = [...Array(kanjidb.length + 1).keys()];
+    setMyKanji([]);
+    for (let i = 0; i <= kanjidb.length; i++) {
+      if (document.getElementById(i)) {
+        document.getElementById(i).checked = false;
+      }
     }
   };
   return (
     <div>
-      <h2>Kanji Quiz Page</h2>
-      <p>answer {answer}</p>
-      {quizes.map((kanji) => (
+      <h2>All Kanji Page</h2>
+      <button onClick={selectAllKanji}>Select All</button>
+      <button onClick={deselectAllKanji}>Deselect All</button>
+      {kanjidb.map((kanji, index) => (
         <p>
-          <button onClick={() => confirmAnswer(kanji.meaning)}>
-            {kanji.kanji}
-          </button>
+          <input
+            type="checkbox"
+            id={kanji.id}
+            onChange={(e) => updateKanji(e)}
+          />
+          {kanji.id} - {kanji.word}:{kanji.meaning}:{kanji.kanji}
         </p>
       ))}
     </div>
