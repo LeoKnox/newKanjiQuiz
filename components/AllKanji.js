@@ -3,6 +3,7 @@ import { kanjidb } from "./Kanjidb.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
   let checkedKanji = myKanji.map((kanji) => kanji.id);
+  console.log(`checked kanji ${checkedKanji}`);
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
@@ -15,6 +16,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   };
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
+    console.log(`all kanji %{json.stringify(allKanji)}`);
     let tempKanji = [];
     for (let i of allKanji) {
       tempKanji.push(kanjidb[i]);
@@ -36,6 +38,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   return (
     <div>
       <h2>All Kanji Page</h2>
+      <p>{checkedKanji}</p>
       <button onClick={selectAllKanji}>Select All</button>
       <button onClick={deselectAllKanji}>Deselect All</button>
       {kanjidb.map((kanji, index) => (
