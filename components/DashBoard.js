@@ -9,7 +9,9 @@ export default DashBoard = ({ myKanji }) => {
         <p>No Kanji</p>
       ) : (
         <div>
-          myKanji.map((kanji) => <p>{kanji.word}</p>)
+          {myKanji.map((kanji) => (
+            <p>{kanji.word}</p>
+          ))}
         </div>
       )}
     </div>
