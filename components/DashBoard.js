@@ -8,11 +8,18 @@ export default DashBoard = ({ myKanji }) => {
       {myKanji.length <= 0 ? (
         <p>No Kanji</p>
       ) : (
-        <div>
-          {myKanji.map((kanji) => (
-            <p>{kanji.word}</p>
-          ))}
-        </div>
+        <>
+          <table>
+            <tr>
+              {Object.keys(myKanji[0]).map((key) => (
+                <th>{key}</th>
+              ))}
+            </tr>
+            {myKanji.map((kanji) => (
+              <p>{kanji.word}</p>
+            ))}
+          </table>
+        </>
       )}
     </div>
   );
