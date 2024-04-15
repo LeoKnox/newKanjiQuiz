@@ -36,7 +36,13 @@ export default Home = () => {
       >
         All Kanji
       </button>
-      <button onClick={() => setComponentPage(<Quiz myKanji={myKanji} />)}>
+      <button
+        onClick={() =>
+          setComponentPage(
+            <Quiz myKanji={myKanji} disabled={myKanji.length >= 10} />
+          )
+        }
+      >
         Quiz
       </button>
       <button
