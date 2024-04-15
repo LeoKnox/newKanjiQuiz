@@ -15,9 +15,15 @@ export default DashBoard = ({ myKanji }) => {
                 <th>{key}</th>
               ))}
             </tr>
-            {myKanji.map((kanji) => (
-              <p>{kanji.word}</p>
-            ))}
+              {myKanji.map((kanji) => (
+                <tr>
+                  <td>{kanji.id}</td>
+                  <td>{kanji.word}</td>
+                  <td>{kanji.meaning}</td>
+                  <td>{kanji.kanji}</td>
+                </tr>
+              ))}
+
           </table>
         </>
       )}
