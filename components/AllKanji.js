@@ -4,7 +4,6 @@ import { kanjidb } from "./Kanjidb.js";
 export default AllKanji = ({ myKanji, setMyKanji }) => {
   var checkedKanji = myKanji.map((kanji) => kanji.id);
   useEffect(() => {
-    console.log(checkedKanji);
     for (let i of checkedKanji) {
       if (document.getElementById(i)) {
         document.getElementById(i).checked = true;
@@ -19,6 +18,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       checkedKanji = [...checkedKanji, kanjidb[kanjiId]];
     } else {
       checkedKanji = checkedKanji.filter((item) => item !== kanjiId.id);
+      console.log(`checked kanji ${checkedKanji}`);
     }
     setMyKanji(...myKanji, checkedKanji);
   };
