@@ -39,7 +39,10 @@ export default Home = () => {
       <button
         onClick={() =>
           setComponentPage(
-            <Quiz myKanji={myKanji} disabled={myKanji.length >= 10} />
+            <Quiz
+              myKanji={myKanji}
+              disabled={myKanji.length >= 10 ? false : true}
+            />
           )
         }
       >
