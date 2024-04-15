@@ -10,23 +10,20 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       }
     }
   }, []);
-  console.log(`checked kanji ${checkedKanji}`);
+
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
     if (checked) {
       checkedKanji = [...checkedKanji, kanjidb[kanjiId]];
     } else {
-      console.log("red");
-      console.log(checkedKanji.filter((item) => item.id !== kanjiId));
       checkedKanji = checkedKanji.filter((item) => item.id != kanjiId);
-      console.log(`checked kanji ${checkedKanji}`);
     }
     setMyKanji(...myKanji, checkedKanji);
   };
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
-    console.log(`all kanji %{json.stringify(allKanji)}`);
+
     let tempKanji = [];
     for (let i of allKanji) {
       tempKanji.push(kanjidb[i]);
