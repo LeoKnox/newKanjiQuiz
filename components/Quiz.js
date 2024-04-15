@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-export default Quiz = ({ kanjiData }) => {
+export default Quiz = ({ myKanji }) => {
   const [quizes, setQuizes] = useState([]);
   const [answer, setAnswer] = useState("");
   const [border, setBorder] = useState("black");
   useEffect(() => {
-    const shuffled = kanjiData.sort(() => 0.5 - Math.random());
+    const shuffled = myKanji.sort(() => 0.5 - Math.random());
     console.log(`shuffled ${JSON.stringify(shuffled)}`);
     let selected = shuffled.slice(0, 5);
     let randAnswer = selected[Math.floor(Math.random() * selected.length)];
