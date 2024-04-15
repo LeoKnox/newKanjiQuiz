@@ -17,6 +17,8 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     if (checked) {
       checkedKanji = [...checkedKanji, kanjidb[kanjiId]];
     } else {
+      console.log("red");
+      console.log(checkedKanji.filter((item) => item !== kanjiId.id));
       checkedKanji = checkedKanji.filter((item) => item !== kanjiId.id);
       console.log(`checked kanji ${checkedKanji}`);
     }
