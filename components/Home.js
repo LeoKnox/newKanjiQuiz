@@ -44,6 +44,7 @@ export default Home = () => {
       >
         Practice
       </button>
+      <p>10 Kanji needed for quiz you have {myKanji.length}</p>
       <p>{componentPage}</p>
     </div>
   );
