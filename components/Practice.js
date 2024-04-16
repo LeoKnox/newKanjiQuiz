@@ -1,97 +1,54 @@
-import { useState, useEffect } from "react";
-import DrawKanji from "./DrawKanji.js";
-import { kanjidb } from "./Kanjidb.js";
-// kanji is 80x89 pixels
+import { useState } from "react";
+import { KanjiContext } from "../KanjiContext.js";
+import DashBoard from "./DashBoard.js";
+import AllKanji from "./AllKanji.js";
+import Quiz from "./Quiz.js";
+import Practice from "./Practice.js";
 
-export default Practice = ({ myKanji = [] }) => {
-  console.log(`practice mykanji ${myKanji.length}`);
-  const [practiceKanji, setPracticeKanji] = useState(
-    myKanji.length < 1 ? kanjidb : myKanji
+export default Home = () => {
+  const [myKanji, setMyKanji] = useState([]);
+  console.log(`a: ${myKanji}`);
+  const [componentPage, setComponentPage] = useState(
+    <DashBoard myKanji={myKanji} />
   );
-  const [position, setPosition] = useState(0);
-  const [randomSet, setRandomSet] = useState(false);
-  const [time, setTime] = useState(3000);
-  const [clean, setClean] = useState(false);
-  const timer = setTimeout(() => {
-    setClean(!clean);
-    resume();
-  }, time);
-  useEffect(() => {
-    return () => clearInterval(timer);
-  }, [position, randomSet, time]);
-  const resume = (e) => {
-    if (position >= practiceKanji.length - 1) {
-      setPosition(0);
-    } else {
-      setPosition(position + 1);
-    }
-  };
-  const pause = (e) => {
-    if (e.target.checked) {
-      clearTimeout(timer);
-    } else {
-      resume();
-    }
-  };
-  const advance = (e) => {
-    if (e.target.name === "next") {
-      if (position >= practiceKanji.length - 1) {
-        setPosition(0);
-      } else {
-        setPosition(position + 1);
-      }
-    }
-    if (e.target.name === "previous") {
-      if (position <= 0) {
-        setPosition(practiceKanji.length - 1);
-      } else {
-        setPosition(position - 1);
-      }
-    }
-  };
+
+  const kanjiData = [
+    { word: "ichi", meaning: "one", kanji: "一" },
+    { word: "ni", meaning: "two", kanji: "二" },
+    { word: "san", meaning: "three", kanji: "三" },
+    { word: "yon", meaning: "four", kanji: "四" },
+    { word: "go", meaning: "five", kanji: "五" },
+    { word: "roku", meaning: "six", kanji: "六" },
+  ];
+  console.log(myKanji);
+
   return (
     <div>
-      <h2>Practice Kanji</h2>
-      <input type="checkbox" onChange={pause} />
-      <label>pause</label>
-
-      <input
-        type="radio"
-        checked={time === 3000}
-        onChange={() => setTime(3000)}
-      />
-      <label>3s</label>
-      <input
-        type="radio"
-        checked={time === 6000}
-        onChange={() => setTime(6000)}
-      />
-      <label>6s</label>
-      <input
-        type="radio"
-        checked={time === 9000}
-        onChange={() => setTime(9000)}
-      />
-      <label>9s</label>
-      <p>
-        <progress
-          id="progress"
-          value={position + 1}
-          max={practiceKanji.length}
-          style={{ visibility: randomSet ? "hidden" : "visible" }}
-        ></progress>
-      </p>
-      <button onClick={() => setRandomSet(!randomSet)}>
-        {randomSet ? "Random" : "Ordered"}
+      <button onClick={() => setComponentPage(<DashBoard myKanji={myKanji} />)}>
+        Home
       </button>
-      <div>
-        <label style={{ fontSize: "5em" }}>
-          {practiceKanji[position]["kanji"]}
-        </label>
-        <div>
-          <DrawKanji advance={advance} randomSet={randomSet} clean={clean} />
-        </div>
-      </div>
+      <button
+        onClick={() =>
+          setComponentPage(
+            <AllKanji myKanji={myKanji} setMyKanji={setMyKanji} />
+          )
+        }
+      >
+        All Kanji
+      </button>
+      <button
+        disabled={myKanji.length < 10}
+        onClick={() => setComponentPage(<Quiz myKanji={myKanji} />)}
+      >
+        Quiz
+      </button>
+      <button onClick={() => setComponentPage(<Practice myKanji={myKanji} />)}>
+        Practice
+      </button>
+      <p hidden={myKanji.length >= 10}>
+        10 Kanji needed for quiz you have {myKanji.length}
+      </p>
+      <p>{componentPage}</p>
     </div>
   );
 };
