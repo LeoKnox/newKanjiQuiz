@@ -43,7 +43,7 @@ export default Home = () => {
         Quiz
       </button>
       <button
-        onClick={() => setComponentPage(<Practice kanjiData={kanjiData} />)}
+        onClick={() => setComponentPage(<Practice kanjiData={myKanji} />)}
       >
         Practice
       </button>
