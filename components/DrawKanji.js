@@ -4,6 +4,7 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
   const [stroke, setStroke] = useState([]);
   const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
+  let guide = "四";
   useEffect(() => {
     clearPractice();
   }, [clean]);
@@ -76,6 +77,7 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
+        <foreignObject>{guide}</foreignObject>
         {drawLine}
         {drawKanji()}
       </svg>
