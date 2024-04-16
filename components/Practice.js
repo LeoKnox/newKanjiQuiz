@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import DrawKanji from "./DrawKanji.js";
+import { kanjidb } from "./Kanjidb.js";
 // kanji is 80x89 pixels
 
-export default Practice = ({ kanjiData }) => {
-  const [practiceKanji, setPracticeKanji] = useState(kanjiData);
+export default Practice = ({ myKanji = [] }) => {
+  const [practiceKanji, setPracticeKanji] = useState(
+    myKanji.length < 1 ? kanjidb : myKanji
+  );
   const [position, setPosition] = useState(0);
   const [randomSet, setRandomSet] = useState(false);
   const [time, setTime] = useState(3000);
