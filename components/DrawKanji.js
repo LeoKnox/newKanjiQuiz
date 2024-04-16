@@ -77,7 +77,9 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        <text>{guide}</text>
+        <text textAnchor="middle" x="10" y="10">
+          {guide}
+        </text>
         {drawLine}
         {drawKanji()}
       </svg>
