@@ -90,7 +90,9 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
           x="30px"
           y="20px"
           font-size="5em"
-          userSelect="none"
+          MozUserSelect="none"
+          WebkitUserSelect="none"
+          msUserSelect="none"
         >
           {guide}
         </text>
