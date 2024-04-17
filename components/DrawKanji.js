@@ -41,7 +41,13 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
     let testData = [];
     kanji.map((x) => {
       testData.push(
-        <polyline points={x} stroke="black" strokeWidth="4" fill="none" />
+        <polyline
+          points={x}
+          stroke="black"
+          strokeWidth="4"
+          fill="none"
+          zIndex="50"
+        />
       );
     });
     return testData;
@@ -53,6 +59,7 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
       stroke="black"
       strokeWidth="4"
       fill="none"
+      zIndex="50"
     />
   );
 
@@ -77,18 +84,16 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        <div>
-          <text
-            alignment-baseline="middle"
-            text-anchor="middle"
-            x="30px"
-            y="20px"
-            font-size="5em"
-            disable
-          >
-            {guide}
-          </text>
-        </div>
+        <text
+          alignment-baseline="middle"
+          text-anchor="middle"
+          x="30px"
+          y="20px"
+          font-size="5em"
+          disable
+        >
+          {guide}
+        </text>
         {drawLine}
         {drawKanji()}
       </svg>
