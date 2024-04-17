@@ -90,7 +90,7 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
           x="30px"
           y="20px"
           font-size="5em"
-          disable
+          userSelect="none"
         >
           {guide}
         </text>
