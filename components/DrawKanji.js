@@ -78,7 +78,16 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
         style={{ border: "1px solid black" }}
       >
         <label style={{ fontSize: "50em", x: "10px", x: "10px" }}>
-          {guide}
+          <text
+            color="white"
+            alignment-baseline="middle"
+            text-anchor="middle"
+            x="8"
+            y="2"
+            font-size="50"
+          >
+            {guide}
+          </text>
         </label>
         {drawLine}
         {drawKanji()}
