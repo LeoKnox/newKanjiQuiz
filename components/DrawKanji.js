@@ -18,7 +18,8 @@ export default Practice = ({ myKanji }) => {
     resume();
   }, time);
   useEffect(() => {
-    if (!document.getElementById("pauseKanji")) {
+    console.log("o" + document.getElementById("pauseKanji"));
+    if (!document.getElementById("pauseKanji").checked) {
       return () => clearInterval(timer);
     }
   }, [position, randomSet, time]);
