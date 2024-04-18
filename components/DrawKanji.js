@@ -89,6 +89,8 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
           patternUnits="userSpaceOnUse"
           width="1200"
           height="600"
+          x="50px"
+          y="50px"
         >
           {guide}
         </pattern>
