@@ -84,15 +84,8 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
         hanging="100px"
         style={{ border: "1px solid black" }}
       >
-        <pattern
-          id="pattern"
-          patternUnits="userSpaceOnUse"
-          width="1200"
-          height="600"
-          x="50px"
-          y="50px"
-        >
-          {guide}
+        <pattern id="pattern" width="80" height="60" x="50px" y="50px">
+          {guide}t
         </pattern>
         {drawLine}
         {drawKanji()}
