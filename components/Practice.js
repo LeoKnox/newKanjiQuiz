@@ -19,9 +19,10 @@ export default Practice = ({ myKanji }) => {
   }, time);
   useEffect(() => {
     console.log("o" + document.getElementById("pauseKanji"));
+    if (document.getElementById("pauseKanji").checked) {
+      pause();
+    }
     return () => clearInterval(timer);
-
-    pause();
   }, [position, randomSet, time]);
   const resume = (e) => {
     if (position >= practiceKanji.length - 1) {
@@ -31,7 +32,7 @@ export default Practice = ({ myKanji }) => {
     }
   };
   const pause = (e) => {
-    if (e.target.checked) {
+    if (document.getElementById("pauseKanji").checked) {
       clearTimeout(timer);
     } else {
       resume();
@@ -51,9 +52,6 @@ export default Practice = ({ myKanji }) => {
       } else {
         setPosition(position - 1);
       }
-    }
-    if (document.getElementById("pauseKanji").checked) {
-      timer.pause();
     }
   };
   return (
