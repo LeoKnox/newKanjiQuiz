@@ -52,6 +52,9 @@ export default Practice = ({ myKanji }) => {
         setPosition(position - 1);
       }
     }
+    if (document.getElementById("pauseKanji").checked) {
+      timer.pause();
+    }
   };
   return (
     <div>
