@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 
-export default DrawKanji = ({ advance, randomSet, clean }) => {
+export default DrawKanji = ({ guide, advance, randomSet, clean }) => {
   const [stroke, setStroke] = useState([]);
   const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
-  //console.log("x" + document.getElementById("svg").getBoundingClientRect());
-  let guide = "四";
+
   useEffect(() => {
     clearPractice();
   }, [clean]);
