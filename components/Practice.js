@@ -9,7 +9,7 @@ export default Practice = ({ myKanji }) => {
   );
   const [position, setPosition] = useState(0);
   const [randomSet, setRandomSet] = useState(false);
-  const [time, setTime] = useState(3000);
+  const [time, setTime] = useState(6000);
   const [clean, setClean] = useState(false);
   const timer = setTimeout(() => {
     setClean(!clean);
