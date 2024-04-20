@@ -74,6 +74,10 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
       >
         Previous
       </button>
+      <div style={{ position: "absolute" }}>
+        the quick brown fox jumps over the lazy dog. Hajimete desu ka. dozo
+        yuroshiku
+      </div>
       <svg
         id="svg"
         key="svg"
@@ -82,7 +86,7 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
         onMouseUp={handleMouseUp}
         width="109px"
         hanging="100px"
-        style={{ border: "1px solid black" }}
+        style={{ border: "1px solid black", position: "relative" }}
       >
         {drawLine}
         {drawKanji()}
