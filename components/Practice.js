@@ -4,8 +4,6 @@ import { kanjidb } from "./Kanjidb.js";
 // kanji is 80x89 pixels
 
 export default Practice = ({ myKanji }) => {
-  console.log(`practice mykanji ${myKanji.length}`);
-  console.log(JSON.stringify(myKanji));
   const [practiceKanji, setPracticeKanji] = useState(
     myKanji.length < 1 ? kanjidb : myKanji
   );
@@ -18,7 +16,6 @@ export default Practice = ({ myKanji }) => {
     resume();
   }, time);
   useEffect(() => {
-    console.log("o" + document.getElementById("pauseKanji"));
     if (document.getElementById("pauseKanji").checked) {
       pause();
     }
