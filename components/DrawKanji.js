@@ -70,16 +70,17 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
   return (
     <>
       <p>{`${JSON.stringify(stroke[1])}`}</p>
-      <button
-        className="moveKanji"
-        onClick={advance}
-        name="previous"
-        disabled={randomSet}
-        style={{ float: "left" }}
-      >
-        Previous
-      </button>
       <div style={{ display: "flex", justifyContent: "center" }}>
+        <button
+          className="moveKanji"
+          onClick={advance}
+          name="previous"
+          disabled={randomSet}
+          style={{ float: "left" }}
+        >
+          Previous
+        </button>
+
         <div
           style={{
             position: "absolute",
@@ -107,10 +108,15 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
           {drawLine}
           {drawKanji()}
         </svg>
+        <button
+          className="moveKanji"
+          onClick={advance}
+          name="next"
+          style={{ float: "right" }}
+        >
+          Next
+        </button>
       </div>
-      <button className="moveKanji" onClick={advance} name="next">
-        Next
-      </button>
       <p>
         <button onClick={clearPractice}>Clear</button>
       </p>
