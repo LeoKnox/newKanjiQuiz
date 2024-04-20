@@ -91,7 +91,12 @@ export default Practice = ({ myKanji }) => {
           {practiceKanji[position]["kanji"]}
         </label>
         <div>
-          <DrawKanji advance={advance} randomSet={randomSet} clean={clean} />
+          <DrawKanji
+            guide={practiceKanji[position]["kanji"]}
+            advance={advance}
+            randomSet={randomSet}
+            clean={clean}
+          />
         </div>
       </div>
     </div>
