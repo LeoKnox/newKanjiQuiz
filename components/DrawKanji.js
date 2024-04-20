@@ -78,36 +78,38 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
       >
         Previous
       </button>
-      <div
-        style={{
-          position: "absolute",
-          width: "80px",
-          x: "0",
-          y: "0",
-        }}
-      >
-        the quick brown fox jumps over the lazy dog. Hajimete desu ka. dozo
-        yuroshiku
+      <div>
+        <div
+          style={{
+            position: "absolute",
+            width: "80px",
+            x: "0",
+            y: "0",
+          }}
+        >
+          the quick brown fox jumps over the lazy dog. Hajimete desu ka. dozo
+          yuroshiku
+        </div>
+        <svg
+          id="svg"
+          key="svg"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          width="109px"
+          hanging="100px"
+          style={{
+            border: "1px solid black",
+            position: "relative",
+            zIndex: "10",
+            x: "0",
+            y: "0",
+          }}
+        >
+          {drawLine}
+          {drawKanji()}
+        </svg>
       </div>
-      <svg
-        id="svg"
-        key="svg"
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        width="109px"
-        hanging="100px"
-        style={{
-          border: "1px solid black",
-          position: "relative",
-          zIndex: "10",
-          x: "0",
-          y: "0",
-        }}
-      >
-        {drawLine}
-        {drawKanji()}
-      </svg>
       <button className="moveKanji" onClick={advance} name="next">
         Next
       </button>
