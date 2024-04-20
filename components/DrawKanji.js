@@ -8,6 +8,9 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
   useEffect(() => {
     clearPractice();
   }, [clean]);
+  useEffect(() => {
+    console.log("2nd");
+  }, []);
 
   const clearPractice = () => {
     setKanji([]);
@@ -78,7 +81,7 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
         style={{
           position: "absolute",
           width: "80px",
-          x: document.querySelector("#svg").getBoundingClientRect().top,
+          x: document.getElementById("svg").getBoundingClientRect().left,
         }}
       >
         the quick brown fox jumps over the lazy dog. Hajimete desu ka. dozo
