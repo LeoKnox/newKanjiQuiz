@@ -74,7 +74,7 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
       >
         Previous
       </button>
-      <div style={{ position: "absolute" }}>
+      <div style={{ position: "absolute", width: "80px" }}>
         the quick brown fox jumps over the lazy dog. Hajimete desu ka. dozo
         yuroshiku
       </div>
