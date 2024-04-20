@@ -75,6 +75,7 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
         onClick={advance}
         name="previous"
         disabled={randomSet}
+        style={{ float: "left",  }}
       >
         Previous
       </button>
@@ -84,10 +85,12 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
             display: "flex",
             position: "absolute",
             width: "80px",
+            color: "lightgray",
+            fontSize: "5em",
+            margin: "0 auto",
           }}
         >
-          the quick brown fox jumps over the lazy dog. Hajimete desu ka. dozo
-          yuroshiku
+          {guide}
         </div>
         <svg
           id="svg"
@@ -102,6 +105,7 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
             border: "1px solid black",
             position: "relative",
             zIndex: "10",
+            margin: "0 auto",
           }}
         >
           {drawLine}
