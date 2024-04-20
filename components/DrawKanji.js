@@ -82,6 +82,8 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
         style={{
           position: "absolute",
           width: "80px",
+          x: "0",
+          y: "0",
         }}
       >
         the quick brown fox jumps over the lazy dog. Hajimete desu ka. dozo
@@ -99,6 +101,8 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
           border: "1px solid black",
           position: "relative",
           zIndex: "10",
+          x: "0",
+          y: "0",
         }}
       >
         {drawLine}
