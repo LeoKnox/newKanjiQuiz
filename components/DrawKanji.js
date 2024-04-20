@@ -75,19 +75,17 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
         onClick={advance}
         name="previous"
         disabled={randomSet}
-        style={{ float: "left",  }}
+        style={{ float: "left" }}
       >
         Previous
       </button>
-      <div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <div
           style={{
-            display: "flex",
             position: "absolute",
             width: "80px",
             color: "lightgray",
             fontSize: "5em",
-            margin: "0 auto",
           }}
         >
           {guide}
@@ -101,11 +99,9 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
           width="109px"
           hanging="100px"
           style={{
-            display: "flex",
             border: "1px solid black",
             position: "relative",
             zIndex: "10",
-            margin: "0 auto",
           }}
         >
           {drawLine}
