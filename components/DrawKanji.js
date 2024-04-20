@@ -74,7 +74,13 @@ export default DrawKanji = ({ advance, randomSet, clean }) => {
       >
         Previous
       </button>
-      <div style={{ position: "absolute", width: "80px" }}>
+      <div
+        style={{
+          position: "absolute",
+          width: "80px",
+          x: document.querySelector("#svg").getBoundingClientRect().top,
+        }}
+      >
         the quick brown fox jumps over the lazy dog. Hajimete desu ka. dozo
         yuroshiku
       </div>
