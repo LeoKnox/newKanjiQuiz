@@ -1,105 +1,131 @@
 import { useState, useEffect } from "react";
-import DrawKanji from "./DrawKanji.js";
-import { kanjidb } from "./Kanjidb.js";
-// kanji is 80x89 pixels
 
-export default Practice = ({ myKanji }) => {
-  const [practiceKanji, setPracticeKanji] = useState(
-    myKanji.length < 1 ? kanjidb : myKanji
-  );
-  const [position, setPosition] = useState(0);
-  const [randomSet, setRandomSet] = useState(false);
-  const [time, setTime] = useState(6000);
-  const [clean, setClean] = useState(false);
-  const timer = setTimeout(() => {
-    setClean(!clean);
-    resume();
-  }, time);
+export default DrawKanji = ({
+  guide,
+  advance,
+  randomSet,
+  clean,
+  showGuide,
+}) => {
+  const [stroke, setStroke] = useState([]);
+  const [kanji, setKanji] = useState([]);
+  const [draw, setDraw] = useState(false);
+
   useEffect(() => {
-    if (document.getElementById("pauseKanji").checked) {
-      pause();
-    }
-    return () => clearInterval(timer);
-  }, [position, randomSet, time]);
-  const resume = (e) => {
-    if (position >= practiceKanji.length - 1) {
-      setPosition(0);
-    } else {
-      setPosition(position + 1);
-    }
-  };
-  const pause = (e) => {
-    if (document.getElementById("pauseKanji").checked) {
-      clearTimeout(timer);
-    } else {
-      resume();
-    }
-  };
-  const advance = (e) => {
-    if (e.target.name === "next") {
-      if (position >= practiceKanji.length - 1) {
-        setPosition(0);
-      } else {
-        setPosition(position + 1);
-      }
-    }
-    if (e.target.name === "previous") {
-      if (position <= 0) {
-        setPosition(practiceKanji.length - 1);
-      } else {
-        setPosition(position - 1);
-      }
-    }
-  };
-  return (
-    <div>
-      <h2>Practice Kanji</h2>
-      <input id="pauseKanji" type="checkbox" onChange={pause} />
-      <label>pause</label>
+    clearPractice();
+  }, [clean]);
+  useEffect(() => {
+    console.log("2nd");
+  }, []);
 
-      <input
-        type="radio"
-        checked={time === 3000}
-        onChange={() => setTime(3000)}
-      />
-      <label>3s</label>
-      <input
-        type="radio"
-        checked={time === 6000}
-        onChange={() => setTime(6000)}
-      />
-      <label>6s</label>
-      <input
-        type="radio"
-        checked={time === 9000}
-        onChange={() => setTime(9000)}
-      />
-      <label>9s</label>
-      <p>
-        <progress
-          id="progress"
-          value={position + 1}
-          max={practiceKanji.length}
-          style={{ visibility: randomSet ? "hidden" : "visible" }}
-        ></progress>
-      </p>
-      <button onClick={() => setRandomSet(!randomSet)}>
-        {randomSet ? "Random" : "Ordered"}
-      </button>
-      <button>Guide</button>
-      <div>
-        <label style={{ fontSize: "5em" }}>
-          {practiceKanji[position]["kanji"]}
-        </label>
-        <div>
-          <DrawKanji
-            guide={practiceKanji[position]["kanji"]}
-            advance={advance}
-            randomSet={randomSet}
-            clean={clean}
-          />
+  const clearPractice = () => {
+    setKanji([]);
+  };
+
+  const handleMouseDown = (event) => {
+    const { clientX, clientY } = event;
+    setDraw(true);
+  };
+
+  const handleMouseMove = (event) => {
+    const { clientX, clientY } = event;
+    let offset = document.getElementById("svg").getBoundingClientRect();
+    if (draw) {
+      setStroke([
+        ...stroke,
+        { x: clientX - offset.left, y: clientY - offset.top },
+      ]);
+    }
+  };
+
+  const handleMouseUp = () => {
+    let newKanji = kanji;
+    let line = stroke.map((point) => `${point.x},${point.y}`).join(" ");
+    newKanji.push([line]);
+    setKanji(newKanji);
+    setStroke([]);
+    setDraw(false);
+  };
+  const drawKanji = () => {
+    let testData = [];
+    kanji.map((x) => {
+      testData.push(
+        <polyline
+          points={x}
+          stroke="black"
+          strokeWidth="4"
+          fill="none"
+          zIndex="50"
+        />
+      );
+    });
+    return testData;
+  };
+
+  const drawLine = (
+    <polyline
+      points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
+      stroke="black"
+      strokeWidth="4"
+      fill="none"
+      zIndex="50"
+    />
+  );
+
+  return (
+    <>
+      <p>{`${JSON.stringify(stroke[1])}`}</p>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <button
+          className="moveKanji"
+          onClick={advance}
+          name="previous"
+          disabled={randomSet}
+          style={{ float: "left" }}
+        >
+          Previous
+        </button>
+
+        <div
+          style={{
+            position: "absolute",
+            width: "80px",
+            color: "lightgray",
+            fontSize: "5em",
+            hidden: showGuide,
+          }}
+        >
+          {guide}
         </div>
+        <svg
+          id="svg"
+          key="svg"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          width="109px"
+          hanging="100px"
+          style={{
+            border: "1px solid black",
+            position: "relative",
+            zIndex: "10",
+          }}
+        >
+          {drawLine}
+          {drawKanji()}
+        </svg>
+        <button
+          className="moveKanji"
+          onClick={advance}
+          name="next"
+          style={{ float: "right" }}
+        >
+          Next
+        </button>
       </div>
-    </div>
+      <p>
+        <button onClick={clearPractice}>Clear</button>
+      </p>
+    </>
   );
 };
