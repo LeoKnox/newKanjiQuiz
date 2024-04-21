@@ -11,6 +11,7 @@ export default Practice = ({ myKanji }) => {
   const [randomSet, setRandomSet] = useState(false);
   const [time, setTime] = useState(6000);
   const [clean, setClean] = useState(false);
+  const [showGuide, setShowGuide] = useState(false);
   const timer = setTimeout(() => {
     setClean(!clean);
     resume();
@@ -97,6 +98,7 @@ export default Practice = ({ myKanji }) => {
             advance={advance}
             randomSet={randomSet}
             clean={clean}
+            showGuide={showGuide}
           />
         </div>
       </div>
