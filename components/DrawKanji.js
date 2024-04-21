@@ -10,13 +10,11 @@ export default DrawKanji = ({
   const [stroke, setStroke] = useState([]);
   const [kanji, setKanji] = useState([]);
   const [draw, setDraw] = useState(false);
+  console.log(`show guide ${showGuide}`);
 
   useEffect(() => {
     clearPractice();
   }, [clean]);
-  useEffect(() => {
-    console.log("2nd");
-  }, []);
 
   const clearPractice = () => {
     setKanji([]);
@@ -92,7 +90,7 @@ export default DrawKanji = ({
             width: "80px",
             color: "lightgray",
             fontSize: "5em",
-            hidden: showGuide,
+            display: showGuide,
           }}
         >
           {guide}
