@@ -90,7 +90,7 @@ export default DrawKanji = ({
             width: "80px",
             color: "lightgray",
             fontSize: "5em",
-            display: showGuide,
+            visibility: showGuide ? "visible" : "hidden",
           }}
         >
           {guide}
