@@ -97,7 +97,8 @@ export default Practice = ({ myKanji }) => {
             .filter((key) => key !== "id")
             .map((key) => (
               <label>
-                {key}:{practiceKanji[position][key]}{" "}
+                {key}:{practiceKanji[position][key]}
+                &nbsp;&nbsp;&nbsp;&nbsp;
               </label>
             ))}
         </p>
