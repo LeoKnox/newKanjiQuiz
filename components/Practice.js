@@ -93,11 +93,13 @@ export default Practice = ({ myKanji }) => {
           {practiceKanji[position]["kanji"]}
         </label>
         <p>
-          {Object.keys(practiceKanji[position]).map((key) => (
-            <label>
-              {key}:{practiceKanji[position][key]}{" "}
-            </label>
-          ))}
+          {Object.keys(practiceKanji[position])
+            .filter((key) => key !== "id")
+            .map((key) => (
+              <label>
+                {key}:{practiceKanji[position][key]}{" "}
+              </label>
+            ))}
         </p>
         <div>
           <DrawKanji
