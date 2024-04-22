@@ -94,7 +94,9 @@ export default Practice = ({ myKanji }) => {
         </label>
         <p>
           {Object.keys(practiceKanji[position]).map((key) => (
-            <label>{key}</label>
+            <label>
+              {key}:{practiceKanji[position][key]}{" "}
+            </label>
           ))}
         </p>
         <div>
