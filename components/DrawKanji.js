@@ -72,7 +72,6 @@ export default DrawKanji = ({
 
   return (
     <>
-      <p>{`${JSON.stringify(stroke[1])}`}</p>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <button
           className="moveKanji"
