@@ -92,7 +92,11 @@ export default Practice = ({ myKanji }) => {
         <label style={{ fontSize: "5em" }}>
           {practiceKanji[position]["kanji"]}
         </label>
-        <p>{practiceKanji[position]["meaning"]}</p>
+        <p>
+          {Object.keys(practiceKanji[position]).map((key) => (
+            <label>{key}</label>
+          ))}
+        </p>
         <div>
           <DrawKanji
             guide={practiceKanji[position]["kanji"]}
