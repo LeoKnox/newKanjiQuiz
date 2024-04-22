@@ -87,7 +87,7 @@ export default Practice = ({ myKanji }) => {
       <button onClick={() => setRandomSet(!randomSet)}>
         {randomSet ? "Random" : "Ordered"}
       </button>
-      <button onClick={() => setShowGuide(!showGuide)}>Guide</button>
+      <button onClick={() => setShowGuide(!showGuide)}>Guided</button>
       <div>
         <label style={{ fontSize: "5em" }}>
           {practiceKanji[position]["kanji"]}
