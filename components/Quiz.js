@@ -23,6 +23,7 @@ export default Quiz = ({ myKanji }) => {
     <div>
       <h2>Kanji Quiz Page</h2>
       <p>answer {answer}</p>
+      <p hidden={true}>p</p>
       {quizes.map((kanji) => (
         <p>
           <button
