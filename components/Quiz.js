@@ -9,10 +9,10 @@ export default Quiz = ({ myKanji }) => {
     let selected = shuffled.slice(0, 5);
     let randAnswer = selected[Math.floor(Math.random() * selected.length)];
     setQuizes(selected);
-    setAnswer(randAnswer.meaning);
+    setAnswer(randAnswer);
   }, [answer]);
   const confirmAnswer = (selection) => {
-    if (selection === answer) {
+    if (selection === answer.meaning) {
       setAnswer("correct");
       setBorder("black");
     } else {
@@ -22,7 +22,7 @@ export default Quiz = ({ myKanji }) => {
   return (
     <div>
       <h2>Kanji Quiz Page</h2>
-      <p>answer {answer}</p>
+      <p>answer {answer.meaning}</p>
       <p hidden={true}>p</p>
       {quizes.map((kanji) => (
         <p>
