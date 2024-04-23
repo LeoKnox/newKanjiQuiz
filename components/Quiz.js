@@ -3,6 +3,7 @@ export default Quiz = ({ myKanji }) => {
   const [quizes, setQuizes] = useState([]);
   const [answer, setAnswer] = useState("");
   const [border, setBorder] = useState("black");
+  const [showMeaning, setShowMeaning] = useState(true);
   useEffect(() => {
     const shuffled = myKanji.sort(() => 0.5 - Math.random());
     console.log(`shuffled ${JSON.stringify(shuffled)}`);
@@ -22,8 +23,8 @@ export default Quiz = ({ myKanji }) => {
   return (
     <div>
       <h2>Kanji Quiz Page</h2>
-      <p>answer {answer.meaning}</p>
-      <p hidden={true}>p</p>
+      <p>answer {showMeaning ? answer.meaning : answer.word}</p>
+      <button onClick={() => setShowMeaning(!showMeaning)}>Meaning</button>
       {quizes.map((kanji) => (
         <p>
           <button
