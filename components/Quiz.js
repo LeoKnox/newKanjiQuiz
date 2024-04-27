@@ -13,12 +13,14 @@ export default Quiz = ({ myKanji }) => {
     setQuizes(selected);
     setAnswer(randAnswer);
   }, [answer]);
-  const confirmAnswer = (selection) => {
+  const confirmAnswer = (selection, index) => {
     if (selection === answer.meaning) {
       setAnswer("correct");
       setBorder("black");
     } else {
-      setBorder("red");
+      //alert(selection);
+      //setBorder("red");
+      setCorrect(correct.map((value, i) => (i === index ? "red" : "black")));
     }
   };
   return (
@@ -32,7 +34,7 @@ export default Quiz = ({ myKanji }) => {
         <p>
           <button
             style={{ borderColor: correct[index] }}
-            onClick={() => confirmAnswer(kanji.meaning)}
+            onClick={() => confirmAnswer(kanji.meaning, index)}
           >
             {kanji.kanji}
           </button>
