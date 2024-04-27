@@ -17,6 +17,7 @@ export default Quiz = ({ myKanji }) => {
     if (selection === answer.meaning) {
       setAnswer("correct");
       setBorder("black");
+      setCorrect(Array(6).fill("black"));
     } else {
       //alert(selection);
       //setBorder("red");
