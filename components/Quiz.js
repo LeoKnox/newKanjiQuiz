@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 export default Quiz = ({ myKanji }) => {
   const [quizes, setQuizes] = useState([]);
   const [answer, setAnswer] = useState("");
-  const [border, setBorder] = useState("green");
+  const [border, setBorder] = useState("red");
   const [showMeaning, setShowMeaning] = useState(false);
   const [correct, setCorrect] = useState(Array(6).fill("black"));
   useEffect(() => {
