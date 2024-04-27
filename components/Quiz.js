@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 export default Quiz = ({ myKanji }) => {
   const [quizes, setQuizes] = useState([]);
   const [answer, setAnswer] = useState("");
-  const [border, setBorder] = useState("red");
   const [showMeaning, setShowMeaning] = useState(false);
   const [correct, setCorrect] = useState(Array(6).fill("black"));
   useEffect(() => {
@@ -16,12 +15,13 @@ export default Quiz = ({ myKanji }) => {
   const confirmAnswer = (selection, index) => {
     if (selection === answer.meaning) {
       setAnswer("correct");
-      setBorder("black");
       setCorrect(Array(6).fill("black"));
     } else {
-      //alert(selection);
-      //setBorder("red");
-      setCorrect(correct.map((value, i) => (i === index ? "red" : "black")));
+      setCorrect(
+        correct.map((value, i) =>
+          i === index || value === "red" ? "red" : "black"
+        )
+      );
     }
   };
   return (
