@@ -20,11 +20,7 @@ export default Quiz = ({ myKanji }) => {
         setCorrect(Array(6).fill("black"));
       }, 2000);
     } else {
-      setCorrect(
-        correct.map((value, i) =>
-          i === index || value === "red" ? "red" : "black"
-        )
-      );
+      setCorrect(correct.map((value, i) => (i === index ? "red" : value)));
     }
   };
   return (
