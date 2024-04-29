@@ -25,5 +25,6 @@ button {
 }
 
 quizButton {
-  width: 30%;
+  font-size: 2em;
+  flex: 1 1 30%;
 }
