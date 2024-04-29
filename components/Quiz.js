@@ -31,16 +31,18 @@ export default Quiz = ({ myKanji }) => {
       <button onClick={() => setShowMeaning(!showMeaning)}>
         {showMeaning ? "Word" : "Meaning"}
       </button>
-      {quizes.map((kanji, index) => (
-        <p>
-          <button
-            style={{ borderColor: correct[index] }}
-            onClick={() => confirmAnswer(kanji.meaning, index)}
-          >
-            {kanji.kanji}
-          </button>
-        </p>
-      ))}
+      <div style={{ display: "flex", columnCount: 3 }}>
+        {quizes.map((kanji, index) => (
+          <>
+            <button
+              style={{ borderColor: correct[index] }}
+              onClick={() => confirmAnswer(kanji.meaning, index)}
+            >
+              {kanji.kanji}
+            </button>
+          </>
+        ))}
+      </div>
     </div>
   );
 };
