@@ -1,0 +1,25 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: #ffffee;
+}
+
+button {
+  padding: 0.5em;
+  background-color: tan;
+  color: black;
+}
+
+.moveKanji {
+  height: 152px;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+.quizLayout {
+  display: flex;
+  column-count: 3;
+}
