@@ -7,7 +7,7 @@ export default Quiz = ({ myKanji }) => {
   useEffect(() => {
     const shuffled = myKanji.sort(() => 0.5 - Math.random());
     console.log(`shuffled ${JSON.stringify(shuffled)}`);
-    let selected = shuffled.slice(0, 5);
+    let selected = shuffled.slice(0, 6);
     let randAnswer = selected[Math.floor(Math.random() * selected.length)];
     setQuizes(selected);
     setAnswer(randAnswer);
