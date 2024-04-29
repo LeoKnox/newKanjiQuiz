@@ -21,5 +21,9 @@ button {
 
 .quizLayout {
   display: flex;
-  column-count: 3;
+  flex-wrap: wrap;
+}
+
+quizButton {
+  width: 30%;
 }
