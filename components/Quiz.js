@@ -12,14 +12,17 @@ export default Quiz = ({ myKanji }) => {
     setQuizes(selected);
     setAnswer(randAnswer);
   }, [answer]);
+  const changeMeaning = () => {
+    setShowMeaning(!showMeaning);
+  };
   const confirmAnswer = (selection, index) => {
     if (selection === answer.meaning) {
       setCorrect(correct.map((value, i) => (i === index ? "green" : value)));
-      setShowMeaning(!showMeaning);
+      changeMeaning();
       setTimeout(() => {
+        changeMeaning();
         setAnswer("correct");
         setCorrect(Array(6).fill("black"));
-        setShowMeaning(!showMeaning);
       }, 2000);
     } else {
       setCorrect(correct.map((value, i) => (i === index ? "red" : value)));
