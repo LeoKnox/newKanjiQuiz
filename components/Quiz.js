@@ -25,7 +25,7 @@ export default Quiz = ({ myKanji }) => {
     }
   };
   return (
-    <div>
+    <div style={{ justifyContent: "center" }}>
       <h2>Kanji Quiz Page</h2>
       <p>answer {showMeaning ? answer.meaning : answer.word}</p>
       <button onClick={() => setShowMeaning(!showMeaning)}>
