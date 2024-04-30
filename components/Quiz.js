@@ -23,6 +23,7 @@ export default Quiz = ({ myKanji }) => {
     } else {
       setCorrect(correct.map((value, i) => (i === index ? "red" : value)));
     }
+    setShowMeaning(!showMeaning);
   };
   return (
     <div style={{ justifyContent: "center" }}>
