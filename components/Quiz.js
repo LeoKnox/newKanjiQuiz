@@ -20,7 +20,7 @@ export default Quiz = ({ myKanji }) => {
       setCorrect(correct.map((value, i) => (i === index ? "green" : value)));
       changeMeaning();
       setTimeout(() => {
-        changeMeaning();
+        setShowMeaning(!showMeaning);
         setAnswer("correct");
         setCorrect(Array(6).fill("black"));
       }, 2000);
