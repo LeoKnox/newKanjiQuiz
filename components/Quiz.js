@@ -19,8 +19,8 @@ export default Quiz = ({ myKanji }) => {
       setTimeout(() => {
         setAnswer("correct");
         setCorrect(Array(6).fill("black"));
+        setShowMeaning(!showMeaning);
       }, 2000);
-      setShowMeaning(!showMeaning);
     } else {
       setCorrect(correct.map((value, i) => (i === index ? "red" : value)));
     }
