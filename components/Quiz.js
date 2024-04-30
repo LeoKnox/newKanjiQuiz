@@ -20,10 +20,10 @@ export default Quiz = ({ myKanji }) => {
         setAnswer("correct");
         setCorrect(Array(6).fill("black"));
       }, 2000);
+      setShowMeaning(!showMeaning);
     } else {
       setCorrect(correct.map((value, i) => (i === index ? "red" : value)));
     }
-    setShowMeaning(!showMeaning);
   };
   return (
     <div style={{ justifyContent: "center" }}>
