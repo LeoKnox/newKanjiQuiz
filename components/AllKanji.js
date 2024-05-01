@@ -45,7 +45,6 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   return (
     <div>
       <h2>All Kanji Page</h2>
-      <p>{checkedKanji}</p>
       <button onClick={selectAllKanji}>Select All</button>
       <button onClick={deselectAllKanji}>Deselect All</button>
       {kanjidb.map((kanji, index) => (
