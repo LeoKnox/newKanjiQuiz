@@ -47,16 +47,22 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       <h2>All Kanji Page</h2>
       <button onClick={selectAllKanji}>Select All</button>
       <button onClick={deselectAllKanji}>Deselect All</button>
-      {kanjidb.map((kanji, index) => (
-        <p>
-          <input
-            type="checkbox"
-            id={kanji.id}
-            onChange={(e) => updateKanji(e)}
-          />
-          {kanji.id} - {kanji.word}:{kanji.meaning}:{kanji.kanji}
-        </p>
-      ))}
+      <table>
+        {kanjidb.map((kanji, index) => (
+          <tr>
+            <td>
+              <input
+                type="checkbox"
+                id={kanji.id}
+                onChange={(e) => updateKanji(e)}
+              />
+            </td>
+            <td>{kanji.word}</td>
+            <td>{kanji.meaning}</td>
+            <td>{kanji.kanji}</td>
+          </tr>
+        ))}
+      </table>
     </div>
   );
 };
