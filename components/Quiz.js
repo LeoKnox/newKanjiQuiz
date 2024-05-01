@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 export default Quiz = ({ myKanji }) => {
   const [quizes, setQuizes] = useState([]);
   const [answer, setAnswer] = useState("");
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showMeaning, setShowMeaning] = useState(true);
   const [correct, setCorrect] = useState(Array(6).fill("black"));
   useEffect(() => {
     const shuffled = myKanji.sort(() => 0.5 - Math.random());
@@ -11,16 +11,13 @@ export default Quiz = ({ myKanji }) => {
     let randAnswer = selected[Math.floor(Math.random() * selected.length)];
     setQuizes(selected);
     setAnswer(randAnswer);
-  }, [answer]);
-  const changeMeaning = () => {
     setShowMeaning(!showMeaning);
-  };
+  }, [answer]);
   const confirmAnswer = (selection, index) => {
     if (selection === answer.meaning) {
       setCorrect(correct.map((value, i) => (i === index ? "green" : value)));
-      changeMeaning();
+      setShowMeaning(!showMeaning);
       setTimeout(() => {
-        setShowMeaning(!showMeaning);
         setAnswer("correct");
         setCorrect(Array(6).fill("black"));
       }, 2000);
