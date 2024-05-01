@@ -14,7 +14,7 @@ export default DrawKanji = ({
 
   useEffect(() => {
     clearPractice();
-  }, [clean]);
+  }, [clean, advance]);
 
   const clearPractice = () => {
     setKanji([]);
