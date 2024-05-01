@@ -35,3 +35,7 @@ button {
   flex-basis: auto;
   margin: 10%;
 }
+
+.allKanji > table {
+  margin: 3em auto;
+}
