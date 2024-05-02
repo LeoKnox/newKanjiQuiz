@@ -39,3 +39,7 @@ button {
 .allKanji > table {
   margin: 3em auto;
 }
+
+.dashboardStyle > table {
+  margin: auto;
+}
