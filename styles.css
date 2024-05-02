@@ -43,3 +43,7 @@ button {
 .dashboardStyle > table {
   margin: auto;
 }
+
+.progressBar {
+  background-color: blue;
+}
