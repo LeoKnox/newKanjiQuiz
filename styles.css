@@ -45,5 +45,19 @@ button {
 }
 
 .progressBar {
+  border-radius: 8px;
+}
+progress::-webkit-progress-bar {
+  background-color: red;
+  color: blue;
+}
+
+// set the progress value color
+progressBar::-webkit-progress-value {
   background-color: blue;
+}
+
+//set the progress value color for FF
+progressBar::-moz-progress-bar {
+  background-color: green;
 }
