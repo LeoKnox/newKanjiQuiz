@@ -44,11 +44,13 @@ button {
   margin: auto;
 }
 
-.progressBar {
-  border-radius: 8px;
+progress {
+  color: lightblue;
+  border-radius: 3px;
 }
 progress::-webkit-progress-bar {
-  background-color: red;
+  background-color: darkblue;
+  border-radius: 1em;
   color: blue;
 }
 
