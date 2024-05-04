@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 export default Quiz = ({ myKanji }) => {
   const [quizes, setQuizes] = useState([]);
   const [answer, setAnswer] = useState("");
-  const [showMeaning, setShowMeaning] = useState(true);
+  const [showMeaning, setShowMeaning] = useState(false);
   const [correct, setCorrect] = useState(Array(6).fill("black"));
   useEffect(() => {
     const shuffled = myKanji.sort(() => 0.5 - Math.random());
@@ -28,7 +28,9 @@ export default Quiz = ({ myKanji }) => {
     <div style={{ justifyContent: "center" }}>
       <h2>Kanji Quiz Page</h2>
       <p>answer {answer.word}</p>
-      <p style={{ visibility: showMeaning ? "hidden" : "visible" }}>t</p>
+      <p style={{ visibility: showMeaning ? "hidden" : "visible" }}>
+        {answer.meaning}
+      </p>
       <button onClick={() => setShowMeaning(!showMeaning)}>
         {showMeaning ? "Word" : "Meaning"}
       </button>
