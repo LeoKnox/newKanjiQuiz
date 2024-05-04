@@ -15,10 +15,11 @@ export default Quiz = ({ myKanji }) => {
   const confirmAnswer = (selection, index) => {
     if (selection === answer.meaning) {
       setCorrect(correct.map((value, i) => (i === index ? "green" : value)));
-      setShowMeaning(!showMeaning);
+
       setTimeout(() => {
         setAnswer("correct");
         setCorrect(Array(6).fill("black"));
+        setShowMeaning(!showMeaning);
       }, 2000);
     } else {
       setCorrect(correct.map((value, i) => (i === index ? "red" : value)));
