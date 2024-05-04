@@ -28,7 +28,7 @@ export default Quiz = ({ myKanji }) => {
     <div style={{ justifyContent: "center" }}>
       <h2>Kanji Quiz Page</h2>
       <p>answer {answer.word}</p>
-      <p display={showMeaning ? "hidden" : ""}>t</p>
+      <p style={{ visibility: showMeaning ? "hidden" : "visible" }}>t</p>
       <button onClick={() => setShowMeaning(!showMeaning)}>
         {showMeaning ? "Word" : "Meaning"}
       </button>
