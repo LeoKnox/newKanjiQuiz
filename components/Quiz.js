@@ -15,11 +15,11 @@ export default Quiz = ({ myKanji }) => {
   const confirmAnswer = (selection, index) => {
     if (selection === answer.meaning) {
       setCorrect(correct.map((value, i) => (i === index ? "green" : value)));
-
+      document.getElementById("hiddenAnswer").style.visibility = "visible";
       setTimeout(() => {
         setAnswer("correct");
         setCorrect(Array(6).fill("black"));
-        setShowMeaning(!showMeaning);
+        document.getElementById("hiddenAnswer").style.visibility = "hidden";
       }, 2000);
     } else {
       setCorrect(correct.map((value, i) => (i === index ? "red" : value)));
@@ -29,7 +29,7 @@ export default Quiz = ({ myKanji }) => {
     <div style={{ justifyContent: "center" }}>
       <h2>Kanji Quiz Page</h2>
       <p>answer {answer.word}</p>
-      <p style={{ visibility: showMeaning ? "hidden" : "visible" }}>
+      <p id="hiddenAnswer" style={{ visibility: "hidden" }}>
         {answer.meaning}
       </p>
       <button onClick={() => setShowMeaning(!showMeaning)}>
