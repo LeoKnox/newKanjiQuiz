@@ -11,18 +11,21 @@ export default DashBoard = ({ myKanji }) => {
         <div className="dashboardStyle">
           <table>
             <tr>
-              {Object.keys(myKanji[0]).map((key) => (
-                <th>{key}</th>
-              ))}
+              {Object.keys(myKanji[0])
+                .filter((key) => key !== "id")
+                .map((key) => (
+                  <th>{key}</th>
+                ))}
             </tr>
-            {myKanji.map((kanji) => (
-              <tr>
-                <td>{kanji.id}</td>
-                <td>{kanji.word}</td>
-                <td>{kanji.meaning}</td>
-                <td>{kanji.kanji}</td>
-              </tr>
-            ))}
+            {myKanji
+              .map((kanji) => (
+                <tr>
+                  <td>{kanji.id}</td>
+                  <td>{kanji.word}</td>
+                  <td>{kanji.meaning}</td>
+                  <td>{kanji.kanji}</td>
+                </tr>
+              ))}
           </table>
         </div>
       )}
