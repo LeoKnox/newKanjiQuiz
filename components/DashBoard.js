@@ -9,7 +9,7 @@ export default DashBoard = ({ myKanji }) => {
         <p>No Kanji</p>
       ) : (
         <div className="dashboardStyle">
-          <table>
+          <table className="dashboardTable">
             <tr>
               {Object.keys(myKanji[0])
                 .filter((key) => key !== "id")
