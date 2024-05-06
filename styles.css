@@ -14,7 +14,7 @@ button {
 }
 
 .dashboardTable {
-  background-color: goldenrod;
+  background-color: tan;
   color: navy;
 }
 
@@ -31,7 +31,7 @@ th {
 }
 
 .quizLayout {
-  border: 4px solid goldenrod;
+  border: 4px solid tan;
   display: flex;
   flex-wrap: wrap;
   width: 40%;
