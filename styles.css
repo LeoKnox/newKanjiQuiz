@@ -22,6 +22,7 @@ button {
 th {
   border: 2px solid blue;
   padding: 0.3em;
+  margin: 0px;
 }
 
 .moveKanji {
@@ -64,12 +65,10 @@ progress::-webkit-progress-bar {
   color: blue;
 }
 
-// set the progress value color
 progressBar::-webkit-progress-value {
   background-color: blue;
 }
 
-//set the progress value color for FF
 progressBar::-moz-progress-bar {
-  background-color: green;
+  background-color: orange;
 }
