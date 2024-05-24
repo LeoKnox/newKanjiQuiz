@@ -27,7 +27,10 @@ export default Quiz = ({ myKanji }) => {
   return (
     <div style={{ justifyContent: "center" }}>
       <h2>Kanji Quiz Page</h2>
-      <p>answer {showMeaning ? answer.word : answer.meaning}</p>
+      <p>
+        answer{" "}
+        {showMeaning ? answer.onYomi + "-" + answer.kunYomi : answer.meaning}
+      </p>
       <p id="hiddenAnswer" style={{ visibility: "hidden" }}>
         {showMeaning ? answer.meaning : answer.word}
       </p>
