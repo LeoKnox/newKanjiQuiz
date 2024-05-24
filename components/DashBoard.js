@@ -1,7 +1,5 @@
 export default DashBoard = ({ myKanji }) => {
-  kanjiTable = () => {
-    return <p>red</p>;
-  };
+  console.log(myKanji);
   return (
     <div>
       <h2>Home Page</h2>
@@ -19,9 +17,11 @@ export default DashBoard = ({ myKanji }) => {
             </tr>
             {myKanji.map((kanji) => (
               <tr>
-                <td>{kanji.word}</td>
-                <td>{kanji.meaning}</td>
                 <td>{kanji.kanji}</td>
+                <td>{kanji.meaning}</td>
+                <td>{kanji.onYomi}</td>
+                <td>{kanji.kunYomi}</td>
+                <td>{kanji.grade}</td>
               </tr>
             ))}
           </table>
