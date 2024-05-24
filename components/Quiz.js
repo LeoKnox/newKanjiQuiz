@@ -32,7 +32,7 @@ export default Quiz = ({ myKanji }) => {
         {showMeaning ? answer.onYomi + "-" + answer.kunYomi : answer.meaning}
       </p>
       <p id="hiddenAnswer" style={{ visibility: "hidden" }}>
-        {showMeaning ? answer.onYomi + "-" + answer.kunYomi : answer.word}
+        {showMeaning ? answer.meaning : answer.onYomi + "-" + answer.kunYomi}
       </p>
       <button onClick={() => setShowMeaning(!showMeaning)}>
         {showMeaning ? "Word" : "Meaning"}
