@@ -17,5 +17,12 @@ export const kanjidb = [
     kanji: "大",
   },
 
-  { Kanji: "", Meaning: "", onyomi: "", kunYomi: "", grade:1 },
+  {
+    id: 12,
+    kanji: "見",
+    meaning: "see",
+    onYomi: "ken, gen",
+    kunYomi: "mi-ru",
+    grade: 1,
+  },
 ];
