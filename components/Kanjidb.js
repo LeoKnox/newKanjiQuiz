@@ -1,5 +1,5 @@
 export const kanjidb = [
-  { id: 0, word: "ichi", meaning: "one", kanji: "一" },
+  { id: 0, word: "ichi, itsu", meaning: "one", kanji: "一" },
   { id: 1, word: "ni", meaning: "two", kanji: "二" },
   { id: 2, word: "san", meaning: "three", kanji: "三" },
   { id: 3, word: "yon", meaning: "four", kanji: "四" },
@@ -16,4 +16,6 @@ export const kanjidb = [
     meaning: "big, large, great",
     kanji: "大",
   },
+
+  { Kanji: "", Meaning: "", onyomi: "", kunYomi: "", grade:1 },
 ];
