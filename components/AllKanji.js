@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { kanjidb } from "./Kanjidb.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
-  var checkedKanji = myKanji.map((kanji) => kanji.id);
+  var checkedKanji = myKanji.map((kanji) => kanji.id - 1);
   useEffect(() => {
     for (let i of checkedKanji) {
       if (document.getElementById(i)) {
