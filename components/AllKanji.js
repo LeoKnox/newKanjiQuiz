@@ -22,7 +22,13 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     }
     //setMyKanji(...myKanji, checkedKanji);
     console.log(`checked kanji ${JSON.stringify(checkedKanji)}`);
-    setMyKanji(checkedKanji);
+    let newList = [];
+    for (i = 1; i <= myKanji.length; i++) {
+      if (document.getElementById(i).checked == true) {
+        newList.push(myKanji[i]);
+      }
+    }
+    setMyKanji(newList);
   };
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
