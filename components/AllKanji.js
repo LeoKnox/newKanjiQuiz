@@ -21,6 +21,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       checkedKanji = checkedKanji.filter((item) => item.id - 1 != kanjiId);
     }
     //setMyKanji(...myKanji, checkedKanji);
+    console.log(`checked kanji ${JSON.stringify(checkedKanji)}`);
     setMyKanji(checkedKanji);
   };
   const selectAllKanji = () => {
