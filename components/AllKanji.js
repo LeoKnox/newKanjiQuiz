@@ -20,7 +20,8 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     } else {
       checkedKanji = checkedKanji.filter((item) => item.id != kanjiId);
     }
-    setMyKanji(...myKanji, checkedKanji);
+    //setMyKanji(...myKanji, checkedKanji);
+    setMyKanji(checkedKanji);
   };
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
