@@ -25,7 +25,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     console.log(`checked kanji ${JSON.stringify(checkedKanji)}`);
     let newList = [];
     for (i = 0; i < myKanji.length; i++) {
-      if (document.getElementById(i).checked == true) {
+      if (document.getElementById(i).checked) {
         newList.push(kanjidb[i]);
         //alert("red");
       }
