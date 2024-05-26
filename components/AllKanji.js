@@ -26,10 +26,12 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     let newList = [];
     for (i = 0; i < myKanji.length; i++) {
       if (document.getElementById(i).checked == true) {
-        newList.push(myKanji[i]);
+        newList.push(kanjidb[i]);
         //alert("red");
       }
     }
+    console.log("new list");
+    console.log(JSON.stringify(newList));
     setMyKanji(checkedKanji);
   };
   const selectAllKanji = () => {
