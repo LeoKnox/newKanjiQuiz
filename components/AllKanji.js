@@ -17,6 +17,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     if (checked) {
       //checkedKanji = [...checkedKanji, kanjidb[kanjiId]];
       checkedKanji.push(kanjidb[kanjiId]);
+      console.log(`${kanjiId} = ${checkedKanji[0].id}`);
     } else {
       //checkedKanji = myKanji.filter((item) => item.id == kanjiId);
 
@@ -24,7 +25,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       alert(checkedKanji.findIndex((x) => x.id === kanjiId));
     }
     console.log(`checked kanji ${JSON.stringify(checkedKanji)}`);
-    console.log(kanjiId);
+    console.log(`${kanjiId} = ${checkedKanji[0].id}`);
     setMyKanji(checkedKanji);
   };
   const selectAllKanji = () => {
