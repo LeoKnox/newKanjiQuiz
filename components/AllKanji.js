@@ -18,22 +18,12 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       //checkedKanji = [...checkedKanji, kanjidb[kanjiId]];
       checkedKanji.push(kanjidb[kanjiId]);
     } else {
-      checkedKanji = myKanji.filter((item) => item - 1 === kanjiId);
+      checkedKanji = myKanji.filter((item) => item.id - 1 === kanjiId);
       myKanji.filter((item) => console.log(item.id));
       console.log(`checked kanji ${JSON.stringify(checkedKanji)}`);
       alert("ao");
     }
-    //setMyKanji(...myKanji, checkedKanji);
 
-    let newList = [];
-    for (i = 0; i < myKanji.length; i++) {
-      if (document.getElementById(i).checked) {
-        newList.push(kanjidb[i]);
-        //alert("red");
-      }
-    }
-    console.log("new list");
-    console.log(JSON.stringify(newList));
     setMyKanji(checkedKanji);
   };
   const selectAllKanji = () => {
