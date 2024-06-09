@@ -17,12 +17,12 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     if (checked) {
       //checkedKanji = [...checkedKanji, kanjidb[kanjiId]];
       checkedKanji.push(kanjidb[kanjiId]);
-      console.log(`${kanjiId} = ${checkedKanji[0].id}`);
+      //console.log(`${kanjiId} = ${checkedKanji[0].id}`);
     } else {
       checkedKanji = myKanji.filter((item) => item.id == kanjiId);
 
       console.log(`checked kanji ${JSON.stringify(checkedKanji)}`);
-      alert(checkedKanji.findIndex((x) => x.id == 3));
+      alert(checkedKanji.findIndex((x) => x.id == 3) + ":" + kanjiId);
     }
     console.log(`checked kanji ${JSON.stringify(checkedKanji)}`);
     console.log(`${kanjiId} = ${checkedKanji[0]}`);
@@ -54,7 +54,11 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       <h2>All Kanji Page</h2>
       <button onClick={selectAllKanji}>Select All</button>
       <button onClick={deselectAllKanji}>Deselect All</button>
-      <p>{checkedKanji}</p>
+      <p>
+        {checkedKanji.map((a) => (
+          <label>{a}-</label>
+        ))}
+      </p>
       <table>
         {kanjidb.map((kanji, index) => (
           <tr>
