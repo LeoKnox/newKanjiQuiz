@@ -72,6 +72,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
             </td>
             <td>{kanji.meaning}</td>
             <td>{kanji.kanji}</td>
+            <td>{kanji.id}</td>
           </tr>
         ))}
       </table>
