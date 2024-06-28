@@ -79,6 +79,7 @@ export default Practice = ({ myKanji }) => {
       <p>
         <progress
           id="progress"
+          className="progressBar"
           value={position + 1}
           max={practiceKanji.length}
           style={{ visibility: randomSet ? "hidden" : "visible" }}
@@ -89,7 +90,7 @@ export default Practice = ({ myKanji }) => {
       </button>
       <button onClick={() => setShowGuide(!showGuide)}>Guided</button>
       <div>
-        <label style={{ fontSize: "5em" }}>
+        <label className="practiceKanji" style={{ fontSize: "5em" }}>
           {practiceKanji[position]["kanji"]}
         </label>
         <p>
