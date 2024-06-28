@@ -46,7 +46,7 @@ th {
   font-size: 2em;
   flex-basis: auto;
   margin: 10%;
-  box-shadow: 0.2em 0.2em rgb(163, 138, 105);
+  box-shadow: 0.2em 0.2em 0.1em 0.1em rgb(163, 138, 105);
 }
 
 .allKanji > table {
@@ -72,4 +72,10 @@ progressBar::-webkit-progress-value {
 
 progressBar::-moz-progress-bar {
   background-color: orange;
+}
+
+.practiceKanji {
+  padding: .1em;
+  border: 2px solid black;
+  background-color: tan;
 }
