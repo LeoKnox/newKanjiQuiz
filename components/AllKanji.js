@@ -16,7 +16,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     const kanjiId = e.target.id;
     let newList = myKanji;
     for (let j = 0; j < myKanji; j++) {
-      if (myKanji == kanjid) {
+      if (myKanji[j] == kanjid) {
         newList.slice(i, 1);
       }
     }
