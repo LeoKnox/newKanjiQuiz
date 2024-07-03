@@ -23,6 +23,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     console.log(`checked kanji ${JSON.stringify(checkedKanji)}`);
     console.log(`${kanjiId} = ${checkedKanji[0]}`);
     //setMyKanji(checkedKanji);
+    alert(JSON.stringify(newList));
     setMyKanji(newList);
   };
   const selectAllKanji = () => {
