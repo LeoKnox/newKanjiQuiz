@@ -33,7 +33,7 @@ th {
 
 .quizLayout {
   border: 4px solid tan;
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   width: 40%;
   align-items: center;
