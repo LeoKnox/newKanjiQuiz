@@ -15,7 +15,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
     let newList = myKanji;
-    alert(JSON.stringify(newList));
+    alert(JSON.stringify(checkedKanji));
     for (let j = 0; j < myKanji; j++) {
       if (newList[j] == kanjid) {
         console.log("j" + j);
