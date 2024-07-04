@@ -14,13 +14,13 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
-    var checkedKanji = myKanji.map((kanji) => kanji.id - 1);
-    alert(`checked kanji ${checkedKanji}`);
-    for (let i of checkedKanji) {
-      if (document.getElementById(i)) {
-        document.getElementById(i).checked = true;
+    var checkedKanji = [];
+    for (i = 0; i < myKanji.length; i++) {
+      if (document.GetElementById("" + i).checked === true) {
+        checkedKanji.push(i);
       }
     }
+    alert(`checked kanji ${checkedKanji}`);
   };
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
