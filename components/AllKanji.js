@@ -16,9 +16,9 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
-    //let x = myKanji;
-    let x = myKanji.filter((y) => y);
-    alert(JSON.stringify(x));
+    let x = myKanji;
+    setMyKanji(x.map((y) => y.id));
+    alert(JSON.stringify(myKanji));
   };
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
