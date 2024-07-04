@@ -3,6 +3,7 @@ import { kanjidb } from "./Kanjidb.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
   var checkedKanji = myKanji.map((kanji) => kanji.id - 1);
+  console.log(`ffirst checked kanji ${JSON.stringify(myKanji)}`);
   useEffect(() => {
     for (let i of checkedKanji) {
       if (document.getElementById(i)) {
@@ -14,13 +15,8 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
-    var checkedKanji = [];
-    for (i = 0; i < myKanji.length; i++) {
-      if (document.GetElementById("" + i).checked === true) {
-        checkedKanji.push(i);
-      }
-    }
-    alert(`checked kanji ${checkedKanji}`);
+
+    //setMyKanji(myKanji.pop());
   };
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
@@ -49,6 +45,9 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       <button onClick={selectAllKanji}>Select All</button>
       <button onClick={deselectAllKanji}>Deselect All</button>
       <p>
+        {myKanji.map((k) => (
+          <label>{k.kanji} :</label>
+        ))}
         {checkedKanji.map((a) => (
           <label>{a}-</label>
         ))}
