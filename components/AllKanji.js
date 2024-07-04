@@ -14,19 +14,13 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
-    let newList = myKanji;
-    alert(JSON.stringify(checkedKanji));
-    for (let j = 0; j < myKanji; j++) {
-      if (newList[j] == kanjid) {
-        console.log("j" + j);
-        newList.slice(i, 1);
+    var checkedKanji = myKanji.map((kanji) => kanji.id - 1);
+    alert(`checked kanji ${checkedKanji}`);
+    for (let i of checkedKanji) {
+      if (document.getElementById(i)) {
+        document.getElementById(i).checked = true;
       }
     }
-    console.log(`checked kanji ${JSON.stringify(checkedKanji)}`);
-    console.log(`${kanjiId} = ${checkedKanji[0]}`);
-    //setMyKanji(checkedKanji);
-
-    setMyKanji(newList);
   };
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
