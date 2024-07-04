@@ -15,8 +15,9 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
     let newList = myKanji;
+    alert(JSON.stringify(newList));
     for (let j = 0; j < myKanji; j++) {
-      if (myKanji[j] == kanjid) {
+      if (newList[j] == kanjid) {
         console.log("j" + j);
         newList.slice(i, 1);
       }
@@ -24,7 +25,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     console.log(`checked kanji ${JSON.stringify(checkedKanji)}`);
     console.log(`${kanjiId} = ${checkedKanji[0]}`);
     //setMyKanji(checkedKanji);
-    alert(JSON.stringify(newList));
+
     setMyKanji(newList);
   };
   const selectAllKanji = () => {
