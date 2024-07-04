@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { kanjidb } from "./Kanjidb.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
-  var checkedKanji = myKanji.map((kanji) => kanji.id - 1);
+  //var checkedKanji = myKanji.map((kanji) => kanji.id - 1);
+  var checkedKanji = myKanji;
   console.log(`ffirst checked kanji ${JSON.stringify(myKanji)}`);
   useEffect(() => {
     for (let i of checkedKanji) {
@@ -31,7 +32,6 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     setMyKanji(tempKanji);
   };
   const deselectAllKanji = () => {
-    let allKanji = [...Array(kanjidb.length + 1).keys()];
     setMyKanji([]);
     for (let i = 0; i <= kanjidb.length; i++) {
       if (document.getElementById(i)) {
@@ -45,11 +45,8 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       <button onClick={selectAllKanji}>Select All</button>
       <button onClick={deselectAllKanji}>Deselect All</button>
       <p>
-        {myKanji.map((k) => (
-          <label>{k.kanji} :</label>
-        ))}
         {checkedKanji.map((a) => (
-          <label>{a}-</label>
+          <label>{a.id}-</label>
         ))}
       </p>
       <table>
