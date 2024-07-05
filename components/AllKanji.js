@@ -16,12 +16,12 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
-
-    setMyKanji(checkedKanji.filter((y) => y.id !== kanjiId));
+    let x = checkedKanji.filter((y) => y.id !== kanjiId);
+    checkedKanji = x;
+    setMyKanji(x);
   };
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
-
     let tempKanji = [];
     for (let i of allKanji) {
       tempKanji.push(kanjidb[i]);
@@ -30,7 +30,6 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       }
     }
     checkedKanji = tempKanji;
-    console.log(`all kanji ${checkedKanji}`);
     setMyKanji(tempKanji);
   };
   const deselectAllKanji = () => {
