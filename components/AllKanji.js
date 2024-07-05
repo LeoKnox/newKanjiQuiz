@@ -11,13 +11,13 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
         document.getElementById(i).checked = true;
       }
     }
-  }, []);
+  }, [checkedKanji]);
 
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
     let x = myKanji;
-    setMyKanji(x.map((y) => y.id));
+    setMyKanji(checkedKanji.filter((y) => y.id == kanjiId));
     alert(JSON.stringify(myKanji));
   };
   const selectAllKanji = () => {
