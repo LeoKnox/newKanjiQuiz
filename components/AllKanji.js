@@ -7,19 +7,17 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   useEffect(() => {
     for (let i of checkedKanji) {
-      if (document.getElementById(i)) {
-        document.getElementById(i).checked = true;
+      if (document.getElementById(i.id)) {
+        document.getElementById(i.id).checked = true;
       }
     }
-    console.log(`ffirst checked kanji ${JSON.stringify(myKanji)}`);
-  }, [checkedKanji]);
+  }, []);
 
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
 
     setMyKanji(checkedKanji.filter((y) => y.id !== kanjiId));
-
   };
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
