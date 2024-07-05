@@ -19,17 +19,11 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     console.log("update");
     console.log(`check ${JSON.stringify(checkedKanji)}`);
     console.log(`my ${JSON.stringify(myKanji)}`);
-    let x = [];
-    for (let z = 0; z < checkedKanji.lengh; z++) {
-      console.log(z);
-      if (checkedKanji[z].id != kanjiId) {
-        x.push(checkedKanji[kanjiId]);
-      } else {
-        x.push({ id: z });
-      }
-    }
-    //let x = checkedKanji.filter((y) => y["id"].includes(kanjiId));
+    let x = [...checkedKanji];
     console.log(`x ${JSON.stringify(x)}`);
+    x = x.filter((y) => y.id == kanjiId);
+    //let x = checkedKanji.filter((y) => y["id"].includes(kanjiId));
+    console.log(`xx ${JSON.stringify(x)}`);
     checkedKanji = x;
     setMyKanji(x);
   };
