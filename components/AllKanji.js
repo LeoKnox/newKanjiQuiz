@@ -18,10 +18,10 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     const kanjiId = e.target.id;
     let x = [];
     console.log("Run");
-    for (let z = 0; z < myKanji.lengh; z++) {
+    for (let z = 0; z < checkedKanji.lengh; z++) {
       console.log(z);
-      if (myKanji[z].id != kanjiId) {
-        x.push(myKanji[z]);
+      if (checkedKanji[z].id != kanjiId) {
+        x.push(checkKanji[z]);
         console.log(myKanji[z]);
         console.log(`x ${JSON.stringify(x)}`);
       } else {
