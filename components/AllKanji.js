@@ -23,10 +23,13 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     for (let z = 0; z < checkedKanji.lengh; z++) {
       console.log(z);
       if (checkedKanji[z].id != kanjiId) {
-        x.push(checkKanji[z]);
+        x.push(checkedKanji[kanjiId]);
+      } else {
+        x.push({ id: z });
       }
     }
     //let x = checkedKanji.filter((y) => y["id"].includes(kanjiId));
+    console.log(`x ${JSON.stringify(x)}`);
     checkedKanji = x;
     setMyKanji(x);
   };
@@ -40,7 +43,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       }
     }
     checkedKanji = tempKanji;
-    setMyKanji(checkedKanji);
+    setMyKanji(tempKanji);
   };
   const deselectAllKanji = () => {
     setMyKanji([]);
