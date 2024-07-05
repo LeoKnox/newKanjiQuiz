@@ -16,21 +16,17 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = e.target.id;
+    console.log("update");
+    console.log(`check ${JSON.stringify(checkedKanji)}`);
+    console.log(`my ${JSON.stringify(myKanji)}`);
     let x = [];
-    console.log("Run");
     for (let z = 0; z < checkedKanji.lengh; z++) {
       console.log(z);
       if (checkedKanji[z].id != kanjiId) {
         x.push(checkKanji[z]);
-        console.log(myKanji[z]);
-        console.log(`x ${JSON.stringify(x)}`);
-      } else {
-        console.log(myKanji[z]);
-        console.log(`x ${JSON.stringify(x)}`);
       }
     }
     //let x = checkedKanji.filter((y) => y["id"].includes(kanjiId));
-    console.log(`x ${JSON.stringify(x)}`);
     checkedKanji = x;
     setMyKanji(x);
   };
@@ -44,7 +40,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       }
     }
     checkedKanji = tempKanji;
-    setMyKanji(tempKanji);
+    setMyKanji(checkedKanji);
   };
   const deselectAllKanji = () => {
     setMyKanji([]);
