@@ -4,13 +4,14 @@ import { kanjidb } from "./Kanjidb.js";
 export default AllKanji = ({ myKanji, setMyKanji }) => {
   //var checkedKanji = myKanji.map((kanji) => kanji.id - 1);
   var checkedKanji = myKanji;
-  console.log(`ffirst checked kanji ${JSON.stringify(myKanji)}`);
+
   useEffect(() => {
     for (let i of checkedKanji) {
       if (document.getElementById(i)) {
         document.getElementById(i).checked = true;
       }
     }
+    console.log(`ffirst checked kanji ${JSON.stringify(myKanji)}`);
   }, [checkedKanji]);
 
   const updateKanji = (e) => {
@@ -30,6 +31,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
         document.getElementById(i).checked = true;
       }
     }
+    checkedKanji = tempKanji;
     setMyKanji(tempKanji);
   };
   const deselectAllKanji = () => {
