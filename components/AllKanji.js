@@ -5,7 +5,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   var checkedKanji = myKanji;
 
   useEffect(() => {
-    for (let i of checkedKanji) {
+    for (let i of myKanji) {
       if (document.getElementById(i.id)) {
         document.getElementById(i.id - 1).checked = true;
       }
