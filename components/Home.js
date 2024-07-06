@@ -11,15 +11,6 @@ export default Home = () => {
     <DashBoard myKanji={myKanji} />
   );
 
-  const kanjiData = [
-    { word: "ichi", meaning: "one", kanji: "一" },
-    { word: "ni", meaning: "two", kanji: "二" },
-    { word: "san", meaning: "three", kanji: "三" },
-    { word: "yon", meaning: "four", kanji: "四" },
-    { word: "go", meaning: "five", kanji: "五" },
-    { word: "roku", meaning: "six", kanji: "六" },
-  ];
-
   return (
     <div>
       <button onClick={() => setComponentPage(<DashBoard myKanji={myKanji} />)}>
