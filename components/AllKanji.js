@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { kanjidb } from "./Kanjidb.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
-  //var checkedKanji = myKanji.map((kanji) => kanji.id - 1);
   var checkedKanji = myKanji;
 
   useEffect(() => {
@@ -16,14 +15,9 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const updateKanji = (e) => {
     const checked = e.target.checked;
     const kanjiId = 1 + parseInt(e.target.id);
-    console.log("update");
-    console.log(`check ${JSON.stringify(checkedKanji)}`);
-    console.log(` ${kanjiId}`);
     let x = [...checkedKanji];
     console.log(`x ${JSON.stringify(x)}`);
     x = x.filter((y) => y.id != kanjiId);
-    //let x = checkedKanji.filter((y) => y["id"].includes(kanjiId));
-    console.log(`xx ${JSON.stringify(x)}`);
     checkedKanji = x;
     setMyKanji(x);
   };
