@@ -15,10 +15,10 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   const updateKanji = (e) => {
     const checked = e.target.checked;
-    const kanjiId = e.target.id;
+    const kanjiId = 1 + e.target.id;
     console.log("update");
     console.log(`check ${JSON.stringify(checkedKanji)}`);
-    console.log(`my ${JSON.stringify(myKanji)}`);
+    console.log(` ${kanjiId}`);
     let x = [...checkedKanji];
     console.log(`x ${JSON.stringify(x)}`);
     x = x.filter((y) => y.id != kanjiId);
