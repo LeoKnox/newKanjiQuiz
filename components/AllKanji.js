@@ -14,10 +14,10 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   const updateKanji = (e) => {
     const checked = e.target.checked;
-    const kanjiId = 1 + parseInt(e.target.id);
+    let kanjiId = 1 + parseInt(e.target.id);
     let x = [...checkedKanji];
     if (checked) {
-      x.push(kanjidb[parseInt(kanjiId)]);
+      x.push(kanjidb[kanjiId]);
     }
     x = x.filter((y) => y.id != kanjiId);
     checkedKanji = x;
