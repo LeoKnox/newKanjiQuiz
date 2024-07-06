@@ -19,8 +19,9 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     let x = [...checkedKanji];
     if (checked) {
       x.push(kanjidb[absId]);
+    } else {
+      x = x.filter((y) => y.id != kanjiId);
     }
-    x = x.filter((y) => y.id != kanjiId);
     checkedKanji = x;
     setMyKanji(x);
   };
