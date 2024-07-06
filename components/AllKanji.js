@@ -8,7 +8,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   useEffect(() => {
     for (let i of checkedKanji) {
       if (document.getElementById(i.id)) {
-        document.getElementById(i.id).checked = true;
+        document.getElementById(i.id - 1).checked = true;
       }
     }
   }, []);
