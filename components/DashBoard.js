@@ -1,5 +1,4 @@
 export default DashBoard = ({ myKanji }) => {
-  console.log(myKanji);
   return (
     <div>
       <h2>Home Page</h2>
