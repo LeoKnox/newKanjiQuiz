@@ -21,7 +21,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     console.log(`my ${JSON.stringify(myKanji)}`);
     let x = [...checkedKanji];
     console.log(`x ${JSON.stringify(x)}`);
-    x = x.filter((y) => y.id !== kanjiId);
+    x = x.filter((y) => y.id != kanjiId);
     //let x = checkedKanji.filter((y) => y["id"].includes(kanjiId));
     console.log(`xx ${JSON.stringify(x)}`);
     checkedKanji = x;
