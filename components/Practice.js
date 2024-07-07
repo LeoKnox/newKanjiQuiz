@@ -50,6 +50,9 @@ export default Practice = ({ myKanji }) => {
       } else {
         setPosition(position - 1);
       }
+      if (randomSet) {
+        setPosition(5);
+      }
     }
   };
   return (
