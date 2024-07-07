@@ -1,3 +1,11 @@
+import { useState } from "react";
+
 export default Kana = () => {
-  return <h3>Practice Kana</h3>;
+  const [kana, setKana] = useState("hiragana");
+
+  return;
+  <div>
+    <h3>Practice Kana</h3>
+    <button>{kana}</button>
+  </div>;
 };
