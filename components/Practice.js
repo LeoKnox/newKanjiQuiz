@@ -28,6 +28,9 @@ export default Practice = ({ myKanji }) => {
     } else {
       setPosition(position + 1);
     }
+    if (randomSet) {
+      setPosition(1);
+    }
   };
   const pause = (e) => {
     if (document.getElementById("pauseKanji").checked) {
@@ -49,9 +52,6 @@ export default Practice = ({ myKanji }) => {
         setPosition(practiceKanji.length - 1);
       } else {
         setPosition(position - 1);
-      }
-      if (randomSet) {
-        setPosition(5);
       }
     }
   };
