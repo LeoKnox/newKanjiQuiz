@@ -4,6 +4,7 @@ import DashBoard from "./DashBoard.js";
 import AllKanji from "./AllKanji.js";
 import Quiz from "./Quiz.js";
 import Practice from "./Practice.js";
+import Kana from "./Kana.js";
 
 export default Home = () => {
   const [myKanji, setMyKanji] = useState([]);
@@ -34,6 +35,7 @@ export default Home = () => {
       <button onClick={() => setComponentPage(<Practice myKanji={myKanji} />)}>
         Practice
       </button>
+      <button onClick={() => setComponentPage(<Kana />)}>Kana</button>
       <p hidden={myKanji.length >= 10}>
         10 Kanji needed for quiz you have {myKanji.length}
       </p>
