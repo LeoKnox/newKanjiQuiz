@@ -54,6 +54,9 @@ export default Practice = ({ myKanji }) => {
         setPosition(position - 1);
       }
     }
+    if (randomSet) {
+      setPosition(Math.floor(Math.random() * practiceKanji.length));
+    }
   };
   return (
     <div>
