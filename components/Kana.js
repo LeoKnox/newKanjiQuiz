@@ -4,6 +4,7 @@ import { hiraganaData, katakanaData } from "./kanaData.js";
 export default Kana = () => {
   const [kana, setKana] = useState(false);
   const shuffled = hiraganaData.sort(() => 0.5 - Math.random());
+  console.log(shuffled);
   return (
     <div>
       <h3>Practice Kana</h3>
@@ -15,9 +16,9 @@ export default Kana = () => {
       ) : (
         <p>
           hira
-          {shuffled.map((tile) => {
-            <label>{tile.sound}</label>;
-          })}
+          {shuffled.map((tile) => (
+            <label>{tile.kana}</label>
+          ))}
         </p>
       )}
     </div>
