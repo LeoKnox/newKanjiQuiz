@@ -14,10 +14,10 @@ export default Kana = () => {
       {kana ? (
         <p>kata {katakanaData[1].kana}</p>
       ) : (
-        <p>
+        <p className="kanaTest">
           hira
           {shuffled.map((tile) => (
-            <label>{tile.kana}</label>
+            <label>:{tile.sound}</label>
           ))}
         </p>
       )}
