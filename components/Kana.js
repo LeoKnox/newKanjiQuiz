@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default Kana = () => {
-  const [kana, setKana] = useState("hiragana");
+  const [kana, setKana] = useState(false);
   const changeKana = () => {
     kana == "hiragana" ? setKana("kataKana") : setKana("hiragarana");
   };
@@ -9,12 +9,8 @@ export default Kana = () => {
   return (
     <div>
       <h3>Practice Kana</h3>
-      <button
-        onClick={() =>
-          kana == "hiragana" ? setKana("kataKana") : setKana("hiragarana")
-        }
-      >
-        {kana}
+      <button onClick={() => setKana(!kana)}>
+        {kana ? setKana("kataKana") : setKana("hiragarana")}
       </button>
     </div>
   );
