@@ -82,3 +82,9 @@ progressBar::-moz-progress-bar {
   border: 2px solid black;
   background-color: tan;
 }
+
+.kanaTest {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+}
