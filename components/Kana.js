@@ -9,7 +9,13 @@ export default Kana = () => {
   return (
     <div>
       <h3>Practice Kana</h3>
-      <button onClick={changeKana}>{kana}</button>
+      <button
+        onClick={() =>
+          kana == "hiragana" ? setKana("kataKana") : setKana("hiragarana")
+        }
+      >
+        {kana}
+      </button>
     </div>
   );
 };
