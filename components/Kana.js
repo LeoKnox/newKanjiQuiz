@@ -10,8 +10,11 @@ export default Kana = () => {
       <button onClick={() => setKana(!kana)}>
         {kana ? "kataKana" : "hiragarana"}
       </button>
-      <p>hira {hiraganaData[0].kana}</p>
-      <p>kata {katakanaData[1].kana}</p>
+      {kana ? (
+        <p>kata {katakanaData[1].kana}</p>
+      ) : (
+        <p>hira {hiraganaData[0].kana}</p>
+      )}
     </div>
   );
 };
