@@ -5,6 +5,11 @@ export default Kana = () => {
   const [kana, setKana] = useState(false);
   const shuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
   const answer = shuffled[Math.floor(Math.random() * shuffled.length)];
+  const checkKana = (param) => {
+    if (param == answer) {
+      alert("right");
+    }
+  };
   return (
     <div>
       <h3>Practice Kana</h3>
@@ -18,7 +23,7 @@ export default Kana = () => {
       ) : (
         <p className="kanaTest">
           {shuffled.map((tile) => (
-            <button>
+            <button onClick={() => checkKana(tile.kana)}>
               <label>{tile.kana}</label>
             </button>
           ))}
