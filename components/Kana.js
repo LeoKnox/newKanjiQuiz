@@ -3,7 +3,7 @@ import { hiraganaData, katakanaData } from "./kanaData.js";
 
 export default Kana = () => {
   const [kana, setKana] = useState(false);
-  const shuffled = hiraganaData.sort(() => 0.5 - Math.random());
+  const shuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 5);
   console.log(shuffled);
   return (
     <div>
