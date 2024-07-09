@@ -9,17 +9,31 @@ export default Kana = () => {
   const [answer, setAnswer] = useState(
     shuffled[Math.floor(Math.random() * shuffled.length)]
   );
+  const changeKana = () => {
+    setKana(!kana);
+    if (kana) {
+      newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+      newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
+      setShuffled(newShuffled);
+      setAnswer(newAnswer);
+    } else {
+      newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+      newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
+      setShuffled(newShuffled);
+      setAnswer(newAnswer);
+    }
+  };
   const checkKana = (param) => {
     let newShuffled = [];
     let newAnswer = {};
     if (param == answer.kana) {
       if (kana) {
-        newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+        newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
         newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
         setShuffled(newShuffled);
         setAnswer(newAnswer);
       } else {
-        newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+        newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
         newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
         setShuffled(newShuffled);
         setAnswer(newAnswer);
@@ -30,9 +44,7 @@ export default Kana = () => {
     <div>
       <h3>Practice Kana</h3>
 
-      <button onClick={() => setKana(!kana)}>
-        {kana ? "kataKana" : "hiragarana"}
-      </button>
+      <button onClick={changeKana}>{kana ? "kataKana" : "hiragarana"}</button>
       <p>{answer.sound}</p>
       {kana ? (
         <p className="kanaTest">
