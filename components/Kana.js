@@ -9,6 +9,9 @@ export default Kana = () => {
     if (param == answer.kana) {
       alert(param + "&" + answer);
     }
+    answer = kana
+      ? hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6)
+      : katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
   };
   return (
     <div>
