@@ -6,8 +6,8 @@ export default Kana = () => {
   const shuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
   const answer = shuffled[Math.floor(Math.random() * shuffled.length)];
   const checkKana = (param) => {
-    if (param == answer) {
-      alert("right");
+    if (param == answer.kana) {
+      alert(param + "&" + answer);
     }
   };
   return (
