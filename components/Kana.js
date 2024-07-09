@@ -4,14 +4,18 @@ import { hiraganaData, katakanaData } from "./kanaData.js";
 export default Kana = () => {
   const [kana, setKana] = useState(false);
   const shuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-  const answer = shuffled[Math.floor(Math.random() * shuffled.length)];
+  const [answer, setAnswer] = useState(
+    shuffled[Math.floor(Math.random() * shuffled.length)]
+  );
   const checkKana = (param) => {
     if (param == answer.kana) {
-      alert(param + "&" + answer);
+      alert("correct");
     }
-    answer = kana
-      ? hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6)
-      : katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+    setAnswer(
+      kana
+        ? hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6)
+        : katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6)
+    );
   };
   return (
     <div>
