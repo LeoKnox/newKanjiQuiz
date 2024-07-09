@@ -13,18 +13,18 @@ export default Kana = () => {
     let newShuffled = [];
     let newAnswer = {};
     if (param == answer.kana) {
-      kana ? (
-       newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-     newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
-    setShuffled(newShuffled);
-    setAnswer(newAnswer);
-  ) : (
-       newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-       newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
-      setShuffled(newShuffled);
-      setAnswer(newAnswer)};
-    )
-    
+      if (kana) {
+        newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+        newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
+        setShuffled(newShuffled);
+        setAnswer(newAnswer);
+      } else {
+        newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+        newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
+        setShuffled(newShuffled);
+        setAnswer(newAnswer);
+      }
+    }
   };
   return (
     <div>
@@ -35,7 +35,13 @@ export default Kana = () => {
       </button>
       <p>{answer.sound}</p>
       {kana ? (
-        <p>kata {katakanaData[1].kana}</p>
+        <p className="kanaTest">
+          {shuffled.map((tile) => (
+            <button onClick={() => checkKana(tile.kana)}>
+              <label>{tile.kana}</label>
+            </button>
+          ))}
+        </p>
       ) : (
         <p className="kanaTest">
           {shuffled.map((tile) => (
