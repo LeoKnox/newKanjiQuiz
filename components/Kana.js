@@ -3,7 +3,9 @@ import { hiraganaData, katakanaData } from "./kanaData.js";
 
 export default Kana = () => {
   const [kana, setKana] = useState(false);
-  const shuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+  const [shuffled, setShuffled] = useState(
+    hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6)
+  );
   const [answer, setAnswer] = useState(
     shuffled[Math.floor(Math.random() * shuffled.length)]
   );
@@ -11,11 +13,10 @@ export default Kana = () => {
     if (param == answer.kana) {
       alert("correct");
     }
-    setAnswer(
-      kana
-        ? hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6)
-        : katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6)
-    );
+    let newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+    let newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
+    setShuffled(newShuffled);
+    setAnswer(newAnswer);
   };
   return (
     <div>
