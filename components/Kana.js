@@ -10,13 +10,21 @@ export default Kana = () => {
     shuffled[Math.floor(Math.random() * shuffled.length)]
   );
   const checkKana = (param) => {
+    let newShuffled = [];
+    let newAnswer = {};
     if (param == answer.kana) {
-      alert("correct");
-    }
-    let newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-    let newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
+      kana ? (
+       newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+     newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
     setShuffled(newShuffled);
     setAnswer(newAnswer);
+  ) : (
+       newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+       newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
+      setShuffled(newShuffled);
+      setAnswer(newAnswer)};
+    )
+    
   };
   return (
     <div>
