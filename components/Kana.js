@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { hiraganaData, katakanaData } from "./kanaData.js";
 
 export default Kana = () => {
@@ -9,8 +9,7 @@ export default Kana = () => {
   const [answer, setAnswer] = useState(
     shuffled[Math.floor(Math.random() * shuffled.length)]
   );
-  const changeKana = () => {
-    setKana(!kana);
+  useEffect(() => {
     if (kana) {
       newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
       newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
@@ -22,6 +21,9 @@ export default Kana = () => {
       setShuffled(newShuffled);
       setAnswer(newAnswer);
     }
+  }, [kana]);
+  const changeKana = () => {
+    setKana(!kana);
   };
   const checkKana = (param) => {
     let newShuffled = [];
