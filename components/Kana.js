@@ -45,12 +45,12 @@ export default Kana = () => {
       <h3>Practice Kana</h3>
 
       <button onClick={changeKana}>{kana ? "kataKana" : "hiragarana"}</button>
-      <p>{answer.sound}</p>
+      <p className="kanaText">{answer.sound}</p>
       {kana ? (
         <p className="kanaTest">
           {shuffled.map((tile) => (
             <button onClick={() => checkKana(tile.kana)}>
-              <label>{tile.kana}</label>
+              <label className="kanaText">{tile.kana}</label>
             </button>
           ))}
         </p>
@@ -58,7 +58,7 @@ export default Kana = () => {
         <p className="kanaTest">
           {shuffled.map((tile) => (
             <button onClick={() => checkKana(tile.kana)}>
-              <label>{tile.kana}</label>
+              <label className="kanaText">{tile.kana}</label>
             </button>
           ))}
         </p>
