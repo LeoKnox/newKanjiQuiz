@@ -11,7 +11,7 @@ export default Kana = () => {
   );
   useEffect(() => {
     if (kana) {
-      newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+      newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
       newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
       setShuffled(newShuffled);
       setAnswer(newAnswer);
