@@ -12,12 +12,12 @@ export default Kana = () => {
   useEffect(() => {
     if (kana) {
       newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-      newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
+      newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
       setShuffled(newShuffled);
       setAnswer(newAnswer);
     } else {
       newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-      newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
+      newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
       setShuffled(newShuffled);
       setAnswer(newAnswer);
     }
@@ -30,12 +30,12 @@ export default Kana = () => {
     let newAnswer = {};
     if (param == answer.kana) {
       if (kana) {
-        newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+        newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
         newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
         setShuffled(newShuffled);
         setAnswer(newAnswer);
       } else {
-        newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
+        newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
         newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
         setShuffled(newShuffled);
         setAnswer(newAnswer);
