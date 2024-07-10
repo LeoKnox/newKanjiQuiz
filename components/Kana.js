@@ -10,14 +10,16 @@ export default Kana = () => {
     shuffled[Math.floor(Math.random() * shuffled.length)]
   );
   useEffect(() => {
+    let newShuffled = [];
+    let newAnswer = {};
     if (kana) {
       newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-      newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
+      newAnswer = newShuffled[Math.floor(Math.random() * newShuffled.length)];
       setShuffled(newShuffled);
       setAnswer(newAnswer);
     } else {
       newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-      newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
+      newAnswer = newShuffled[Math.floor(Math.random() * newShuffled.length)];
       setShuffled(newShuffled);
       setAnswer(newAnswer);
     }
