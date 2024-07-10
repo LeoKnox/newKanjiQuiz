@@ -88,3 +88,8 @@ progressBar::-moz-progress-bar {
   justify-content: space-between;
   grid-template-columns: repeat(3, 1fr);
 }
+
+.kanaText {
+  font-size: 2.2em;
+  font-weight: bold;
+}
