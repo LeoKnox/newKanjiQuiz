@@ -31,11 +31,14 @@ export default Kana = () => {
   const changeKana = () => {
     setKana(!kana);
   };
+  const pauseKana = () => {
+    setTimeout(setColor("green"), 3000);
+  };
+
   const checkKana = (param) => {
     let newShuffled = [];
     let newAnswer = {};
     if (param == answer.kana) {
-      setTimeout(setColor("green"), 3000);
       if (kana) {
         newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
         newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
