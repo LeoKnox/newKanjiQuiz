@@ -23,6 +23,7 @@ export default Kana = () => {
       setShuffled(newShuffled);
       setAnswer(newAnswer);
     }
+    alert("effect");
   }, [kana]);
   const changeKana = () => {
     setKana(!kana);
@@ -43,6 +44,7 @@ export default Kana = () => {
         setAnswer(newAnswer);
       }
     }
+    alert("checked");
   };
   return (
     <div>
