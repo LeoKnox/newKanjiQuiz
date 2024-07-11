@@ -5,6 +5,7 @@ export default Kana = () => {
   const [kana, setKana] = useState(false);
   const [count, setCount] = useState(0);
   const [correct, setCorrect] = useState(0);
+  const [color, setColor] = useState("black");
   const [shuffled, setShuffled] = useState(
     hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6)
   );
@@ -34,6 +35,7 @@ export default Kana = () => {
     let newShuffled = [];
     let newAnswer = {};
     if (param == answer.kana) {
+      setTimeout(setColor("green"), 3000);
       if (kana) {
         newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
         newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
