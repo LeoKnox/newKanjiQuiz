@@ -3,6 +3,8 @@ import { hiraganaData, katakanaData } from "./kanaData.js";
 
 export default Kana = () => {
   const [kana, setKana] = useState(false);
+  const [count, setCount] = useState(0);
+  const [correct, setCorrect] = useState(0);
   const [shuffled, setShuffled] = useState(
     hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6)
   );
@@ -52,6 +54,9 @@ export default Kana = () => {
       <h3>Practice Kana</h3>
 
       <button onClick={changeKana}>{kana ? "kataKana" : "hiragarana"}</button>
+      <p>
+        {correct} of {count} correct
+      </p>
       <p className="kanaText">{answer.sound}</p>
       {kana ? (
         <p className="kanaTest">
