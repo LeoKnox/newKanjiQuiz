@@ -23,7 +23,7 @@ export default Kana = () => {
       setShuffled(newShuffled);
       setAnswer(newAnswer);
     }
-    alert("effect");
+    //alert("effect");
   }, [kana]);
   const changeKana = () => {
     setKana(!kana);
@@ -34,17 +34,18 @@ export default Kana = () => {
     if (param == answer.kana) {
       if (kana) {
         newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-        newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
+        newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
+        //alert(`${JSON.stringify(newShuffled)} answer ${newAnswer.sound}`);
         setShuffled(newShuffled);
         setAnswer(newAnswer);
       } else {
         newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-        newAnswer = shuffled[Math.floor(Math.random() * shuffled.length)];
+        newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
+        //alert(`${JSON.stringify(newShuffled)} answer ${newAnswer.sound}`);
         setShuffled(newShuffled);
         setAnswer(newAnswer);
       }
     }
-    alert("checked");
   };
   return (
     <div>
