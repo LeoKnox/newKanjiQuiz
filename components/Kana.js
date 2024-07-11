@@ -47,7 +47,9 @@ export default Kana = () => {
         setShuffled(newShuffled);
         setAnswer(newAnswer);
       }
+      setCorrect(correct + 1);
     }
+    setCount(count + 1);
   };
   return (
     <div>
