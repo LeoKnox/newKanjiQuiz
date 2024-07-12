@@ -32,13 +32,16 @@ export default Kana = () => {
     setKana(!kana);
   };
   const pauseKana = () => {
-    setTimeout(setColor("green"), 3000);
+    setTimeout(() => {
+      alert("Hello after 3 seconds!");
+    }, 3000); // 3000 milliseconds = 3 seconds
   };
 
   const checkKana = (param) => {
     let newShuffled = [];
     let newAnswer = {};
     if (param == answer.kana) {
+      pauseKana();
       if (kana) {
         newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
         newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
