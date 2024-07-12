@@ -41,20 +41,25 @@ export default Kana = () => {
     let newShuffled = [];
     let newAnswer = {};
     if (param == answer.kana) {
-      pauseKana();
-      if (kana) {
-        newShuffled = katakanaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-        newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
-        //alert(`${JSON.stringify(newShuffled)} answer ${newAnswer.sound}`);
-        setShuffled(newShuffled);
-        setAnswer(newAnswer);
-      } else {
-        newShuffled = hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6);
-        newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
-        //alert(`${JSON.stringify(newShuffled)} answer ${newAnswer.sound}`);
-        setShuffled(newShuffled);
-        setAnswer(newAnswer);
-      }
+      setTimeout(() => {
+        if (kana) {
+          newShuffled = katakanaData
+            .sort(() => 0.5 - Math.random())
+            .slice(0, 6);
+          newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
+          //alert(`${JSON.stringify(newShuffled)} answer ${newAnswer.sound}`);
+          setShuffled(newShuffled);
+          setAnswer(newAnswer);
+        } else {
+          newShuffled = hiraganaData
+            .sort(() => 0.5 - Math.random())
+            .slice(0, 6);
+          newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
+          //alert(`${JSON.stringify(newShuffled)} answer ${newAnswer.sound}`);
+          setShuffled(newShuffled);
+          setAnswer(newAnswer);
+        }
+      }, 3000);
       setCorrect(correct + 1);
     }
     setCount(count + 1);
