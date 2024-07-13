@@ -44,7 +44,6 @@ export default Kana = () => {
     setTimeout(() => {
       setCount(count + 1);
       if (param == answer.kana) {
-        document.getElementById(answer.kana).style.borderColor = "red";
         setCorrect(correct + 1);
         if (kana) {
           newShuffled = katakanaData
@@ -64,6 +63,7 @@ export default Kana = () => {
           setAnswer(newAnswer);
         }
       }
+      document.getElementById(answer.kana).style.borderColor = "red";
     }, 3000);
   };
   return (
