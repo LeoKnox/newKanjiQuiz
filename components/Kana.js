@@ -63,7 +63,11 @@ export default Kana = () => {
           setShuffled(newShuffled);
           setAnswer(newAnswer);
         }
-        document.getElementById(answer.kana).style.backgroundColor = "tan";
+        let reset = document.getElementsByClassName("kanabutton");
+
+        for (let r = 0; r < reset.length; r++) {
+          reset.item(r).style.background = "tan";
+        }
       }, 3000);
     }
   };
@@ -79,7 +83,11 @@ export default Kana = () => {
       {kana ? (
         <p className="kanaTest">
           {shuffled.map((tile) => (
-            <button id={tile.kana} onClick={() => checkKana(tile.kana)}>
+            <button
+              id={tile.kana}
+              className="kanabutton"
+              onClick={() => checkKana(tile.kana)}
+            >
               <label className="kanaText">{tile.kana}</label>
             </button>
           ))}
@@ -87,7 +95,11 @@ export default Kana = () => {
       ) : (
         <p className="kanaTest">
           {shuffled.map((tile) => (
-            <button id={tile.kana} onClick={() => checkKana(tile.kana)}>
+            <button
+              id={tile.kana}
+              className="kanabutton"
+              onClick={() => checkKana(tile.kana)}
+            >
               <label className="kanaText">{tile.kana}</label>
             </button>
           ))}
