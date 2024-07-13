@@ -79,7 +79,7 @@ export default Kana = () => {
       {kana ? (
         <p className="kanaTest">
           {shuffled.map((tile) => (
-            <button onClick={() => checkKana(tile.kana)}>
+            <button id={tile.kana} onClick={() => checkKana(tile.kana)}>
               <label className="kanaText">{tile.kana}</label>
             </button>
           ))}
