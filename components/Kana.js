@@ -41,8 +41,8 @@ export default Kana = () => {
     let newShuffled = [];
     let newAnswer = {};
     setCount(count + 1);
-    if (param == answer.kana) {
-      setTimeout(() => {
+    setTimeout(() => {
+      if (param == answer.kana) {
         if (kana) {
           newShuffled = katakanaData
             .sort(() => 0.5 - Math.random())
@@ -62,8 +62,8 @@ export default Kana = () => {
         }
 
         setCorrect(correct + 1);
-      }, 3000);
-    }
+      }
+    }, 3000);
   };
   return (
     <div>
