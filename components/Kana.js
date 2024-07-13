@@ -41,10 +41,10 @@ export default Kana = () => {
     let newShuffled = [];
     let newAnswer = {};
 
-    setTimeout(() => {
-      setCount(count + 1);
-      if (param == answer.kana) {
-        setCorrect(correct + 1);
+    setCount(count + 1);
+    if (param == answer.kana) {
+      setCorrect(correct + 1);
+      setTimeout(() => {
         if (kana) {
           newShuffled = katakanaData
             .sort(() => 0.5 - Math.random())
@@ -62,9 +62,9 @@ export default Kana = () => {
           setShuffled(newShuffled);
           setAnswer(newAnswer);
         }
-      }
-      document.getElementById(answer.kana).style.borderColor = "red";
-    }, 3000);
+      }, 3000);
+    }
+    document.getElementById(answer.kana).style.borderColor = "red";
   };
   return (
     <div>
