@@ -70,6 +70,7 @@ export default Kana = () => {
         }
       }, 3000);
     }
+    document.getElementById(param).style.backgroundColor = "red";
   };
   return (
     <div>
