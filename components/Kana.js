@@ -44,6 +44,7 @@ export default Kana = () => {
     setTimeout(() => {
       setCount(count + 1);
       if (param == answer.kana) {
+        document.getElementById(answer.kana).style.borderColor = "red";
         setCorrect(correct + 1);
         if (kana) {
           newShuffled = katakanaData
@@ -85,7 +86,7 @@ export default Kana = () => {
       ) : (
         <p className="kanaTest">
           {shuffled.map((tile) => (
-            <button onClick={() => checkKana(tile.kana)}>
+            <button id={tile.kana} onClick={() => checkKana(tile.kana)}>
               <label className="kanaText">{tile.kana}</label>
             </button>
           ))}
