@@ -1,3 +1,14 @@
+/*あ	い	う	え	お
+k	か	き	く	け	こ
+s	さ	し	す	せ	そ
+t	た	ち	つ	て	と
+n	な	に	ぬ	ね	の
+h	は	ひ	ふ	へ	ほ
+m	ま	み	む	め	も
+y	や	[6]	ゆ	[6]	よ
+r	ら	り	る	れ	ろ
+w	わ	ゐ	[6]	ゑ	を
+ん (n)*/
 export const hiraganaData = [
   { sound: "a", kana: "あ" },
   { sound: "i", kana: "い" },
@@ -9,6 +20,31 @@ export const hiraganaData = [
   { sound: "ku", kana: "く" },
   { sound: "ke", kana: "け" },
   { sound: "ko", kana: "こ" },
+  { sound: "ga", kana: "が" },
+  { sound: "gi", kana: "ぎ" },
+  { sound: "gu", kana: "ぐ" },
+  { sound: "ge", kana: "げ" },
+  { sound: "go", kana: "ご" },
+  { sound: "sa", kana: "さ" },
+  { sound: "shi", kana: "し" },
+  { sound: "su", kana: "す" },
+  { sound: "se", kana: "せ" },
+  { sound: "so", kana: "そ" },
+  { sound: "za", kana: "ざ" },
+  { sound: "ji", kana: "じ" },
+  { sound: "zu", kana: "ず" },
+  { sound: "ze", kana: "ぜ" },
+  { sound: "zo", kana: "ぞ" },
+  { sound: "ta", kana: "た" },
+  { sound: "chi", kana: "ち" },
+  { sound: "tsu", kana: "つ" },
+  { sound: "te", kana: "て" },
+  { sound: "to", kana: "と" },
+  { sound: "da", kana: "だ" },
+  { sound: "ji", kana: "ぢ" },
+  { sound: "tzu", kana: "づ" },
+  { sound: "de", kana: "で" },
+  { sound: "do", kana: "ど" },
 ];
 
 export const katakanaData = [
@@ -22,4 +58,29 @@ export const katakanaData = [
   { sound: "ku", kana: "ク" },
   { sound: "ke", kana: "ケ" },
   { sound: "ko", kana: "コ" },
+  { sound: "ga", kana: "ガ" },
+  { sound: "gi", kana: "ギ" },
+  { sound: "gu", kana: "グ" },
+  { sound: "ge", kana: "ゲ" },
+  { sound: "go", kana: "ゴ" },
+  { sound: "sa", kana: "サ" },
+  { sound: "shi", kana: "シ" },
+  { sound: "su", kana: "ス" },
+  { sound: "se", kana: "セ" },
+  { sound: "so", kana: "ソ" },
+  { sound: "za", kana: "ザ" },
+  { sound: "ji", kana: "ジ" },
+  { sound: "zu", kana: "ズ" },
+  { sound: "ze", kana: "ゼ" },
+  { sound: "zo", kana: "ゾ" },
+  { sound: "ta", kana: "タ" },
+  { sound: "chi", kana: "チ" },
+  { sound: "tsu", kana: "ツ" },
+  { sound: "te", kana: "テ" },
+  { sound: "to", kana: "ト" },
+  { sound: "da", kana: "ダ" },
+  { sound: "ji", kana: "ヂ" },
+  { sound: "tzu", kana: "ヅ" },
+  { sound: "de", kana: "デ" },
+  { sound: "do", kana: "ド" },
 ];
