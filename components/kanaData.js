@@ -1,14 +1,3 @@
-/*あ	い	う	え	お
-k	か	き	く	け	こ
-s	さ	し	す	せ	そ
-t	た	ち	つ	て	と
-n	な	に	ぬ	ね	の
-h	は	ひ	ふ	へ	ほ
-m	ま	み	む	め	も
-y	や	[6]	ゆ	[6]	よ
-r	ら	り	る	れ	ろ
-w	わ	ゐ	[6]	ゑ	を
-ん (n)*/
 export const hiraganaData = [
   { sound: "a", kana: "あ" },
   { sound: "i", kana: "い" },
@@ -45,6 +34,42 @@ export const hiraganaData = [
   { sound: "tzu", kana: "づ" },
   { sound: "de", kana: "で" },
   { sound: "do", kana: "ど" },
+  { sound: "na", kana: "な" },
+  { sound: "ni", kana: "に" },
+  { sound: "nu", kana: "ぬ" },
+  { sound: "ne", kana: "ね" },
+  { sound: "no", kana: "の" },
+  { sound: "ha", kana: "は" },
+  { sound: "hi", kana: "ひ" },
+  { sound: "fu", kana: "ふ" },
+  { sound: "he", kana: "へ" },
+  { sound: "ho", kana: "ほ" },
+  { sound: "ba", kana: "ば" },
+  { sound: "bi", kana: "び" },
+  { sound: "bu", kana: "ぶ" },
+  { sound: "be", kana: "べ" },
+  { sound: "bo", kana: "ぼ" },
+  { sound: "pa", kana: "ぱ" },
+  { sound: "pi", kana: "ぴ" },
+  { sound: "pu", kana: "ぷ" },
+  { sound: "pe", kana: "ぺ" },
+  { sound: "po", kana: "ぽ" },
+  { sound: "ma", kana: "ま" },
+  { sound: "mi", kana: "み" },
+  { sound: "mu", kana: "む" },
+  { sound: "me", kana: "め" },
+  { sound: "mo", kana: "も" },
+  { sound: "ya", kana: "や" },
+  { sound: "yu", kana: "ゆ" },
+  { sound: "yo", kana: "よ" },
+  { sound: "ra", kana: "ら" },
+  { sound: "ri", kana: "り" },
+  { sound: "ru", kana: "る" },
+  { sound: "re", kana: "れ" },
+  { sound: "ro", kana: "ろ" },
+  { sound: "wa", kana: "わ" },
+  { sound: "wo", kana: "を" },
+  { sound: "n", kana: "ん" },
 ];
 
 export const katakanaData = [
@@ -83,4 +108,40 @@ export const katakanaData = [
   { sound: "tzu", kana: "ヅ" },
   { sound: "de", kana: "デ" },
   { sound: "do", kana: "ド" },
+  { sound: "na", kana: "ナ" },
+  { sound: "ni", kana: "ニ" },
+  { sound: "nu", kana: "ヌ" },
+  { sound: "ne", kana: "ネ" },
+  { sound: "no", kana: "ノ" },
+  { sound: "ha", kana: "ハ" },
+  { sound: "hi", kana: "ヒ" },
+  { sound: "fu", kana: "フ" },
+  { sound: "he", kana: "ヘ" },
+  { sound: "ho", kana: "ホ" },
+  { sound: "ba", kana: "バ" },
+  { sound: "bi", kana: "ビ" },
+  { sound: "bu", kana: "ブ" },
+  { sound: "be", kana: "ベ" },
+  { sound: "bo", kana: "ボ" },
+  { sound: "pa", kana: "パ" },
+  { sound: "pi", kana: "ピ" },
+  { sound: "pu", kana: "プ" },
+  { sound: "pe", kana: "ペ" },
+  { sound: "po", kana: "ポ" },
+  { sound: "ma", kana: "マ" },
+  { sound: "mi", kana: "ミ" },
+  { sound: "mu", kana: "ム" },
+  { sound: "me", kana: "メ" },
+  { sound: "mo", kana: "モ" },
+  { sound: "ya", kana: "ヤ" },
+  { sound: "yu", kana: "ユ" },
+  { sound: "yo", kana: "ヨ" },
+  { sound: "ra", kana: "ラ" },
+  { sound: "ri", kana: "リ" },
+  { sound: "ru", kana: "ル" },
+  { sound: "re", kana: "レ" },
+  { sound: "ro", kana: "ロ" },
+  { sound: "wa", kana: "ワ" },
+  { sound: "wo", kana: "ヲ" },
+  { sound: "n", kana: "ン" },
 ];
