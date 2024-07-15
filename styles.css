@@ -88,6 +88,7 @@ progressBar::-moz-progress-bar {
   width: 60%;
   justify-content: space-between;
   grid-template-columns: repeat(3, 1fr);
+  margin: auto;
 }
 
 .kanaText {
@@ -96,5 +97,5 @@ progressBar::-moz-progress-bar {
 }
 
 .kanaDiv {
-  margin: auto;
+
 }
