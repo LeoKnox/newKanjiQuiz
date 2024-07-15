@@ -97,5 +97,9 @@ progressBar::-moz-progress-bar {
 }
 
 .kanaDiv {
+  boder: solid 3px blue;
+}
 
+.kanaButton {
+  background-color: orange;
 }
