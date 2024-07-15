@@ -42,7 +42,6 @@ export default Kana = () => {
     let newAnswer = {};
 
     setCount(count + 1);
-    document.getElementById(param).style.backgroundColor = "red";
     if (param == answer.kana) {
       setCorrect(correct + 1);
       document.getElementById(answer.kana).style.backgroundColor = "green";
@@ -71,7 +70,7 @@ export default Kana = () => {
         }
       }, 3000);
     }
-    
+    document.getElementById(param).style.backgroundColor = "red";
   };
   return (
     <div>
