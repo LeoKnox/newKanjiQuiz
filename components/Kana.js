@@ -5,7 +5,6 @@ export default Kana = () => {
   const [kana, setKana] = useState(false);
   const [count, setCount] = useState(0);
   const [correct, setCorrect] = useState(0);
-  const [color, setColor] = useState();
   const [shuffled, setShuffled] = useState(
     hiraganaData.sort(() => 0.5 - Math.random()).slice(0, 6)
   );
@@ -26,15 +25,9 @@ export default Kana = () => {
       setShuffled(newShuffled);
       setAnswer(newAnswer);
     }
-    //alert("effect");
   }, [kana]);
   const changeKana = () => {
     setKana(!kana);
-  };
-  const pauseKana = () => {
-    setTimeout(() => {
-      alert("Hello after 3 seconds!");
-    }, 3000); // 3000 milliseconds = 3 seconds
   };
 
   const checkKana = (param) => {
@@ -51,7 +44,6 @@ export default Kana = () => {
             .sort(() => 0.5 - Math.random())
             .slice(0, 6);
           newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
-          //alert(`${JSON.stringify(newShuffled)} answer ${newAnswer.sound}`);
           setShuffled(newShuffled);
           setAnswer(newAnswer);
         } else {
@@ -59,12 +51,10 @@ export default Kana = () => {
             .sort(() => 0.5 - Math.random())
             .slice(0, 6);
           newAnswer = newShuffled[Math.floor(Math.random() * shuffled.length)];
-          //alert(`${JSON.stringify(newShuffled)} answer ${newAnswer.sound}`);
           setShuffled(newShuffled);
           setAnswer(newAnswer);
         }
         let reset = document.getElementsByClassName("kanabutton");
-
         for (let r = 0; r < reset.length; r++) {
           reset.item(r).style.background = "tan";
         }
