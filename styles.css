@@ -85,6 +85,7 @@ progressBar::-moz-progress-bar {
 
 .kanaTest {
   display: grid;
+  width: 60%;
   justify-content: space-between;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -92,4 +93,8 @@ progressBar::-moz-progress-bar {
 .kanaText {
   font-size: 2.2em;
   font-weight: bold;
+}
+
+.kanaDiv {
+  margin: auto;
 }
