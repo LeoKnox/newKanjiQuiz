@@ -72,31 +72,33 @@ export default Kana = () => {
         {correct} of {count} correct
       </p>
       <p className="kanaText">{answer.sound}</p>
-      {kana ? (
-        <p className="kanaTest">
-          {shuffled.map((tile) => (
-            <button
-              id={tile.kana}
-              className="kanabutton"
-              onClick={() => checkKana(tile.kana)}
-            >
-              <label className="kanaText">{tile.kana}</label>
-            </button>
-          ))}
-        </p>
-      ) : (
-        <p className="kanaTest">
-          {shuffled.map((tile) => (
-            <button
-              id={tile.kana}
-              className="kanabutton"
-              onClick={() => checkKana(tile.kana)}
-            >
-              <label className="kanaText">{tile.kana}</label>
-            </button>
-          ))}
-        </p>
-      )}
+      <div className="kanaDiv">
+        {kana ? (
+          <p className="kanaTest">
+            {shuffled.map((tile) => (
+              <button
+                id={tile.kana}
+                className="kanabutton"
+                onClick={() => checkKana(tile.kana)}
+              >
+                <label className="kanaText">{tile.kana}</label>
+              </button>
+            ))}
+          </p>
+        ) : (
+          <p className="kanaTest">
+            {shuffled.map((tile) => (
+              <button
+                id={tile.kana}
+                className="kanabutton"
+                onClick={() => checkKana(tile.kana)}
+              >
+                <label className="kanaText">{tile.kana}</label>
+              </button>
+            ))}
+          </p>
+        )}
+      </div>
     </div>
   );
 };
