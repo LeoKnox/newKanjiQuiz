@@ -69,8 +69,9 @@ export default Kana = () => {
           reset.item(r).style.background = "tan";
         }
       }, 3000);
+    } else {
+      document.getElementById(param).style.backgroundColor = "red";
     }
-    document.getElementById(param).style.backgroundColor = "red";
   };
   return (
     <div>
