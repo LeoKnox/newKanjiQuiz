@@ -71,7 +71,9 @@ export default Kana = () => {
       <p>
         {correct} of {count} correct
       </p>
-      <p className="kanaText">{answer.sound}</p>
+      <div className="kanaDiv">
+        <p className="kanaText">{answer.sound}</p>
+      </div>
       <div className="kanaDiv">
         {kana ? (
           <p className="kanaTest">
