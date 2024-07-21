@@ -13,6 +13,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     for (let i = 0; i < testArray.length; i++) {
       newArray.push(kanjidb[i]);
     }
+    newArray = [...kanjidb1, ...kanjidb2];
     setKanjidb(newArray);
   }, []);
   useEffect(() => {
