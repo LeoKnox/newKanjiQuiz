@@ -9,11 +9,12 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   var checkedKanji = myKanji;
 
   useEffect(() => {
-    alert("why won't you run");
     let newArray = [];
     for (let i = 0; i < testArray.length; i++) {
-      newArray.push(kanjidb[i]);
+      newArray = newArray.concat(kanjidb[i]);
     }
+    //newArray = testArray[0];
+    console.log(JSON.stringify(newArray));
     //newArray = [...kanjidb1, ...kanjidb2];
     setKanjidb(newArray);
   }, []);
