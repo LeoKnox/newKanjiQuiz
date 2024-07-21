@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 //import { kanjidb } from "./Kanjidb.js";
-import { kanjidb2 as kanjidb } from "./kanjidb_L2.js";
+import { kanjidb2 } from "./kanjidb_L2.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
+  const kanjidb = kanjidb2;
   var checkedKanji = myKanji;
 
   useEffect(() => {
