@@ -10,8 +10,12 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   useEffect(() => {
     let newArray = [];
+    console.log("array");
     for (let i = 0; i < testArray.length; i++) {
-      newArray.concat("kanjidb" + testArray[i]);
+      //console.log(testArray)
+      let temp = "kanjidb" + testArray[i];
+      console.log(temp);
+      newArray.concat({ temp });
     }
     setKanjidb(newArray);
   }, []);
