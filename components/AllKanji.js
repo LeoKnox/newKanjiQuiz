@@ -5,10 +5,11 @@ import { kanjidb2 } from "./kanjidb_L2.js";
 export default AllKanji = ({ myKanji, setMyKanji }) => {
   const testArray = ["kanjidb1", "kanjidb2"];
   //const kanjidb = [...kanjidb1, ...kanjidb2];
-  const [kanjidb, setKanjidb] = [];
+  const [kanjidb, setKanjidb] = kanjidb1;
   var checkedKanji = myKanji;
 
   useEffect(() => {
+    alert("why won't you run");
     let newArray = [];
     for (let i = 0; i < testArray.length; i++) {
       newArray.push(kanjidb[i]);
