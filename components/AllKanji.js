@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { kanjidb } from "./Kanjidb.js";
+//import { kanjidb } from "./Kanjidb.js";
+import { kanjidb } from "./kanjidb_L2.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
   var checkedKanji = myKanji;
@@ -14,8 +15,8 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   const updateKanji = (e) => {
     const checked = e.target.checked;
-    let kanjiId = 1 + parseInt(e.target.id);
-    let absId = parseInt(e.target.id);
+    const kanjiId = 1 + parseInt(e.target.id);
+    const absId = parseInt(e.target.id);
     let x = [...checkedKanji];
     if (checked) {
       x.push(kanjidb[absId]);
