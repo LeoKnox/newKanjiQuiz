@@ -1,4 +1,4 @@
-export const kanjidb = [
+export const kanjidb2 = [
   {
     id: 81,
     kanji: "	数	",
