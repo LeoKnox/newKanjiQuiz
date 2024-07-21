@@ -3,9 +3,18 @@ import { kanjidb1 } from "./Kanjidb.js";
 import { kanjidb2 } from "./kanjidb_L2.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
-  const kanjidb = [...kanjidb1, ...kanjidb2];
+  const testArray = [1, 2];
+  //const kanjidb = [...kanjidb1, ...kanjidb2];
+  const [kanjidb, setKanjidb] = [];
   var checkedKanji = myKanji;
 
+  useEffect(() => {
+    let newArray = [];
+    for (let i = 0; i < testArray.length; i++) {
+      newArray.concat("kanjidb" + testArray[i]);
+    }
+    setKanjidb(newArray);
+  }, []);
   useEffect(() => {
     for (let i of myKanji) {
       if (document.getElementById(i.id)) {
