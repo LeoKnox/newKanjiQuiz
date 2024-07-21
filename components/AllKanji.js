@@ -3,19 +3,15 @@ import { kanjidb1 } from "./Kanjidb.js";
 import { kanjidb2 } from "./kanjidb_L2.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
-  const testArray = [1, 2];
+  const testArray = ["kanjidb1", "kanjidb2"];
   //const kanjidb = [...kanjidb1, ...kanjidb2];
   const [kanjidb, setKanjidb] = [];
   var checkedKanji = myKanji;
 
   useEffect(() => {
     let newArray = [];
-    console.log("array");
     for (let i = 0; i < testArray.length; i++) {
-      //console.log(testArray)
-      let temp = "kanjidb" + testArray[i];
-      console.log(temp);
-      newArray.concat({ temp });
+      newArray.push(kanjidb[i]);
     }
     setKanjidb(newArray);
   }, []);
