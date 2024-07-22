@@ -15,7 +15,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       newArray = newArray.concat(grades[i]);
     }
     setKanjidb(newArray);
-  }, []);
+  }, [grades]);
   useEffect(() => {
     for (let i of myKanji) {
       if (document.getElementById(i.id)) {
@@ -26,7 +26,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   const editGrade = (e) => {
     if (e.target.id === "2") {
-      alert("3");
+      setGrades([...grades, kanjidb2]);
     }
   };
   const updateKanji = (e) => {
