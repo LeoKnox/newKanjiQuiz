@@ -25,15 +25,15 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   }, []);
 
   const editGrade = (e) => {
-    if (e.target.value == true && e.target.id === "2") {
+    if (e.target.value === "in" && e.target.id === "2") {
       setGrades([...grades, kanjidb2]);
-      e.target.value = false;
+      e.target.value = "off";
       alert(e.target.value);
     } else {
       const filteredArray = grades.filter((item) => !kanjidb2.includes(item));
       console.log(filteredArray);
       setGrades(filteredArray);
-      e.target.value = true;
+      e.target.value = "in";
     }
   };
   const updateKanji = (e) => {
@@ -77,7 +77,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
           <input type="checkbox" id="1" />
           Grade 1
         </button>
-        <button id="2" value={true} onClick={editGrade}>
+        <button id="2" value="in" onClick={editGrade}>
           Level 2
         </button>
       </p>
