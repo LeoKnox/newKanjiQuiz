@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { kanjidb1 } from "./Kanjidb.js";
-import { kanjidb2 } from "./kanjidb_L2.js";
+import kanjidb2 from "./kanjidb_L2.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
   let testArray = [kanjidb1, kanjidb2];
@@ -27,21 +27,11 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   const editGrade = (e) => {
     if (e.target.value === "in" && e.target.id === "2") {
-      setGrades([...grades, kanjidb2]);
+      setGrades([...grades, { kanjidb2 }]);
       e.target.value = "off";
       alert(e.target.value);
     } else {
-      const filteredArray = grades.filter(
-        (item) =>
-          !kanjidb2.includes({
-            id: 81,
-            kanji: "	数	",
-            meaning: "	number, count	",
-            onYomi: "	sū	",
-            kunYomi: "	kazu	",
-            grade: 2,
-          })
-      );
+      const filteredArray = grades.filter((item) => !kanjidb2.includes(item));
       console.log(filteredArray);
       setGrades(filteredArray);
       e.target.value = "in";
