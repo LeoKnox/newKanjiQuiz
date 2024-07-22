@@ -13,9 +13,6 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     for (let i = 0; i < testArray.length; i++) {
       newArray = newArray.concat(testArray[i]);
     }
-    //newArray = testArray[0];
-    console.log(JSON.stringify(newArray));
-    //newArray = [...kanjidb1, ...kanjidb2];
     setKanjidb(newArray);
   }, []);
   useEffect(() => {
@@ -64,11 +61,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       <h2>All Kanji Page</h2>
       <button onClick={selectAllKanji}>Select All</button>
       <button onClick={deselectAllKanji}>Deselect All</button>
-      <p>
-        {checkedKanji.map((a) => (
-          <label>{a.id}-</label>
-        ))}
-      </p>
+
       <table>
         {kanjidb.map((kanji, index) => (
           <tr>
