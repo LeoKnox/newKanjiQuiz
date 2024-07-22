@@ -27,8 +27,12 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const editGrade = (e) => {
     if (e.target.id === "2" && e.target.value) {
       setGrades([...grades, kanjidb2]);
-      e.target.value = !e.target.value;
+      e.target.value = false;
       alert(e.target.value);
+    } else {
+      const filteredArray = grades.filter((item) => !kanjidb2.includes(item));
+      setGrades(filteredArray);
+      e.target.value = true;
     }
   };
   const updateKanji = (e) => {
