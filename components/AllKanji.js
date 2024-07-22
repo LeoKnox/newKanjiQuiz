@@ -3,7 +3,7 @@ import { kanjidb1 } from "./Kanjidb.js";
 import { kanjidb2 } from "./kanjidb_L2.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
-  const testArray = ["kanjidb1", "kanjidb2"];
+  const testArray = [kanjidb1, kanjidb2];
   //const kanjidb = [...kanjidb1, ...kanjidb2];
   const [kanjidb, setKanjidb] = useState([]);
   var checkedKanji = myKanji;
