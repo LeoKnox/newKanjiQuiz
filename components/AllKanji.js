@@ -59,6 +59,10 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   return (
     <div className="allKanji">
       <h2>All Kanji Page</h2>
+      <p>
+        <button>Level 1</button>
+        <button>Level 2</button>
+      </p>
       <button onClick={selectAllKanji}>Select All</button>
       <button onClick={deselectAllKanji}>Deselect All</button>
 
