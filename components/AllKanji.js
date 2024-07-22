@@ -4,14 +4,15 @@ import { kanjidb2 } from "./kanjidb_L2.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
   const testArray = [kanjidb1, kanjidb2];
+  const [grades, setGrades] = useState([]);
   //const kanjidb = [...kanjidb1, ...kanjidb2];
   const [kanjidb, setKanjidb] = useState([]);
   var checkedKanji = myKanji;
 
   useEffect(() => {
     let newArray = [];
-    for (let i = 0; i < testArray.length; i++) {
-      newArray = newArray.concat(testArray[i]);
+    for (let i = 0; i < grades.length; i++) {
+      newArray = newArray.concat(grades[i]);
     }
     setKanjidb(newArray);
   }, []);
