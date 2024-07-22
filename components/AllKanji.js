@@ -11,7 +11,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   useEffect(() => {
     let newArray = [];
     for (let i = 0; i < testArray.length; i++) {
-      newArray = newArray.concat(kanjidb[i]);
+      newArray = newArray.concat(testArray[i]);
     }
     //newArray = testArray[0];
     console.log(JSON.stringify(newArray));
