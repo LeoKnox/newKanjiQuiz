@@ -25,7 +25,9 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   }, []);
 
   const editGrade = (e) => {
-    alert(e.target.id);
+    if (e.target.id === "2") {
+      alert("3");
+    }
   };
   const updateKanji = (e) => {
     const checked = e.target.checked;
@@ -68,7 +70,9 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
           <input type="checkbox" id="1" />
           Grade 1
         </button>
-        <button>Level 2</button>
+        <button id="2" onClick={editGrade}>
+          Level 2
+        </button>
       </p>
       <button onClick={selectAllKanji}>Select All</button>
       <button onClick={deselectAllKanji}>Deselect All</button>
