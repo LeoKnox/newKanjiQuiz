@@ -3,7 +3,8 @@ import { kanjidb1 } from "./Kanjidb.js";
 import { kanjidb2 } from "./kanjidb_L2.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
-  const testArray = [kanjidb1, kanjidb2];
+  let testArray = [kanjidb1, kanjidb2];
+  let kanjidbs = [];
   const [grades, setGrades] = useState([]);
   //const kanjidb = [...kanjidb1, ...kanjidb2];
   const [kanjidb, setKanjidb] = useState([]);
@@ -30,7 +31,17 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       e.target.value = "off";
       alert(e.target.value);
     } else {
-      const filteredArray = grades.filter((item) => !kanjidb2.includes(item));
+      const filteredArray = grades.filter(
+        (item) =>
+          !kanjidb2.includes({
+            id: 81,
+            kanji: "	数	",
+            meaning: "	number, count	",
+            onYomi: "	sū	",
+            kunYomi: "	kazu	",
+            grade: 2,
+          })
+      );
       console.log(filteredArray);
       setGrades(filteredArray);
       e.target.value = "in";
