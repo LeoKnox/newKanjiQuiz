@@ -31,7 +31,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       e.target.value = "off";
     } else {
       let newArr = grades.filter(function (item) {
-        return item.grade != 1;
+        return item.grade != e.target.id + 1;
       });
       console.log(newArr);
       setGrades(newArr);
