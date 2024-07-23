@@ -27,7 +27,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   const editGrade = (e) => {
     if (e.target.value === "in" && e.target.id === "2") {
-      setGrades([...grades, testArray[2]]);
+      setGrades([...grades, testArray[e.target.id - 1]]);
       e.target.value = "off";
       alert(e.target.value);
     } else {
