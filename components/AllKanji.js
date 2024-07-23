@@ -32,7 +32,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       alert(e.target.value);
     } else {
       let newArr = grades.filter(function (item) {
-        return (item.grades = "2");
+        return item.grades !== "2";
       });
       setGrades(newArr);
       e.target.value = "in";
