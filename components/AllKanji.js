@@ -27,7 +27,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   const editGrade = (e) => {
     if (e.target.value === "in" && e.target.id === "2") {
-      setGrades([...grades, kanjidb2]);
+      setGrades([...grades, testArray[2]]);
       e.target.value = "off";
       alert(e.target.value);
     } else {
@@ -75,12 +75,11 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     <div className="allKanji">
       <h2>All Kanji Page</h2>
       <p>
-        <button onClick={editGrade}>
-          <input type="checkbox" id="1" />
+        <button id="1" value="in" onClick={editGrade}>
           Grade 1
         </button>
         <button id="2" value="in" onClick={editGrade}>
-          Level 2
+          Grade 2
         </button>
       </p>
       <button onClick={selectAllKanji}>Select All</button>
