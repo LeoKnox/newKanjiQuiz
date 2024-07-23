@@ -27,13 +27,13 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   const editGrade = (e) => {
     if (e.target.value === "in") {
-      setGrades([...grades, testArray[e.target.id]]);
+      setGrades(grades.concat(testArray[e.target.id]));
       e.target.value = "off";
     } else {
       let newArr = grades.filter(function (item) {
-        return item.grade != e.target.id;
+        return item.grade != 1;
       });
-      console.table(newArr);
+      console.log(newArr);
       setGrades(newArr);
       e.target.value = "in";
     }
