@@ -30,6 +30,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       setGrades(grades.concat(testArray[e.target.id]));
       e.target.value = "off";
     } else {
+      alert(e.target.id + " " + grades[0].grade);
       let newArr = grades.filter(function (item) {
         return item.grade != e.target.id + 1;
       });
