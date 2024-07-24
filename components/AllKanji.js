@@ -65,8 +65,8 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const deselectAllKanji = () => {
     setMyKanji([]);
     for (let i = 0; i <= kanjidb.length; i++) {
-      if (document.getElementById(i)) {
-        document.getElementById(i).checked = false;
+      if (document.getElementById("k" + i)) {
+        document.getElementById("k" + i).checked = false;
       }
     }
   };
