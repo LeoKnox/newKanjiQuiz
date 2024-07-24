@@ -3,10 +3,8 @@ import { kanjidb1 } from "./Kanjidb.js";
 import { kanjidb2 } from "./kanjidb_L2.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
-  let testArray = [kanjidb1, kanjidb2];
-  let kanjidbs = [];
+  const testArray = [kanjidb1, kanjidb2];
   const [grades, setGrades] = useState([]);
-  //const kanjidb = [...kanjidb1, ...kanjidb2];
   const [kanjidb, setKanjidb] = useState([]);
   var checkedKanji = myKanji;
 
@@ -33,7 +31,6 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       let newArr = grades.filter(function (item) {
         return item.grade != parseInt(e.target.id) + 1;
       });
-      console.log(newArr);
       setGrades(newArr);
       e.target.value = "in";
     }
