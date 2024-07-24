@@ -53,13 +53,10 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
     let tempKanji = [];
-    //for (let i of allKanji) {
-    console.log(allKanji.length);
     for (let i = 0; i < allKanji.length; i++) {
       tempKanji.push(kanjidb[i]);
-      if (document.getElementById("a" + i)) {
-        document.getElementById("a" + i).checked = true;
-        console.log("a" + i);
+      if (document.getElementById("k" + i)) {
+        document.getElementById("k" + i).checked = true;
       }
     }
     checkedKanji = tempKanji;
@@ -93,7 +90,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
             <td>
               <input
                 type="checkbox"
-                id={"a" + (kanji.id - 1)}
+                id={"k" + (kanji.id - 1)}
                 onChange={(e) => updateKanji(e)}
               />
             </td>
