@@ -91,7 +91,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
             <td>
               <input
                 type="checkbox"
-                id={kanji.id - 1}+"a"
+                id={"a" + (kanji.id - 1)}
                 onChange={(e) => updateKanji(e)}
               />
             </td>
