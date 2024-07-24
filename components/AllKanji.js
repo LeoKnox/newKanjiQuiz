@@ -27,12 +27,14 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     if (e.target.value === "in") {
       setGrades(grades.concat(testArray[e.target.id]));
       e.target.value = "off";
+      document.getElementById(e.target.id).style.backgroundColor = "chocolate";
     } else {
       let newArr = grades.filter(function (item) {
         return item.grade != parseInt(e.target.id) + 1;
       });
       setGrades(newArr);
       e.target.value = "in";
+      document.getElementById(e.target.id).style.backgroundColor = "tan";
     }
   };
   const updateKanji = (e) => {
@@ -72,12 +74,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     <div className="allKanji">
       <h2>All Kanji Page</h2>
       <p>
-        <button
-          id="0"
-          value="in"
-          onClick={editGrade}
-          style={{ backgroundColor: this.value ? "blue" : "red" }}
-        >
+        <button id="0" value="in" onClick={editGrade}>
           Grade 1
         </button>
         <button id="1" value="in" onClick={editGrade}>
