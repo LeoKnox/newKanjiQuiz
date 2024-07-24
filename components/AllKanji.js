@@ -54,10 +54,12 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     let allKanji = [...Array(kanjidb.length).keys()];
     let tempKanji = [];
     //for (let i of allKanji) {
+    console.log(allKanji.length);
     for (let i = 0; i < allKanji.length; i++) {
       tempKanji.push(kanjidb[i]);
-      if (document.getElementById(i)) {
+      if (document.getElementById("a" + i)) {
         document.getElementById("a" + i).checked = true;
+        console.log("a" + i);
       }
     }
     checkedKanji = tempKanji;
