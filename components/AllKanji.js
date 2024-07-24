@@ -76,7 +76,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
           id="0"
           value="in"
           onClick={editGrade}
-          style={{ backgroundColor: value == "in" ? "tan" : "red" }}
+          style={{ backgroundColor: this.value ? "blue" : "red" }}
         >
           Grade 1
         </button>
