@@ -30,9 +30,8 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       setGrades(grades.concat(testArray[e.target.id]));
       e.target.value = "off";
     } else {
-      alert(e.target.id + " " + grades[0].grade);
       let newArr = grades.filter(function (item) {
-        return item.grade != e.target.id + 1;
+        return item.grade != parseInt(e.target.id) + 1;
       });
       console.log(newArr);
       setGrades(newArr);
@@ -47,7 +46,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     if (checked) {
       x.push(kanjidb[absId]);
     } else {
-      x = x.filter((y) => y.id != kanjiId);
+      x = x.filter((y) => y.id !== kanjiId);
     }
     checkedKanji = x;
     setMyKanji(x);
