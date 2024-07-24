@@ -72,7 +72,12 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     <div className="allKanji">
       <h2>All Kanji Page</h2>
       <p>
-        <button id="0" value="in" onClick={editGrade}>
+        <button
+          id="0"
+          value="in"
+          onClick={editGrade}
+          style={{ backgroundColor: value == "in" ? "tan" : "red" }}
+        >
           Grade 1
         </button>
         <button id="1" value="in" onClick={editGrade}>
