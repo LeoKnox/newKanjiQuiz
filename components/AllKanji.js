@@ -4,9 +4,7 @@ import { kanjidb2 } from "./kanjidb_L2.js";
 
 export default AllKanji = ({ myKanji, setMyKanji }) => {
   const testArray = [kanjidb1, kanjidb2];
-  const [grades, setGrades] = useState([
-    Array.from(new Set(myKanji.map((item) => item))),
-  ]);
+  const [grades, setGrades] = useState(myKanji);
   const [kanjidb, setKanjidb] = useState([]);
   let checkedKanji = myKanji;
 
