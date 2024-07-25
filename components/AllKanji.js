@@ -10,6 +10,9 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   useEffect(() => {
     let newArray = [];
+    if (checkedKanji.find((e) => e.id === 1)) {
+      alert("green");
+    }
     for (let i = 0; i < grades.length; i++) {
       newArray = newArray.concat(grades[i]);
     }
