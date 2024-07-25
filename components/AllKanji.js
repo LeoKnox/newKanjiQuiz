@@ -10,15 +10,20 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
   useEffect(() => {
     let newArray = [];
-    if (checkedKanji.find((e) => e.id === 1)) {
-      alert("green");
-    }
+
     for (let i = 0; i < grades.length; i++) {
       newArray = newArray.concat(grades[i]);
     }
     setKanjidb(newArray);
   }, [grades]);
   useEffect(() => {
+    let newArray = [];
+    if (checkedKanji.find((e) => e.id === 1)) {
+      for (let i = 0; i < grades.length; i++) {
+        newArray = newArray.concat(grades[i]);
+      }
+      setKanjidb(newArray);
+    }
     for (let i of myKanji) {
       if (document.getElementById(i.id)) {
         document.getElementById(i.id - 1).checked = true;
