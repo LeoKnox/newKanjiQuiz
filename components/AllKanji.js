@@ -49,14 +49,14 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
     const checked = e.target.checked;
     const kanjiId = 1 + parseInt(e.target.id);
     const absId = parseInt(e.target.id);
-    let x = [...checkedKanji];
+    let temp = [...checkedKanji];
     if (checked) {
-      x.push(kanjidb[absId]);
+      temp.push(kanjidb[absId]);
     } else {
-      x = x.filter((y) => y.id !== kanjiId);
+      temp = temop.filter((y) => y.id !== kanjiId);
     }
-    checkedKanji = x;
-    setMyKanji(x);
+    checkedKanji = temp;
+    setMyKanji(temp);
   };
   const selectAllKanji = () => {
     let allKanji = [...Array(kanjidb.length).keys()];
@@ -93,7 +93,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       <button onClick={deselectAllKanji}>Deselect All</button>
 
       <table>
-        {kanjidb.map((kanji, index) => (
+        {kanjidb.map((kanji) => (
           <tr>
             <td>
               <input
