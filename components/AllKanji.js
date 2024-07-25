@@ -6,7 +6,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
   const testArray = [kanjidb1, kanjidb2];
   const [grades, setGrades] = useState([]);
   const [kanjidb, setKanjidb] = useState([]);
-  var checkedKanji = myKanji;
+  let checkedKanji = myKanji;
 
   useEffect(() => {
     let newArray = [];
