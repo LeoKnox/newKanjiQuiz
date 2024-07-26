@@ -29,7 +29,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
         document.getElementById(i.id - 1).checked = true;
       }
     }
-  }, []);
+  }, [grades]);
 
   const editGrade = (e) => {
     if (e.target.value === "in") {
