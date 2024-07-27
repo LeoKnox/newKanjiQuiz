@@ -13,9 +13,6 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
     for (let i = 0; i < grades.length; i++) {
       newArray = newArray.concat(grades[i]);
-      if (checkedKanji.includes(grades[i])) {
-        document.getElementById(grades[i].id).checked = true;
-      }
     }
     setKanjidb(newArray);
   }, [grades]);
@@ -39,6 +36,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       setGrades(grades.concat(testArray[e.target.id]));
       e.target.value = "off";
       document.getElementById(e.target.id).style.backgroundColor = "chocolate";
+      checkedKanji.map((ck) => (document.getElementById(ck.id).checked = true));
     } else {
       let newArr = grades.filter(function (item) {
         return item.grade != parseInt(e.target.id) + 1;
