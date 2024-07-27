@@ -36,10 +36,10 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       setGrades(grades.concat(testArray[e.target.id]));
       e.target.value = "off";
       document.getElementById(e.target.id).style.backgroundColor = "chocolate";
-      let z = checkedKanji.map((ck) =>
-        ck.id != e.target.id
-          ? (document.getElementById(ck.id).checked = true)
-          : null
+      let z = checkedKanji.map(
+        (ck) =>
+          ck.id == e.target.id &&
+          (document.getElementById(ck.id).checked = true)
       );
     } else {
       let newArr = grades.filter(function (item) {
