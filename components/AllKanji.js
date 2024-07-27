@@ -37,7 +37,7 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
       e.target.value = "off";
       document.getElementById(e.target.id).style.backgroundColor = "chocolate";
       let z = checkedKanji.map((ck) =>
-        ck.id == e.target.id
+        ck.id != e.target.id
           ? (document.getElementById(ck.id).checked = true)
           : null
       );
