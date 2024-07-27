@@ -13,6 +13,9 @@ export default AllKanji = ({ myKanji, setMyKanji }) => {
 
     for (let i = 0; i < grades.length; i++) {
       newArray = newArray.concat(grades[i]);
+      if (checkedKanji.includes(grades[i])) {
+        document.getElememntById(grades[i].id - 1).checked = true;
+      }
     }
     setKanjidb(newArray);
   }, [grades]);
