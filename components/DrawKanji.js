@@ -94,26 +94,29 @@ export default DrawKanji = ({
         >
           {guide}
         </div>
-        <svg
-          id="svg"
-          key="svg"
-          onMouseDown={handleMouseDown}
+        <div
           onTouchStart={handleMouseDown}
-          onMouseMove={handleMouseMove}
           onTouchMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
           onTouchEnd={handleMouseUp}
-          width="109px"
-          hanging="100px"
-          style={{
-            border: "1px solid black",
-            position: "relative",
-            zIndex: "10",
-          }}
         >
-          {drawLine}
-          {drawKanji()}
-        </svg>
+          <svg
+            id="svg"
+            key="svg"
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            width="109px"
+            hanging="100px"
+            style={{
+              border: "1px solid black",
+              position: "relative",
+              zIndex: "10",
+            }}
+          >
+            {drawLine}
+            {drawKanji()}
+          </svg>
+        </div>
         <button
           className="moveKanji"
           onClick={advance}
