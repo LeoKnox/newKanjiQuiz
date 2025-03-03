@@ -1,148 +1,134 @@
-import { useState, useEffect, cloneElement } from "react";
-import { floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
-import {
-  changeDown,
-  changeLeft,
-  mobDown,
-  charUpdate,
-  charLocation,
-  deleteDown,
-  updateMonster,
-  singleMonster,
-  change,
-  updateCharacter,
-  mapData,
-  move,
-  addChar,
-} from "./playData.js";
-import DrawMonster from "./DrawMonster.js";
-import DrawCharacter from "./DrawCharacter.js";
+import { useState, useEffect } from "react";
 
-export default DrawMap = ({
-  width = 10,
-  height = 10,
-  x = 2,
-  y = 3,
-  sety,
-  setx,
+export default DrawKanji = ({
+  guide,
+  advance,
+  randomSet,
+  clean,
+  showGuide,
 }) => {
-  let mobs = singleMonster();
-  const [dataMove, setDataMove] = useState(addChar());
-  const [pagetest, setpagetest] = useState(warriorSVG());
-  const [char, setChar] = useState(charLocation());
-  const [mapState, setMapState] = useState(() => {
-    let temp = [];
-    let tempRow = [];
-    for (let x = 0; x < width + 2; x++) {
-      tempRow.push(wallSVG());
-    }
-    temp.push(tempRow);
-    tempRow = [];
-    for (let x = 0; x < height; x++) {
-      tempRow.push(wallSVG());
-      for (let y = 0; y < width; y++) {
-        tempRow.push(floorSVG());
-      }
-      tempRow.push(wallSVG());
-      temp.push(tempRow);
-      tempRow = [];
-    }
-    for (let x = 0; x < width + 2; x++) {
-      tempRow.push(wallSVG());
-    }
-    temp.push(tempRow);
-    tempRow = [];
-    return temp;
-  });
+  const [stroke, setStroke] = useState([]);
+  const [kanji, setKanji] = useState([]);
+  const [draw, setDraw] = useState(false);
+  console.log(`show guide ${showGuide}`);
 
   useEffect(() => {
-    console.log("draw character");
-    let tempRow = [...mapState];
-    let temp = [...mapState[x]];
-    temp[y] = char;
-    tempRow[x] = temp;
-    let chartemp = charLocation();
-    for (let ct in chartemp) {
-      mobs[ct] = chartemp[ct];
-    }
-    modifyTable(mobs);
-  }, []);
+    clearPractice();
+  }, [clean, advance]);
 
-  const moveMob = (xval = -1) => {
-    console.log("move mob");
-    let change = updateMonster(0, -1);
-    modifyTable(change);
+  const clearPractice = () => {
+    setKanji([]);
   };
 
-  const modifyTable = (
-    objMove = {
-      3: [
-        {
-          oldx: 8,
-          newx: 7,
-          tile: <DrawMonster background={wallSVG()} />,
-        },
-      ],
-    }
-  ) => {
-    console.log("modify table");
-    let newGrid = [...mapState];
-    let newRow = [];
-    console.log(objMove);
-    for (index in objMove) {
-      newRow = [...mapState[index]];
-      objMove[parseInt(index)].map((child) => {
-        newRow[child.oldx] = floorSVG();
-        newRow[child.newx] = child.tile;
-        newGrid[index] = newRow;
-      });
-    }
-    setMapState(newGrid);
+  const handleMouseDown = (event) => {
+    const { clientX, clientY } = event;
+    setDraw(true);
   };
 
-  const newChange = () => {
-    console.log("new change");
-    changeDown();
-    temp = charLocation();
-    modifyTable(change());
-    deleteDown();
+  const handleMouseMove = (event) => {
+    const { clientX, clientY } = event;
+    let offset = document.getElementById("svg").getBoundingClientRect();
+    if (draw) {
+      setStroke([
+        ...stroke,
+        { x: clientX - offset.left, y: clientY - offset.top },
+      ]);
+    }
   };
-  const newMove = () => {
-    //move();
-    //setDataMove({ mapData });
-    setDataMove(move());
-    console.log("red");
+
+  const handleMouseUp = () => {
+    let newKanji = kanji;
+    let line = stroke.map((point) => `${point.x},${point.y}`).join(" ");
+    newKanji.push([line]);
+    setKanji(newKanji);
+    setStroke([]);
+    setDraw(false);
   };
+  const drawKanji = () => {
+    let testData = [];
+    kanji.map((x) => {
+      testData.push(
+        <polyline
+          points={x}
+          stroke="black"
+          strokeWidth="4"
+          fill="none"
+          zIndex="50"
+        />
+      );
+    });
+    return testData;
+  };
+
+  const drawLine = (
+    <polyline
+      points={stroke.map((point) => `${point.x},${point.y}`).join(" ")}
+      stroke="black"
+      strokeWidth="4"
+      fill="none"
+      zIndex="50"
+    />
+  );
+
   return (
-    <div>
-      {mapState.map((row) => (
-        <tr>
-          {row.map((tile) => (
-            <td>{tile}</td>
-          ))}
-        </tr>
-      ))}
-      <td>
-        <button onClick={console.log("button")}>right</button>
-      </td>
-      <td>
-        <button onClick={console.log("button")}>left</button>
-      </td>
-      <td>
-        <button onClick={() => newChange()}>down</button>
-      </td>
-      <td>
-        <button onClick={() => setDataMove(addChar(1))}>up</button>
-      </td>
-      <td>
-        <button onClick={() => moveMob()}>mob</button>
-      </td>
-      {warr}
-      {dataMove.map((i) => (
-        <>
-          <tr>{i}</tr>
-        </>
-      ))}
-    </div>
+    <>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <button
+          className="moveKanji"
+          onClick={advance}
+          name="previous"
+          disabled={randomSet}
+          style={{ float: "left" }}
+        >
+          Previous
+        </button>
+
+        <div
+          style={{
+            position: "absolute",
+            width: "80px",
+            color: "lightgray",
+            fontSize: "5em",
+            visibility: showGuide ? "visible" : "hidden",
+          }}
+        >
+          {guide}
+        </div>
+        <div
+          onTouchStart={handleMouseDown}
+          onTouchMove={handleMouseMove}
+          onTouchEnd={handleMouseUp}
+        >
+          <svg
+            id="svg"
+            key="svg"
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            width="109px"
+            hanging="100px"
+            style={{
+              border: "1px solid black",
+              position: "relative",
+              zIndex: "10",
+            }}
+          >
+            {drawLine}
+            {drawKanji()}
+          </svg>
+        </div>
+        <button
+          className="moveKanji"
+          onClick={advance}
+          name="next"
+          style={{ float: "right" }}
+        >
+          Next
+        </button>
+      </div>
+      <p>
+        <button onClick={clearPractice}>Clear</button>
+      </p>
+    </>
   );
 };
