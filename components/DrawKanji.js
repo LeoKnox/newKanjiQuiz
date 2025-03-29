@@ -75,7 +75,11 @@ export default DrawMap = ({
   };
   const createWalls = () => {
     console.log("create walls");
-    let cw = [...dataMove, ((s) => [...s])];
+    let cw = dataMove.map((s,t) =>
+      s.props.children.map((u,v) =>
+       wallSVG()
+      )
+      )
     let elements = dataMove.map((s, t) =>
       t == locations.player.y
         ? s.props.children.map((u, v) =>
@@ -83,7 +87,8 @@ export default DrawMap = ({
           )
         : s
     );
-    cw[locations.player.x][locations.player.y] = wallSVG();
+    console.table(cw);
+    elements[locations.player.x + 1][locations.player.y + 1] = wallSVG();
     return cw;
   };
 
