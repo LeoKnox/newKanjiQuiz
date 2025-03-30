@@ -66,20 +66,31 @@ export default DrawMap = ({
     console.log("red");
     console.log(dataMove);
   };
-  const confirm = (v) => {
+  const confirm = (t, v) => {
     console.log("CC");
-    console.log(v);
+
     //let mmm = [...v]
-    v.props.children = wallSVG();
-    return v;
+    //v.props.children = wallSVG();
+    //return demonSVG();
+    console.log("RRRR");
+    console.log(t + ":" + v);
+    //console.log(mobData[t][v]);
+    if (mobData[t][v] === undefined) {
+      return false;
+    } else {
+      return mobData[t][v];
+    }
+    return mobData[t][v] || false;
   };
   const createWalls = () => {
     console.log("create walls");
-    let cw = dataMove.map((s,t) =>
-      s.props.children.map((u,v) =>
-       wallSVG()
-      )
-      )
+    let cw = dataMove.map((s, t) => (
+      <tr>
+        {s.props.children.map((u, v) => (
+          <td>{confirm(t, v) || u}</td>
+        ))}
+      </tr>
+    ));
     let elements = dataMove.map((s, t) =>
       t == locations.player.y
         ? s.props.children.map((u, v) =>
