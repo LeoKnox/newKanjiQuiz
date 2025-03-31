@@ -1,4 +1,4 @@
-import { useState, useEffect, cloneElement } from "react";
+import { useState, useEffect, useCallback, cloneElement } from "react";
 import { demonSVG, floorSVG, wallSVG, warriorSVG, warr } from "./svgData";
 import { singleRoom } from "./dungeonData.js";
 import { charLocation, updateMonster, mobData, mapData } from "./playData.js";
@@ -18,7 +18,7 @@ export default DrawMap = ({
     .map(() => <tr>{Array(singleRoom().y).fill(<td>{floorSVG()}</td>)}</tr>);
   const [dataMove, setDataMove] = useState(currMap);
   const [locations, setLocations] = useState(mapData);
-  const [char, setChar] = useState(charLocation());
+  const [mabData, setMabData] = useState(mobData);
   const [mapState, setMapState] = useState(() => {
     let temp = [];
     let tempRow = [];
@@ -59,31 +59,25 @@ export default DrawMap = ({
   };
 
   const newMove = (x, y) => {
-    let temp = locations;
+    /*let temp = locations;
     temp["player"].y = temp["player"].y + y;
     temp["player"].x = temp["player"].x + x;
-    setLocations({ ...temp });
+    setLocations({ ...temp });*/
+    let temp = currMap;
+    currMap[0][1] = wallSVG();
     console.log("red");
+    setLocations(locations);
     console.log(dataMove);
   };
   const confirm = (t, v) => {
-    console.log("CC");
-
-    //let mmm = [...v]
-    //v.props.children = wallSVG();
-    //return demonSVG();
-    console.log("RRRR");
-    console.table(mobData);
-    console.log(t + ":" + v);
-    //console.log(mobData[t][v]);
-    if (mobData[t][v] === undefined) {
-      return false;
+    console.log("confirm");
+    if (mabData.hasOwnProperty(t) && mabData[t].hasOwnProperty(v)) {
+      return mabData[t][v];
     } else {
-      return mobData[t][v];
+      return false;
     }
-    return mobData[t][v] || false;
   };
-  const createWalls = () => {
+  const createWalls = useCallback(() => {
     console.log("create walls");
     let cw = dataMove.map((s, t) => (
       <tr>
@@ -92,17 +86,8 @@ export default DrawMap = ({
         ))}
       </tr>
     ));
-    let elements = dataMove.map((s, t) =>
-      t == locations.player.y
-        ? s.props.children.map((u, v) =>
-            v == locations.player.x ? warriorSVG() : u
-          )
-        : s
-    );
-    console.table(cw);
-    elements[locations.player.x + 1][locations.player.y + 1] = wallSVG();
     return cw;
-  };
+  }, [locations]);
 
   return (
     <div>
