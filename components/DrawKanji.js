@@ -59,14 +59,14 @@ export default DrawMap = ({
   };
 
   const newMove = (x, y) => {
-    /*let temp = locations;
+    let temp = locations;
     temp["player"].y = temp["player"].y + y;
     temp["player"].x = temp["player"].x + x;
-    setLocations({ ...temp });*/
-    let temp = currMap;
+    setLocations({ ...temp });
+    //let temp = currMap;
     currMap[0][1] = wallSVG();
     console.log("red");
-    setLocations(locations);
+    //setLocations(locations);
     console.log(dataMove);
   };
   const confirm = (t, v) => {
